@@ -1,7 +1,7 @@
 
 import React from "react";
 import { Link } from "react-router-dom";
-const  Sidebar =()=>{
+const  Sidebar =(props)=>{
     return (
 <>
   {/*body_left*/}
@@ -31,18 +31,18 @@ const  Sidebar =()=>{
       <div className="push_menu">
         <ul className="nav flex-column">
           <li className="nav-item">
-            <Link aria-current="page" to="/" className="nav-link active">
+            <Link aria-current="page" to="/" className={props.className}>
               <img src="images/dashboard.svg" alt="" /> Dashboard
             </Link>
           </li>
           <li className="nav-item">
-            <a aria-current="page" href="#" className="nav-link">
+            <a aria-current="page" href="#" className={props.className}>
               <img src="images/user-list.svg" alt="" />
               User list{" "}
             </a>
           </li>
           <li className="nav-item">
-            <Link aria-current="page" to="/Form" className="nav-link">
+            <Link aria-current="page" to="/Form" className={props.className}>
               <img src="images/owner-list.svg" alt="" /> Data input
             </Link>
           </li>

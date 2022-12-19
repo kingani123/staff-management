@@ -16,10 +16,10 @@ const AdminLayout = (props) => {
     <div>
     <Navbar/>
     <div className="wrapper">  
-    <Sidebar/>  
-       <Home/>  
+    <Sidebar className="nav-link active"  />  
+       <Home />  
        
-       <Form/>
+    
      
                       
                  </div>

@@ -1,8 +1,17 @@
 import React from "react";
+import Navbar from "./Navbar";
+
+
+import Sidebar from "./Sidebar";
+import Footer from "./Footer";
+
+
 const Form =()=>{
     return (
-
-
+      <div>
+      <Navbar/>
+      <div className="wrapper">  
+      <Sidebar className="nav-link active"/>            
 
 <div className="body_right">
   <div className="inside">
@@ -191,6 +200,11 @@ const Form =()=>{
     </div>
   </div>
 </div>
+    </div>
+    <Footer/>
+    </div>
+  
+
       );
      }
      export default Form;
