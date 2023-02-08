@@ -42,14 +42,14 @@ const  Sidebar =(props)=>{
             </a>
           </li>
           <li className="nav-item">
-            <Link aria-current="page" to="/Form" className={props.className}>
-              <img src="images/owner-list.svg" alt="" /> Data input
+            <Link aria-current="page" to="/Addstaff" className={props.className}>
+              <img src="images/owner-list.svg" alt="" /> Add Staff
             </Link>
           </li>
           <li className="nav-item">
-            <a aria-current="page" href="#" className="nav-link">
-              <img src="images/place-management.svg" alt="" /> Reports
-            </a>
+            <Link aria-current="page" to="/Liststaff" className="nav-link">
+              <img src="images/place-management.svg" alt="" /> List Staff
+            </Link>
           </li>
           <li className="nav-item">
             <a aria-current="page" href="#" className="nav-link">

@@ -2,7 +2,11 @@
 import { BrowserRouter , Routes, Route,Link } from "react-router-dom";
 import AdminLayout from '../src/component/Admin.Layout';
 import Home from '../src/component/Home';
-import Form from '../src/component/Form';
+import Form from './component/Addstaff';
+import Report from '../src/component/Liststaff';
+import Addstaff from "./component/Addstaff";
+import Liststaff from "../src/component/Liststaff";
+import Login from "./component/Login";
 
 
 function App() {
@@ -16,9 +20,10 @@ function App() {
   
       <Route path="/" element={<Home />}/>
       
-      <Route path="/Form" element={<Form />}/>
+      <Route path="/Addstaff" element={<Login/>}/>
+      <Route path="/Liststaff" element={<Liststaff />}/>
       
-        
+      <Route path="/" element={<Login />}/>
       
     </Routes>
   </BrowserRouter>

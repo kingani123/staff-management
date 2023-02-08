@@ -4,7 +4,7 @@ import React  from "react";
 
 import Navbar from "./Navbar";
 import Home from "./Home";
-import Form from "./Form";
+import Form from "./Addstaff";
 import Sidebar from "./Sidebar";
 import Footer from "./Footer";
 

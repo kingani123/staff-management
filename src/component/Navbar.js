@@ -9,7 +9,7 @@ const Navbar =()=>{
         <div className="left">
           <div className="logo">
             <a href="#">
-              <img src="images/logo.svg" alt="" />
+              <img src="images/ani.svg" alt="" />
             </a>
           </div>
         </div>
@@ -20,9 +20,9 @@ const Navbar =()=>{
           </div>
           <div className="header_profile_img">
             <div className="header_profile_img_box">
-              <p>PH</p>
+              <p>admin</p>
             </div>
-            <h5>PCB Howrha</h5>
+            <h5>Admin</h5>
             <i className="fa-solid fa-chevron-down" />
             <div className="profile_drop">
               <ul>

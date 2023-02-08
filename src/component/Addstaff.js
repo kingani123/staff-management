@@ -6,7 +6,7 @@ import Sidebar from "./Sidebar";
 import Footer from "./Footer";
 
 
-const Form =()=>{
+const Addstaff =()=>{
     return (
       <div>
       <Navbar/>
@@ -207,5 +207,5 @@ const Form =()=>{
 
       );
      }
-     export default Form;
+     export default Addstaff;
      
