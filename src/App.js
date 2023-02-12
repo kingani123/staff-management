@@ -7,6 +7,8 @@ import Report from '../src/component/Liststaff';
 import Addstaff from "./component/Addstaff";
 import Liststaff from "../src/component/Liststaff";
 import Login from "./component/Login";
+import Addcontract from "../src/component/Addcontract";
+import Addunit from "../src/component/Addunit";
 
 
 function App() {
@@ -20,9 +22,10 @@ function App() {
   
       <Route path="/" element={<Home />}/>
       
-      <Route path="/Addstaff" element={<Login/>}/>
+      <Route path="/Addstaff" element={<Addstaff/>}/>
       <Route path="/Liststaff" element={<Liststaff />}/>
-      
+      <Route path="/Addcontract" element={<Addcontract/>}/>
+      <Route path="/Addunit" element={<Addunit/>}/>
       <Route path="/" element={<Login />}/>
       
     </Routes>

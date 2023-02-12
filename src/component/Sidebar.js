@@ -52,9 +52,13 @@ const  Sidebar =(props)=>{
             </Link>
           </li>
           <li className="nav-item">
-            <a aria-current="page" href="#" className="nav-link">
-              <img src="images/adertisement.svg" alt="" /> Suggestion &amp;
-              Feedback
+            <a aria-current="page" href="/Addunit" className={props.className}>
+              <img src="images/adertisement.svg" alt="" /> Add Unit
+            </a>
+          </li>
+          <li className="nav-item">
+            <a aria-current="page" href="/Addcontract" className={props.className}>
+              <img src="images/adertisement.svg" alt="" /> Add Contract
             </a>
           </li>
           <li className="nav-item">
