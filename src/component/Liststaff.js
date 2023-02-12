@@ -12,17 +12,16 @@ const Liststaff = ()=>{
       <div>
       <Navbar/>
       <div className="wrapper">  
-      <Sidebar className="nav-link active"/>            
-
+      <Sidebar className="nav-link active"/>  
       <div className="body_right">
         <div className="inside">
           <div className="right_body_pagenation">
-            <p>Reports</p>
+            <p>Unit Details</p>
           </div>    
           <div className="right_body_section">
             {/*--content here--*/}
             <div className="card mt-0">
-              <div className="heading"><h3>Reports</h3></div>
+              <div className="heading"><h3>Unit Details</h3></div>
               <div className="report_search_panner">
                 <div className="left">
                   <select className="form-select" aria-label="Default select example">
@@ -55,33 +54,33 @@ const Liststaff = ()=>{
                 <div className="table_header">
                   <div style={{width: '8%'}}>Sl No.</div>
                   <div style={{width: '12%'}}>Name</div>
-                  <div style={{width: '10%'}}>ID</div>
-                  <div style={{width: '10%'}}>Mobile</div>
-                  <div style={{width: '15%'}}>H. No.</div>
-                  <div style={{width: '15%'}}>Town</div>
+                  <div style={{width: '10%'}}>Country</div>
+                  <div style={{width: '10%'}}>State</div>
+                  <div style={{width: '15%'}}>Police Station</div>
+                  <div style={{width: '15%'}}>Actions</div>
                   <div style={{width: '10%'}}>District </div>
                   <div style={{width: '20%'}}>Customer Email</div>
                 </div>
                 <div className="table_body">
                   <div style={{width: '8%'}}>
                     <p className="mobile_heading">Sl No.</p>
-                    <p className="sl_no">#1</p>
+                    <p className="sl_no"></p>
                   </div>
                   <div style={{width: '12%'}}>
                     <p className="mobile_heading">Name</p>
-                    <p>T.koley</p>
+                    <p></p>
                   </div>
                   <div style={{width: '10%'}}>
                     <p className="mobile_heading">ID</p>
-                    <p>#123467890</p>
+                    <p></p>
                   </div>
                   <div style={{width: '10%'}}>
                     <p className="mobile_heading">Mobile</p>
-                    <p>1234567890</p>
+                    <p></p>
                   </div>
                   <div style={{width: '15%'}}>
                     <p className="mobile_heading">H. No.</p>
-                    <p>584587</p>
+                    <p></p>
                   </div>
                   <div style={{width: '15%'}}>
                     <p className="mobile_heading">Town</p>
@@ -224,6 +223,11 @@ const Liststaff = ()=>{
 
     </div>
   </div>
+
+
+
+
+
 
       );
      }
