@@ -1,5 +1,5 @@
 import React  from "react";
-
+import "./Home.css";
 import {
   ResponsiveContainer,
   LineChart,
@@ -94,7 +94,7 @@ const Home  = ()=>{
             <div className="card-body">
                 
                     <div>
-                     <p className="text-white">Direct Employee</p>
+                    <b><p className="text-dark">Direct Employee</p></b>
                         <center><h4 className="my-1 text-dark">0</h4></center>
                         
                     </div>
