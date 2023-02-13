@@ -126,7 +126,7 @@ const  Sidebar =(props)=>{
             </a>
           </li>
           <li className="nav-item">
-            <a aria-current="page" href="/Addcontract" className={props.className}>
+            <a aria-current="page" href="/Rolewise" className={props.className}>
               <img src="images/adertisement.svg" alt="" />Role Wise Report
             </a>
           </li>

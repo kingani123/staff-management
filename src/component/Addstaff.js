@@ -24,7 +24,7 @@ const Addstaff =()=>{
     <div className="body_right">
         <div className="inside">
           <div className="right_body_pagenation">
-            <p>Reports</p>
+            <p>Add Staff</p>
           </div>
   
       <div className="col-xl-12 mx-auto">            
