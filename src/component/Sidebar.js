@@ -32,24 +32,61 @@ const  Sidebar =(props)=>{
         <ul className="nav flex-column">
           <li className="nav-item">
             <Link aria-current="page" to="/" className={props.className}>
-              <img src="images/dashboard.svg" alt="" /> Dashboard
+              <img src="images/dashboard.svg" alt="" /> <b>DASHBOARD</b> 
             </Link>
           </li>
           <li className="nav-item">
             <a aria-current="page" href="#" className={props.className}>
-              <img src="images/user-list.svg" alt="" />
-              User list{" "}
+            <b> STAFF SECTION{" "}</b> 
+            </a>
+          </li>
+         
+          <li className="nav-item">
+            <Link aria-current="page" to="/Addstaff" className={props.className}>
+              <img src="images/owner-list.svg" alt="" /> Add Staff &nbsp;&nbsp;
+              <i className="fa-solid fa-chevron-down" />
+            </Link>
+              </li>
+              <li className="nav-item">
+            <Link aria-current="page" to="/Liststaff" className={props.className}>
+              <img src="images/place-management.svg" alt="" /> Indian Staff
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link aria-current="page" to="/Liststaff" className={props.className}>
+              <img src="images/place-management.svg" alt="" /> Foreigner Staff
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link aria-current="page" to="/Liststaff" className={props.className}>
+              <img src="images/place-management.svg" alt="" /> List Of Staff
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link aria-current="page" to="/Liststaff" className={props.className}>
+              <img src="images/place-management.svg" alt="" /> Released Person
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link aria-current="page" to="/Liststaff" className={props.className}>
+              <img src="images/place-management.svg" alt="" /> Performance
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link aria-current="page" to="/Liststaff" className={props.className}>
+              <img src="images/place-management.svg" alt="" /> No change Confirmation
+            </Link>
+          </li>
+          <li className="nav-item">
+            <a aria-current="page" href="#" className={props.className}>
+            <b>UNIT SECTION{" "}</b> 
             </a>
           </li>
           <li className="nav-item">
-            <Link aria-current="page" to="/Addstaff" className={props.className}>
-              <img src="images/owner-list.svg" alt="" /> Add Staff
-            </Link>
-          </li>
-          <li className="nav-item">
-            <Link aria-current="page" to="/Liststaff" className="nav-link">
-              <img src="images/place-management.svg" alt="" /> List Staff
-            </Link>
+            <a aria-current="page" href="#" className={props.className}>
+             Unit Management{" "}&nbsp;&nbsp;
+             <i className="fa-solid fa-chevron-down" />
+            </a>
           </li>
           <li className="nav-item">
             <a aria-current="page" href="/Addunit" className={props.className}>
@@ -57,28 +94,114 @@ const  Sidebar =(props)=>{
             </a>
           </li>
           <li className="nav-item">
+            <a aria-current="page" href="#" className={props.className}>
+            <b>CONTRACTOR SECTION{" "}</b> 
+            </a>
+          </li>
+          <li className="nav-item">
+            <a aria-current="page" href="#" className={props.className}>
+            Contractor Management{" "}&nbsp;&nbsp;
+             <i className="fa-solid fa-chevron-down" />
+            </a>
+          </li>
+          <li className="nav-item">
             <a aria-current="page" href="/Addcontract" className={props.className}>
-              <img src="images/adertisement.svg" alt="" /> Add Contract
+              <img src="images/adertisement.svg" alt="" /> Add Contractor
             </a>
           </li>
           <li className="nav-item">
-            <a aria-current="page" href="/Listunit" className="nav-link">
-              <img src="images/support.svg" alt="" /> Unit Details List
+            <a aria-current="page" href="/Addcontract" className={props.className}>
+              <img src="images/adertisement.svg" alt="" /> List Of Contractors
             </a>
           </li>
           <li className="nav-item">
-            <a aria-current="page" href="#" className="nav-link">
-              <img src="images/revenue-model.svg" alt="" /> Faq
+            <a aria-current="page" href="#" className={props.className}>
+            <b>REPORT SECTION{" "}</b> 
             </a>
           </li>
           <li className="nav-item">
-            <a aria-current="page" href="#" className="nav-link">
-              <img src="images/settings.svg" alt="" /> Settings
+            <a aria-current="page" href="#" className={props.className}>
+           Staff Strength Reports{" "}&nbsp;&nbsp;
+             <i className="fa-solid fa-chevron-down" />
             </a>
           </li>
           <li className="nav-item">
-            <a aria-current="page" href="#" className="nav-link">
-              <img src="images/logout.svg" alt="" /> Logout
+            <a aria-current="page" href="/Addcontract" className={props.className}>
+              <img src="images/adertisement.svg" alt="" />Role Wise Report
+            </a>
+          </li>
+          <li className="nav-item">
+            <a aria-current="page" href="/Addcontract" className={props.className}>
+              <img src="images/adertisement.svg" alt="" /> Category Wise Report
+            </a>
+          </li>
+          
+          <li className="nav-item">
+            <a aria-current="page" href="#" className={props.className}>
+           Analytics{" "}&nbsp;&nbsp;
+             <i className="fa-solid fa-chevron-down" />
+            </a>
+          </li>
+                    
+          <li className="nav-item">
+            <a aria-current="page" href="#" className={props.className}>
+              <img src="images/revenue-model.svg" alt="" /> Qualification Wise
+            </a>
+          </li>
+          <li className="nav-item">
+            <a aria-current="page" href="#" className={props.className}>
+              <img src="images/revenue-model.svg" alt="" /> Age Wise
+            </a>
+          </li>
+          <li className="nav-item">
+            <a aria-current="page" href="#" className={props.className}>
+              <img src="images/revenue-model.svg" alt="" /> Tenure Wise
+            </a>
+          </li>
+          <li className="nav-item">
+            <a aria-current="page" href="#" className={props.className}>
+              <img src="images/revenue-model.svg" alt="" /> Performance Wise
+            </a>
+          </li>
+          <li className="nav-item">
+            <a aria-current="page" href="#" className={props.className}>
+              <img src="images/revenue-model.svg" alt="" /> Local Wise
+            </a>
+          </li>
+          <li className="nav-item">
+            <a aria-current="page" href="#" className={props.className}>
+              <img src="images/revenue-model.svg" alt="" /> Outside Wise
+            </a>
+          </li>
+          <li className="nav-item">
+            <a aria-current="page" href="#" className={props.className}>
+              <img src="images/revenue-model.svg" alt="" /> Foreigners
+            </a>
+          </li>
+          <li className="nav-item">
+            <a aria-current="page" href="#" className={props.className}>
+              <img src="images/revenue-model.svg" alt="" /> Inflow Report
+            </a>
+          </li>
+          <li className="nav-item">
+            <a aria-current="page" href="#" className={props.className}>
+              <img src="images/revenue-model.svg" alt="" /> Outflow Report
+            </a>
+          </li>
+       
+          <li className="nav-item">
+            <a aria-current="page" href="#" className={props.className}>
+              <img src="images/settings.svg" alt="" /> <b>Tutorials</b>
+            </a>
+          </li>
+          <li className="nav-item">
+            <a aria-current="page" href="#" className={props.className}>
+              <img src="images/support.svg" alt="" /> <b>Contact Us</b>
+            </a>
+          </li>
+          <li className="nav-item">
+            <a aria-current="page" href="#" className={props.className}>
+              <img src="images/logout.svg" alt="" /> <b>Logout</b>
             </a>
           </li>
         </ul>
@@ -91,3 +214,39 @@ const  Sidebar =(props)=>{
       );
 }
 export default Sidebar;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
