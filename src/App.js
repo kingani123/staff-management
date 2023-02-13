@@ -9,7 +9,7 @@ import Liststaff from "../src/component/Liststaff";
 import Login from "./component/Login";
 import Addcontract from "../src/component/Addcontract";
 import Addunit from "../src/component/Addunit";
-
+import Listunit from "../src/component/Listunit";
 
 function App() {
   return (
@@ -26,6 +26,7 @@ function App() {
       <Route path="/Liststaff" element={<Liststaff />}/>
       <Route path="/Addcontract" element={<Addcontract/>}/>
       <Route path="/Addunit" element={<Addunit/>}/>
+      <Route path="/Listunit" element={<Listunit/>}/>
       <Route path="/" element={<Login />}/>
       
     </Routes>
