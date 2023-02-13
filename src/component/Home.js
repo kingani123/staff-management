@@ -71,6 +71,8 @@ const Home  = ()=>{
 
      <div className="body_right">
   <div className="inside">
+  <div className="container">
+          <div className="col-xl-10 mx-10"> 
    
     <div className="right_body_section">
       {/*--content here--*/}
@@ -80,8 +82,8 @@ const Home  = ()=>{
             <div className="card-body">
                 <div className="d-flex align-items-center">
                     <div>
-                       <b> <p className="mb-1 text-dark">Total Employee</p></b>
-                       <center> <h4 className="my-1 text-dark">1</h4></center>
+                       <b> <p className="mb-1 text-white">Total Employee</p></b>
+                       <center> <h4 className="my-1 text-white">1</h4></center>
                         
                     </div>
                     
@@ -94,8 +96,8 @@ const Home  = ()=>{
             <div className="card-body">
                 
                     <div>
-                    <b><p className="text-dark">Direct Employee</p></b>
-                        <center><h4 className="my-1 text-dark">0</h4></center>
+                    <b><p className="text-white">Direct Employee</p></b>
+                        <center><h4 className="my-1 text-white">0</h4></center>
                         
                     </div>
                    
@@ -109,7 +111,7 @@ const Home  = ()=>{
                 <div className="d-flex align-items-center">
                     <div>
                     <b><p className="mb-0 text-dark">Via Contractors</p></b>
-                        <center><h4 className="my-1 text-dark">1</h4></center>
+                        <center><h4 className="my-1 text-white">1</h4></center>
                         
                     </div>
                     
@@ -122,8 +124,8 @@ const Home  = ()=>{
             <div className="card-body">
                 <div className="d-flex align-items-center">
                     <div>
-                    <b><p className="mb-0 text-dark">Daily Wagers</p></b>
-                        <center> <h4 class="my-1 text-dark">0</h4></center>
+                    <b><p className="mb-0 text-white">Daily Wagers</p></b>
+                        <center> <h4 class="my-1 text-white">0</h4></center>
                        
                     </div>
                    
@@ -136,8 +138,8 @@ const Home  = ()=>{
             <div className="card-body">
                 <div className="d-flex align-items-center">
                     <div>
-                       <b> <p className="mb-0 text-dark">Casuals</p></b>
-                        <center><h4 className="my-1 text-dark">0</h4></center>
+                       <b> <p className="mb-0 text-white">Casuals</p></b>
+                        <center><h4 className="my-1 text-white">0</h4></center>
                        
                     </div>
                     
@@ -156,7 +158,7 @@ const Home  = ()=>{
                     </div>
                 </div>
             </div>            
-            <div className="card-body text-dark">                
+            <div className="card-body text-white">                
                 
                 <ResponsiveContainer width="100%" aspect={1.5}>
               <LineChart
@@ -212,40 +214,7 @@ const Home  = ()=>{
         </PieChart>
       </ResponsiveContainer>
    
-            </div>
-            </div>
-            </div>
-  </div>
-
-  <div className="row">
-    <div className="col-xl-9 mx-auto">
-        <div className="card radius-10 w-100"> 
-            <div className="card-header bg-transparent">
-                <div className="row g-3 align-items-center">
-                    <div className="col">
-                        <h5 className="mb-0">Change Chart</h5>
-                    </div>
-                </div>
-            </div>          
-            <div class="card-body">
-            <ResponsiveContainer width="100%" aspect={1.5}>
-        <PieChart width={500} height={500}>
-          <Pie
-            data={data1}
-            cx="50%"
-            cy="50%"
-            labelLine={false}
-            label={renderCustomizedLabel}
-            outerRadius={160}
-            fill="#8884d8"
-            dataKey="value"
-          >
-            {data1.map((entry, index) => (
-              <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
-            ))}
-          </Pie>
-        </PieChart>
-      </ResponsiveContainer>
+     
             </div>
         </div>
     </div>
@@ -255,7 +224,8 @@ const Home  = ()=>{
     </div>
   </div>
 </div>
-
+</div>
+</div>
       
       );
   

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const  Sidebar =(props)=>{
     return (
 <>
-  {/*body_left*/}
+  
   <div className="body_left">
     <div className="body_left_push">
       <i className="fa-solid fa-chevron-left" />
@@ -31,18 +31,13 @@ const  Sidebar =(props)=>{
       <div className="push_menu">
         <ul className="nav flex-column">
           <li className="nav-item">
-            <Link aria-current="page" to="/" className={props.className}>
+            <Link aria-current="page" to="/" className="nav-link">
               <img src="images/dashboard.svg" alt="" /> Dashboard
             </Link>
           </li>
+      
           <li className="nav-item">
-            <a aria-current="page" href="#" className={props.className}>
-              <img src="images/user-list.svg" alt="" />
-              User list{" "}
-            </a>
-          </li>
-          <li className="nav-item">
-            <Link aria-current="page" to="/Addstaff" className={props.className}>
+            <Link aria-current="page" to="/Addstaff" className="nav-link">
               <img src="images/owner-list.svg" alt="" /> Add Staff
             </Link>
           </li>
@@ -52,30 +47,22 @@ const  Sidebar =(props)=>{
             </Link>
           </li>
           <li className="nav-item">
-            <a aria-current="page" href="/Addunit" className={props.className}>
+            <a aria-current="page" href="/Addunit" className="nav-link">
               <img src="images/adertisement.svg" alt="" /> Add Unit
             </a>
           </li>
           <li className="nav-item">
-            <a aria-current="page" href="/Addcontract" className={props.className}>
+            <a aria-current="page" href="/Addcontract" className="nav-link">
               <img src="images/adertisement.svg" alt="" /> Add Contract
             </a>
           </li>
           <li className="nav-item">
             <a aria-current="page" href="/Listunit" className="nav-link">
-              <img src="images/support.svg" alt="" /> Unit Details List
+              <img src="images/support.svg" alt="" /> Unit List
             </a>
           </li>
-          <li className="nav-item">
-            <a aria-current="page" href="#" className="nav-link">
-              <img src="images/revenue-model.svg" alt="" /> Faq
-            </a>
-          </li>
-          <li className="nav-item">
-            <a aria-current="page" href="#" className="nav-link">
-              <img src="images/settings.svg" alt="" /> Settings
-            </a>
-          </li>
+       
+     
           <li className="nav-item">
             <a aria-current="page" href="#" className="nav-link">
               <img src="images/logout.svg" alt="" /> Logout

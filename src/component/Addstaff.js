@@ -13,28 +13,31 @@ const Addstaff =()=>{
       <div className="wrapper">  
       <Sidebar className="nav-link active"/>            
 
-      {}
-    {}
-    {}
-    {}
-    {}        {}
-    {}
-    {}
-    {}  
-    <div className="body_right">
-        <div className="inside">
-          <div className="right_body_pagenation">
-            <p>Reports</p>
-          </div>
-  
-      <div className="col-xl-12 mx-auto">            
-      
-        
+<div className="body_right">
+  <div className="inside">
+    <div className="right_body_pagenation">
+      <p> Add Unit Details</p>
+    </div>
+    <div className="right_body_section">
+      {/*--content here--*/}
+
+
+
+
+
+<div className="container">
+<div className="col-xl-10 mx-10"> 
+  <div className="row">
+    
+      <div className="col-xl-12 mx-12">        
+        <div className="card">
+          <div className="card-body">
+            <h6 className="mb-0 ">ADD UNIT DETAILS</h6>
             
             <hr />
             <div className="border p-4 rounded">                   
-              <form action="http://staff.atithiaadhaar.com/staff" className="row g-3 " method="POST" name="staff" id="staff" encType="multipart/form-data"> 
-                <input type="hidden" name="_token" defaultValue="1oFhZ6JZy92bRbZZhaOSZI1pn0yNRWgJTFQC2U3H" />                            <div className="accordion" id="accordionExample">
+              <form action="#" className="row g-3 " method="POST" name="staff" id="staff" encType="multipart/form-data"> 
+                <input type="hidden" name="_token" defaultValue="" />                            <div className="accordion" id="accordionExample">
                   <div className="accordion-item">
                     <h2 className="accordion-header" id="headingOne">
                       <button className="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -45,23 +48,23 @@ const Addstaff =()=>{
                       <div className="accordion-body row">
                         <div className="col-md-4">
                           <label className="form-label">Name</label><span className="text-danger">*</span>
-                          <input type="text" onkeyup="titleCase(this.value,'name')" className="form-control" name="name" id="name" placeholder="Name" required />
+                          <input type="text" onkeyup="titleCase(this.value,'name')" className="form-control" name="name" id="name" placeholder="Name" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}/>
                         </div>
                         <div className="col-md-4">
                           <label className="form-label">Upload Image</label><span className="text-danger">*</span>
-                          <input type="file" className="form-control" id="profile_pic" name="profile_pic" required />
+                          <input type="file" className="form-control" id="profile_pic" name="profile_pic" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
                         </div>
                         <div className="col-md-4">
                           <label className="form-label">Religion</label><span className="text-danger" />
-                          <input type="text" className="form-control" name="religion" id="religion" placeholder="Religion" />
+                          <input type="text" className="form-control" name="religion" id="religion" placeholder="Religion" style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
                         </div>
                         <div className="col-md-4 mt-2">
                           <label className="form-label">Father’s Name</label><span className="text-danger">*</span>
-                          <input type="text" className="form-control" name="father_name" onkeyup="titleCase(this.value,'father_name')" id="father_name" placeholder="Father\u2019s Name" required />
+                          <input type="text" className="form-control" name="father_name" onkeyup="titleCase(this.value,'father_name')" id="father_name" placeholder="Father Name" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
                         </div>
                         <div className="col-md-4 mt-2">
                           <label className="form-label">Mother’s Name</label><span className="text-danger">*</span>
-                          <input type="text" className="form-control" name="mother_name" onkeyup="titleCase(this.value,'mother_name')" id="mother_name" placeholder="Mother\u2019s Name" required />
+                          <input type="text" className="form-control" name="mother_name" onkeyup="titleCase(this.value,'mother_name')" id="mother_name" placeholder="Mother\u2019s Name" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
                         </div>
                         <div className="col-md-4 mt-2">
                           <label className="form-label">Gender</label><span className="text-danger">*</span><br />
@@ -75,15 +78,15 @@ const Addstaff =()=>{
                         </div>
                         <div className="col-md-4 mt-2">
                           <label className="form-label">DOB</label><span className="text-danger">*</span>
-                          <input type="date" className="form-control" name="dob" id="dob" placeholder="DOB" onchange="ageCalculate()" required />
+                          <input type="date" className="form-control" name="dob" id="dob" placeholder="DOB" onchange="ageCalculate()" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}/>
                         </div>
                         <div className="col-md-4 mt-2">
                           <label className="form-label">Age</label><span className="text-danger">*</span>
-                          <input type="number" className="form-control" name="age" id="age" placeholder="Age" required />
+                          <input type="number" className="form-control" name="age" id="age" placeholder="Age" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}/>
                         </div>
                         <div className="col-md-4 mt-2">
                           <label className="form-label">Blood Group</label>
-                          <select className="single-select form-select" name="bloodgroup" id="bloodgroup" required>
+                          <select className="single-select form-select" name="bloodgroup" id="bloodgroup" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}>
                             <option value disabled selected>Select Blood Group</option>
                             <option value="A+">A+</option>
                             <option value="A-">A-</option>
@@ -108,55 +111,74 @@ const Addstaff =()=>{
                     <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                       <div className="accordion-body row">
                         <h6 className="fw-bold">Permanent Address:</h6><hr />
-                        <div className="col-md-12">
-                          <label className="form-label">Address</label><span className="text-danger">*</span>
-                          <textarea type="text" className="form-control" name="p_locality" id="p_locality" required placeholder="Address Line" defaultValue={""} />
-                        </div>
-                        <div className="col-md-4 mt-2">
-                          <label className="form-label">Nearest Landmark</label><span className="text-danger">*</span>
-                          <input type="text" className="form-control" name="p_landmark" id="p_landmark" placeholder="Landmark" required />
-                        </div>
+                        <div className="col-md-3 mt-2">
+                            <label className="form-label">Address</label><span className="text-danger">*</span>
+                              <input type="text" placeholder="Address" id="address"name="address"  style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
+                           
+                          </div>
+                          <div className="col-md-3 mt-2">
+                            <label className="form-label">Landmark</label><span className="text-danger">*</span>
+                            <input type="text" placeholder="Landmark" id="landmark" name="landmark" style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
+                          </div>
                         <div className="col-md-4 mt-2">
                           <label className="form-label">PIN code</label><span className="text-danger">*</span>
-                          <input type="text" onkeyup="inputNumber(this.value,'p_pincode')" maxLength={6} className="form-control" name="p_pincode" id="p_pincode" placeholder="PIN code" required />
+                          <input type="text" onkeyup="inputNumber(this.value,'p_pincode')" maxLength={6} className="form-control" name="p_pincode" id="p_pincode" placeholder="PIN code" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
                         </div>
-                        <div className="col-md-4 mt-2">
-                          <label className="form-label">Country</label><span className="text-danger">*</span>
-                          <select className="single-select form-select" name="p_country_id" id="p_country_id" required onchange="state(this,'p')">
-                          </select>
-                        </div>
-                        <div className="col-md-4 mt-2">
-                          <label className="form-label">State</label><span className="text-danger">*</span>
-                          <select className="single-select form-select" name="p_state_id" id="p_state_id" required onchange="district(this,'p')">
-                            <option value disabled selected>Select State</option>
-                          </select>
-                        </div>
-                        <div className="col-md-4 mt-2">
-                          <label className="form-label">District</label><span className="text-danger">*</span>
-                          <select className="single-select form-select" name="p_district_id" id="p_district_id" required onchange="ps(this,'p')">
-                            <option value disabled selected>Select District</option>
-                          </select>
-                        </div>
-                        <div className="col-md-4 mt-2">
-                          <label className="form-label">Police Station</label><span className="text-danger">*</span>
-                          <select className="single-select form-select" name="p_ps_id" id="p_ps_id" required>
-                            <option value disabled selected>Select PS</option>
-                          </select>
-                        </div>
+                        <div className="col-md-3 mt-2">
+                            <label htmlFor="validationDefault04" className="form-label">Country</label><span className="text-danger">*</span>
+                            <select id="country" name="country" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}><option value disabled selected>Select Country</option>
+                            </select>
+                          </div>
+                          <div className="col-md-3 mt-2">
+                            <label htmlFor className="form-label">State</label><span className="text-danger">*</span>
+                            <select id="state" name="state" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}><option value disabled selected>Select State</option>
+                            </select>
+                          </div>
+                          <div className="col-md-3 mt-2">
+                            <label htmlFor className="form-label">District</label><span className="text-danger">*</span>
+                            <select id="district_id" name="district" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}><option value disabled selected>Select District</option>
+                            </select>
+                          </div>
+                          <div className="col-md-3 mt-2">
+                            <label htmlFor className="form-label">PS</label><span className="text-danger">*</span>
+                            <select className="select" id="ps_id" name="ps" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}><option value disabled selected>Select PS</option>
+                            </select>
+                          </div>
                         <br />
                         <h6 className="fw-bold mt-3">Present Address:</h6><hr />
                         <div className="col-md-12">
                           <div className="form-check">
-                            <input className="form-check-input" type="checkbox" defaultValue id="sameas" onclick="sameAs()" />
+                            <input className="form-check-input" type="checkbox" defaultValue id="sameas" onclick="sameAs()"  />
                             <label className="form-check-label" htmlFor="sameas">Same As Permanent Address</label>
                           </div>
-                          <label className="form-label">Address</label><span className="text-danger">*</span>
-                          <textarea type="text" className="form-control" name="t_locality" id="t_locality" required placeholder="Address Line" defaultValue={""} />
-                        </div>
+                          <div className="col-md-3 mt-2">
+                            <label className="form-label">Address</label><span className="text-danger">*</span>
+                              <input type="text" placeholder="Address" id="address"name="address"  style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
+                           </div>
+                          </div>
+                          <div className="col-md-3 mt-2">
+                            <label className="form-label">Landmark</label><span className="text-danger">*</span>
+                            <input type="text" placeholder="Landmark" id="landmark" name="landmark" style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
+                          </div>
                         <div className="col-md-4 mt-2">
-                          <label className="form-label">Nearest Landmark</label><span className="text-danger">*</span>
-                          <input type="text" className="form-control" name="t_landmark" id="t_landmark" placeholder="Landmark" required />
+                          <label className="form-label">PIN code</label><span className="text-danger">*</span>
+                          <input type="text" onkeyup="inputNumber(this.value,'p_pincode')" maxLength={6} className="form-control" name="p_pincode" id="p_pincode" placeholder="PIN code" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
                         </div>
+                        <div className="col-md-3 mt-2">
+                            <label htmlFor="validationDefault04" className="form-label">Country</label><span className="text-danger">*</span>
+                            <select id="country" name="country" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}><option value disabled selected>Select Country</option>
+                            </select>
+                          </div>
+                          <div className="col-md-3 mt-2">
+                            <label htmlFor className="form-label">State</label><span className="text-danger">*</span>
+                            <select id="state" name="state" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}><option value disabled selected>Select State</option>
+                            </select>
+                          </div>
+                          <div className="col-md-3 mt-2">
+                            <label htmlFor className="form-label">District</label><span className="text-danger">*</span>
+                            <select id="district_id" name="district" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}><option value disabled selected>Select District</option>
+                            </select>
+                          </div>
                         <div className="col-md-4 mt-2">
                           <label className="form-label">PIN code</label><span className="text-danger">*</span>
                           <input type="text" onkeyup="inputNumber(this.value,'t_pincode')" maxLength={6} className="form-control" name="t_pincode" id="t_pincode" placeholder="PIN code" required />
@@ -174,13 +196,13 @@ const Addstaff =()=>{
                         </div>
                         <div className="col-md-4 mt-2">
                           <label className="form-label">District</label><span className="text-danger">*</span>
-                          <select className="single-select form-select" name="t_district_id" id="t_district_id" required onchange="ps(this,'t')">
+                          <select className="single-select form-select" name="t_district_id" id="t_district_id" required onchange="ps(this,'t')"  style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}>
                             <option value disabled selected>Select District</option>
                           </select>
                         </div>
                         <div className="col-md-4 mt-2">
                           <label className="form-label">Police Station</label><span className="text-danger">*</span>
-                          <select className="single-select form-select" name="t_ps_id" id="t_ps_id" required>
+                          <select className="single-select form-select" name="t_ps_id" id="t_ps_id" required  style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}>
                             <option value disabled selected>Select PS</option>
                           </select>
                         </div>
@@ -198,18 +220,17 @@ const Addstaff =()=>{
                       <div className="accordion-body row">
                         <div className="col-md-4">
                           <label className="form-label">Email</label><span className="text-danger">*</span>
-                          <input type="email" className="form-control" name="email" id="email" placeholder="Email" required style={{
-                                textTransform: 'none'
-                              }} />
+                          <input type="email" className="form-control" name="email" id="email" placeholder="Email" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}
+                               />
                           <small className="text-danger" />
                         </div>
                         <div className="col-md-4">
                           <label className="form-label">Mobile</label><span className="text-danger">*</span>
-                          <input type="text" className="form-control" name="mobile" id="mobile" onkeyup="inputNumber(this.value,'mobile')" maxLength={10} placeholder="Mobile" required />
+                          <input type="text" className="form-control" name="mobile" id="mobile" onkeyup="inputNumber(this.value,'mobile')" maxLength={10} placeholder="Mobile" required  style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}/>
                         </div>
                         <div className="col-md-4">
                           <label className="form-label">Landline</label>
-                          <input type="text" className="form-control" name="landline" id="landline" placeholder="Landline" maxLength={11} onkeyup="inputNumber(this.value,'landline')" />
+                          <input type="text" className="form-control" name="landline" id="landline" placeholder="Landline" maxLength={11} onkeyup="inputNumber(this.value,'landline')" style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}/>
                         </div>
                         {}
                       </div>
@@ -239,17 +260,17 @@ const Addstaff =()=>{
                               <tbody id="educational">
                                 <tr>
                                   <td width="3%">
-                                    <input type="text" className="form-control slno" name="slno[]" placeholder="Sl.No." defaultValue={1} />
+                                    <input type="text" className="form-label slno" name="slno[]" placeholder="Sl.No." defaultValue={1} style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}/>
                                   </td>
                                   <td>
-                                    <select className="form-control" name="qualification[]"><option value disabled selected>Select qualification</option><option value="Illiterate">Illiterate</option><option value="Primary School">Primary School</option><option value="Middle School">Middle School</option><option value="Secondary">Secondary</option><option value="Higher Secondary">Higher Secondary</option><option value="Graduate">Graduate</option><option value="Postgraduate">Postgraduate</option><option value="Professional">Professional</option><option value="Doctorate">Doctorate</option></select>
+                                    <select className="form-label" name="qualification[]" style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}><option value disabled selected>Select qualification</option><option value="Illiterate">Illiterate</option><option value="Primary School">Primary School</option><option value="Middle School">Middle School</option><option value="Secondary">Secondary</option><option value="Higher Secondary">Higher Secondary</option><option value="Graduate">Graduate</option><option value="Postgraduate">Postgraduate</option><option value="Professional">Professional</option><option value="Doctorate">Doctorate</option></select>
                                   </td>
                                   <td>
-                                    <input type="text" className="form-control" name="institution[]" placeholder="Institution" />
+                                    <input type="text" className="form-label" name="institution[]" placeholder="Institution" style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}/>
                                   </td>
                                   {}
                                   <td>
-                                    <select className="form-control" name="to[]"><option value disabled selected>Select year</option><option value={2023}>2023</option><option value={2022}>2022</option><option value={2021}>2021</option><option value={2020}>2020</option><option value={2019}>2019</option><option value={2018}>2018</option><option value={2017}>2017</option><option value={2016}>2016</option><option value={2015}>2015</option><option value={2014}>2014</option><option value={2013}>2013</option><option value={2012}>2012</option><option value={2011}>2011</option><option value={2010}>2010</option><option value={2009}>2009</option><option value={2008}>2008</option><option value={2007}>2007</option><option value={2006}>2006</option><option value={2005}>2005</option><option value={2004}>2004</option><option value={2003}>2003</option><option value={2002}>2002</option><option value={2001}>2001</option><option value={2000}>2000</option><option value={1999}>1999</option><option value={1998}>1998</option><option value={1997}>1997</option><option value={1996}>1996</option><option value={1995}>1995</option><option value={1994}>1994</option><option value={1993}>1993</option><option value={1992}>1992</option><option value={1991}>1991</option><option value={1990}>1990</option><option value={1989}>1989</option><option value={1988}>1988</option><option value={1987}>1987</option><option value={1986}>1986</option><option value={1985}>1985</option><option value={1984}>1984</option><option value={1983}>1983</option><option value={1982}>1982</option><option value={1981}>1981</option><option value={1980}>1980</option><option value={1979}>1979</option><option value={1978}>1978</option><option value={1977}>1977</option><option value={1976}>1976</option><option value={1975}>1975</option><option value={1974}>1974</option><option value={1973}>1973</option><option value={1972}>1972</option><option value={1971}>1971</option><option value={1970}>1970</option><option value={1969}>1969</option><option value={1968}>1968</option><option value={1967}>1967</option><option value={1966}>1966</option><option value={1965}>1965</option><option value={1964}>1964</option><option value={1963}>1963</option><option value={1962}>1962</option><option value={1961}>1961</option><option value={1960}>1960</option></select>
+                                    <select className="form-label" name="to[]"style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}><option value disabled selected>Select year</option><option value={2023}>2023</option><option value={2022}>2022</option><option value={2021}>2021</option><option value={2020}>2020</option><option value={2019}>2019</option><option value={2018}>2018</option><option value={2017}>2017</option><option value={2016}>2016</option><option value={2015}>2015</option><option value={2014}>2014</option><option value={2013}>2013</option><option value={2012}>2012</option><option value={2011}>2011</option><option value={2010}>2010</option><option value={2009}>2009</option><option value={2008}>2008</option><option value={2007}>2007</option><option value={2006}>2006</option><option value={2005}>2005</option><option value={2004}>2004</option><option value={2003}>2003</option><option value={2002}>2002</option><option value={2001}>2001</option><option value={2000}>2000</option><option value={1999}>1999</option><option value={1998}>1998</option><option value={1997}>1997</option><option value={1996}>1996</option><option value={1995}>1995</option><option value={1994}>1994</option><option value={1993}>1993</option><option value={1992}>1992</option><option value={1991}>1991</option><option value={1990}>1990</option><option value={1989}>1989</option><option value={1988}>1988</option><option value={1987}>1987</option><option value={1986}>1986</option><option value={1985}>1985</option><option value={1984}>1984</option><option value={1983}>1983</option><option value={1982}>1982</option><option value={1981}>1981</option><option value={1980}>1980</option><option value={1979}>1979</option><option value={1978}>1978</option><option value={1977}>1977</option><option value={1976}>1976</option><option value={1975}>1975</option><option value={1974}>1974</option><option value={1973}>1973</option><option value={1972}>1972</option><option value={1971}>1971</option><option value={1970}>1970</option><option value={1969}>1969</option><option value={1968}>1968</option><option value={1967}>1967</option><option value={1966}>1966</option><option value={1965}>1965</option><option value={1964}>1964</option><option value={1963}>1963</option><option value={1962}>1962</option><option value={1961}>1961</option><option value={1960}>1960</option></select>
                                   </td>
                                   <td>
                                     <span onclick="add()"><button type="button" className="btn btn-outline-success radius-30">Add</button></span>
@@ -277,21 +298,21 @@ const Addstaff =()=>{
                               <tr>
                                 <td>
                                   <label className="form-label">Aadhar No</label><span className="text-danger">*</span>
-                                  <input type="text" className="form-control" name="adhar" id="adhar" onkeyup="inputNumber(this.value,'adhar')" maxLength={12} placeholder="Aadhar No" required />                                                                
+                                  <input type="text" className="form-label" name="adhar" id="adhar"  placeholder="Aadhar No" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}/>                                                                
                                 </td>
                                 <td>
                                   <label className="form-label">Upload Aadhar</label><span className="text-danger">*</span>
-                                  <input type="file" className="form-control" id="aadharpic" name="aadharpic" required />  
+                                  <input type="file" className="form-label" id="aadharpic" name="aadharpic" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />  
                                 </td>
                               </tr>
                               <tr>
                                 <td>
                                   <label className="form-label">PAN No.</label>
-                                  <input type="text" className="form-control" name="pan" id="pan" placeholder="PAN No." maxLength={10} onkeyup="inputStrNumber(this.value,'pan')" />
+                                  <input type="text" className="form-label" name="pan" id="pan" placeholder="PAN No." style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
                                 </td>
                                 <td>
                                   <label className="form-label">Upload PAN</label>
-                                  <input type="file" className="form-control" id="panpic" name="panpic" /> 
+                                  <input type="file" className="form-label" id="panpic" name="panpic" style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} /> 
                                 </td>
                               </tr>
                             </tbody>
@@ -299,34 +320,34 @@ const Addstaff =()=>{
                         </div>
                         <div className="col-md-6 mt-2">
                           <label className="form-label">Driving License No</label>
-                          <input type="text" className="form-control" name="driving_license" id="driving_license" maxLength={16} placeholder="Driving License No. e.g. XX-0000000000" />
+                          <input type="text" className="form-control" name="driving_license" id="driving_license" maxLength={16} placeholder="Driving License No. e.g. XX-0000000000" style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}/>
                         </div>
                         <div className="col-md-6 mt-2">
                           <label className="form-label">Personal Vehicle</label>
-                          <select className="form-select" name="personal_vehicle" id="personal_vehicle" onchange="div_vehicle()">
+                          <select className="form-select" name="personal_vehicle" id="personal_vehicle" onchange="div_vehicle()"style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}>
                             <option value="No">No</option>
                             <option value="Yes">Yes</option>
                           </select>
                         </div>
                         <div className="col-md-6 mt-2 div_vehicle">
                           <label className="form-label">Type of vehicle</label>
-                          <input type="text" className="form-control" name="type_vehicle" placeholder="Type of vehicle" />
+                          <input type="text" className="form-control" name="type_vehicle" placeholder="Type of vehicle" style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}/>
                         </div>
                         <div className="col-md-6 mt-2 div_vehicle">
                           <label className="form-label">Vehicle No.</label>
-                          <input type="text" className="form-control" name="vehicle_no" placeholder="Vehicle No." />
+                          <input type="text" className="form-control" name="vehicle_no" placeholder="Vehicle No." style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}/>
                         </div>
                         <div className="col-md-6 mt-2">
                           <label className="form-label">ESI No.</label><span className="text-danger" />
-                          <input type="text" className="form-control" name="esi_number" placeholder="ESI No. E.G 31-00-123456-000-0001" />
+                          <input type="text" className="form-control" name="esi_number" placeholder="ESI No. E.G 31-00-123456-000-0001" style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
                         </div>
                         <div className="col-md-6 mt-2">
                           <label className="form-label">EPFO No.</label><span className="text-danger" />
-                          <input type="text" className="form-control lowercase" name="epfo_number" placeholder="EPFO No. E.G KN/KRP/0054055/0000250" />
+                          <input type="text" className="form-control lowercase" name="epfo_number" placeholder="EPFO No. E.G KN/KRP/0054055/0000250" style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}/>
                         </div>
                         <div className="col-md-6 mt-2">
                           <label className="form-label">Type of Employment</label><span className="text-danger">*</span>
-                          <select className="single-select form-select" name="emp_type" id="emp_type" onchange="empType()" required>
+                          <select className="single-select form-select" name="emp_type" id="emp_type" onchange="empType()" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}>
                             <option value disabled selected>Select Type of Employment</option>
                             <option value="direct">Direct</option>
                             <option value="contractual">Contractual</option>
@@ -334,7 +355,7 @@ const Addstaff =()=>{
                         </div>
                         <div className="col-md-6 mt-2">
                           <label className="form-label">Type of Job</label><span className="text-danger">*</span>
-                          <select className="single-select form-select" name="job_category_id" id="job_category_id" onchange="jobRole(this)" required>
+                          <select className="single-select form-select" name="job_category_id" id="job_category_id" onchange="jobRole(this)" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}>
                             <option value disabled selected>Type of Job</option>
                             <option value={5} className="jobopt jobopt5">Daily Labourer</option>
                             <option value={4} className="jobopt jobopt4">Casual</option>
@@ -347,11 +368,11 @@ const Addstaff =()=>{
                         </div>
                         <div className="col-md-6 mt-2">
                           <label className="form-label">Date of Joining</label><span className="text-danger">*</span>
-                          <input type="date" className="form-control" name="join_date" id="join_date" placeholder="Date of Joining" required />
+                          <input type="date" className="form-control" name="join_date" id="join_date" placeholder="Date of Joining" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
                         </div>
                         <div className="col-md-6 mt-2">
                           <label className="form-label">Special Skill</label>
-                          <select className="single-select form-select otherText" name="special_skill" id="skill_id" onchange>
+                          <select className="single-select form-select otherText" name="special_skill" id="skill_id" onchange style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}>
                             <option value disabled selected>Select Skill</option>
                             <option value="Other" className>Other</option>
                             <option value="Salon & Spa" className>Salon & Spa</option>
@@ -401,19 +422,22 @@ const Addstaff =()=>{
     
     </div>
   
-    {}
-    {}
-    {}
-    {}
-    {}
-    {}
-    {}
-    {}
-    {}    
-  
+ 
     </div>
     
     </div>
+    </div>
+  
+ 
+  </div>
+  
+  </div>
+  </div>
+  
+ 
+  </div>
+  
+  </div>
   
 
       );
