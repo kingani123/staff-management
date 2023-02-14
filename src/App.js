@@ -27,7 +27,7 @@ function App() {
       <Route path="/Addcontract" element={<Addcontract/>}/>
       <Route path="/Addunit" element={<Addunit/>}/>
       <Route path="/Listunit" element={<Listunit/>}/>
-      <Route path="/" element={<Login />}/>
+      <Route path="/login" element={<Login />}/>
       
     </Routes>
   </BrowserRouter>

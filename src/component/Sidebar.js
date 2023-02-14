@@ -74,8 +74,8 @@ const  Sidebar =(props)=>{
             </a>
           </li>
           <li className="nav-item">
-            <a aria-current="page" href="/Addcontract" className={props.className}>
-              <img src="images/adertisement.svg" alt="" /> Add Contractor
+            <a aria-current="page" href="/Login" className={props.className}>
+              <img src="images/adertisement.svg" alt="" /> Login
             </a>
           </li>
           <li className="nav-item">
@@ -83,27 +83,7 @@ const  Sidebar =(props)=>{
               <img src="images/adertisement.svg" alt="" /> List Of Contractors
             </a>
           </li>
-          <li className="nav-item">
-            <a aria-current="page" href="#" className={props.className}>
-            <b>REPORT SECTION{" "}</b> 
-            </a>
-          </li>
-          <li className="nav-item">
-            <a aria-current="page" href="#" className={props.className}>
-           Staff Strength Reports{" "}&nbsp;&nbsp;
-             <i className="fa-solid fa-chevron-down" />
-            </a>
-          </li>
-          <li className="nav-item">
-            <a aria-current="page" href="/Addcontract" className={props.className}>
-              <img src="images/adertisement.svg" alt="" />Role Wise Report
-            </a>
-          </li>
-          <li className="nav-item">
-            <a aria-current="page" href="/Addcontract" className={props.className}>
-              <img src="images/adertisement.svg" alt="" /> Category Wise Report
-            </a>
-          </li>
+          
           
           <li className="nav-item">
             <a aria-current="page" href="#" className={props.className}>
