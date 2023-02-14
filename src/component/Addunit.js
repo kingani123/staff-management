@@ -28,8 +28,7 @@ const Addunit =()=>{
   <div className="row">
     
       <div className="col-xl-12 mx-12">        
-        <div className="card">
-          <div className="card-body">
+                <div className="card-body">
             <h6 className="mb-0 ">ADD UNIT DETAILS</h6>
             <hr />
             <div className="p-4 border rounded">
@@ -69,7 +68,6 @@ const Addunit =()=>{
               </form>
             </div>
           </div>
-        </div>
       </div>
     </div>
   </div></div></div>

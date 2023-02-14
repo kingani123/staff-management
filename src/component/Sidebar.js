@@ -64,7 +64,7 @@ const  Sidebar =(props)=>{
        
      
           <li className="nav-item">
-            <a aria-current="page" href="/Rolewise" className={props.className}>
+            <a aria-current="page" href="/Rolewise" className="nav-link">
               <img src="images/adertisement.svg" alt="" />Role Wise Report
             </a>
           </li>
