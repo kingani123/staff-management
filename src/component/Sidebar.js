@@ -73,11 +73,7 @@ const  Sidebar =(props)=>{
              <i className="fa-solid fa-chevron-down" />
             </a>
           </li>
-          <li className="nav-item">
-            <a aria-current="page" href="/Login" className={props.className}>
-              <img src="images/adertisement.svg" alt="" /> Login
-            </a>
-          </li>
+      
           <li className="nav-item">
             <a aria-current="page" href="/Addcontract" className={props.className}>
               <img src="images/adertisement.svg" alt="" /> List Of Contractors
