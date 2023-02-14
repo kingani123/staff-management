@@ -28,9 +28,7 @@ const Addstaff =()=>{
 <div className="container">
 <div className="col-xl-10 mx-10"> 
   <div className="row">
-    
-      <div className="col-xl-12 mx-12">        
-        <div className="card">
+          <div className="col-xl-12 mx-12">        
           <div className="card-body">
             <h6 className="mb-0 ">ADD UNIT DETAILS</h6>
             
@@ -418,7 +416,7 @@ const Addstaff =()=>{
               </form>
             </div>
           </div>
-        </div>
+        
     
     </div>
   

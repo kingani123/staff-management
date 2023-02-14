@@ -27,8 +27,7 @@ const Listunit =()=>{
 <div>
 <div className="row">
   <div className="col-md-12">
-    <div className="card">
-      <div className="card-body">
+          <div className="card-body">
         <div className="d-flex align-items-center p-1">
           <h5 className="mb-0">Unit Details</h5>
         </div>
@@ -82,7 +81,6 @@ const Listunit =()=>{
           </div>
         </div>
       </div>
-    </div>
   </div>
 </div>
 {/* END: Page Main*/}
