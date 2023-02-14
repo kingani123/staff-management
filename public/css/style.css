@@ -45,7 +45,7 @@ header
   display: block;
   float: left;
   width: 100%;
-  background: #0aa7ce;
+  background: #1fc0e8;;
   box-shadow: 0px 4px 18px rgba(0, 0, 0, 0.08);
   z-index: 2;
   position: relative;
@@ -124,14 +124,14 @@ header
   border-radius: 100%;
   object-fit: cover;
   object-position: center;
-  background: #085599;
+  background: #809FB8;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .header_profile_img_box p
 {
-  font-size: 10px;
+  font-size: 16px;
   font-weight: 700;
   color: #fff;
 }
@@ -195,7 +195,7 @@ header
   position: relative;
   min-width: 270px;
   max-width: 270px;
-  background: #0aa7ce;;
+  background: #f9fafb;
   z-index: 2;
   transition: all .3s;
   transition-timing-function: ease-out;
@@ -276,7 +276,7 @@ header
   transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out;
 }
 .push_menu .nav-link {
-  color: #eff0f3;
+  color: #000309;
   font-size: 15px;
   padding: 15px;
   margin-top: 1px;
@@ -296,13 +296,13 @@ header
   float: right;
   background: #ABC6DC;
   padding: 2px 5px;
-  color: #f7f1f1;
+  color: #090101;
   font-size: 14px;
   border-radius: 5px;
 }
 
 .push_menu .nav-item .active {
-  color: #021d2b;
+  color: #010608;
 }
 .push_menu .nav-item .active img
 {
@@ -328,7 +328,7 @@ header
  
 .body_left .inside::-webkit-scrollbar-thumb
  {
-	 background-color: #160574;
+	 background-color: #bfbfbf;
  }
  .subnav
  {

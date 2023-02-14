@@ -31,14 +31,25 @@ const  Sidebar =(props)=>{
       <div className="push_menu">
         <ul className="nav flex-column">
           <li className="nav-item">
-            <Link aria-current="page" to="/" className="nav-link">
-              <img src="images/dashboard.svg" alt="" /> Dashboard
+            <Link aria-current="page" to="/" className={props.className}>
+              <img src="images/dashboard.svg" alt="" /> <b>DASHBOARD</b> 
             </Link>
           </li>
-      
           <li className="nav-item">
-            <Link aria-current="page" to="/Addstaff" className="nav-link">
-              <img src="images/owner-list.svg" alt="" /> Add Staff
+            <a aria-current="page" href="#" className={props.className}>
+            <b> STAFF SECTION{" "}</b> 
+            </a>
+          </li>
+         
+          <li className="nav-item">
+            <Link aria-current="page" to="/Addstaff" className={props.className}>
+              <img src="images/owner-list.svg" alt="" /> Add Staff &nbsp;&nbsp;
+              <i className="fa-solid fa-chevron-down" />
+            </Link>
+              </li>
+              <li className="nav-item">
+            <Link aria-current="page" to="/Liststaff" className={props.className}>
+              <img src="images/place-management.svg" alt="" /> Indian Staff
             </Link>
           </li>
           <li className="nav-item">
@@ -57,14 +68,34 @@ const  Sidebar =(props)=>{
             </a>
           </li>
           <li className="nav-item">
-            <a aria-current="page" href="/Listunit" className="nav-link">
-              <img src="images/support.svg" alt="" /> Unit List
+            <a aria-current="page" href="#" className={props.className}>
+            Contractor Management{" "}&nbsp;&nbsp;
+             <i className="fa-solid fa-chevron-down" />
             </a>
           </li>
-       
-     
           <li className="nav-item">
-            <a aria-current="page" href="/Rolewise" className={props.className}>
+            <a aria-current="page" href="/Addcontract" className={props.className}>
+              <img src="images/adertisement.svg" alt="" /> Add Contractor
+            </a>
+          </li>
+          <li className="nav-item">
+            <a aria-current="page" href="/Addcontract" className={props.className}>
+              <img src="images/adertisement.svg" alt="" /> List Of Contractors
+            </a>
+          </li>
+          <li className="nav-item">
+            <a aria-current="page" href="#" className={props.className}>
+            <b>REPORT SECTION{" "}</b> 
+            </a>
+          </li>
+          <li className="nav-item">
+            <a aria-current="page" href="#" className={props.className}>
+           Staff Strength Reports{" "}&nbsp;&nbsp;
+             <i className="fa-solid fa-chevron-down" />
+            </a>
+          </li>
+          <li className="nav-item">
+            <a aria-current="page" href="/Addcontract" className={props.className}>
               <img src="images/adertisement.svg" alt="" />Role Wise Report
             </a>
           </li>
@@ -152,39 +183,3 @@ const  Sidebar =(props)=>{
       );
 }
 export default Sidebar;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
