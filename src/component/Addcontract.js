@@ -26,8 +26,7 @@ const Addcontract =()=>{
           <div className="col-xl-10 mx-10"> 
             
               <div className="row">
-                <div className="col-xl-12 mx-12">        
-                  <div className="card">
+                  <div className="col-xl-12 mx-12">        
                     <div className="card-body">
                       <h6 className="mb-0 ">ADD CONTRACTOR DETAILS</h6>
                       <hr />
@@ -91,7 +90,6 @@ const Addcontract =()=>{
                         </form>
                       </div>
                     </div>
-                  </div>
                 </div>
               </div>
             </div></div></div>
