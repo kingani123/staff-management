@@ -42,14 +42,24 @@ const  Sidebar =(props)=>{
           </li>
          
           <li className="nav-item">
-            <Link aria-current="page" to="/Addstaff" className={props.className}>
+            <Link aria-current="page" to="#" className={props.className}>
               <img src="images/owner-list.svg" alt="" /> Add Staff &nbsp;&nbsp;
               <i className="fa-solid fa-chevron-down" />
             </Link>
               </li>
               <li className="nav-item">
-            <Link aria-current="page" to="/Liststaff" className={props.className}>
+            <Link aria-current="page" to="/Addstaff" className={props.className}>
               <img src="images/place-management.svg" alt="" /> Indian Staff
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link aria-current="page" to="/Addforeign" className={props.className}>
+              <img src="images/place-management.svg" alt="" /> Foreign Staff
+            </Link>
+          </li>
+          <li className="nav-item">
+            <Link aria-current="page" to="/Release" className={props.className}>
+              <img src="images/place-management.svg" alt="" /> Released Person
             </Link>
           </li>
           <li className="nav-item">
@@ -68,6 +78,11 @@ const  Sidebar =(props)=>{
             </a>
           </li>
           <li className="nav-item">
+          <a aria-current="page" href="/Rolewise" className="nav-link">
+              <img src="images/adertisement.svg" alt="" /> Rolewise
+            </a>
+          </li>
+          <li className="nav-item">
             <a aria-current="page" href="#" className={props.className}>
             Contractor Management{" "}&nbsp;&nbsp;
              <i className="fa-solid fa-chevron-down" />
@@ -75,7 +90,7 @@ const  Sidebar =(props)=>{
           </li>
       
           <li className="nav-item">
-            <a aria-current="page" href="/Addcontract" className={props.className}>
+            <a aria-current="page" href="#" className={props.className}>
               <img src="images/adertisement.svg" alt="" /> List Of Contractors
             </a>
           </li>
@@ -140,8 +155,8 @@ const  Sidebar =(props)=>{
             </a>
           </li>
           <li className="nav-item">
-            <a aria-current="page" href="#" className={props.className}>
-              <img src="images/support.svg" alt="" /> <b>Contact Us</b>
+            <a aria-current="page" href="/Login" className={props.className}>
+              <img src="images/support.svg" alt="" /> <b>Login</b>
             </a>
           </li>
           <li className="nav-item">

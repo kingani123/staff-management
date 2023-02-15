@@ -6,7 +6,7 @@ import Sidebar from "./Sidebar";
 import Footer from "./Footer";
 
 
-const Addstaff =()=>{
+const Addforeign =()=>{
     return (
       <div>
       <Navbar/>
@@ -16,26 +16,23 @@ const Addstaff =()=>{
 <div className="body_right">
   <div className="inside">
     <div className="right_body_pagenation">
-      <p> Add Unit Details</p>
+      <p> Add Foreign Staff</p>
     </div>
     <div className="right_body_section">
-      {/*--content here--*/}
 
 
-
-
-
-<div className="container">
+    <div className="container">
 <div className="col-xl-10 mx-10"> 
   <div className="row">
           <div className="col-xl-12 mx-12">        
           <div className="card-body">
-            <h6 className="mb-0 ">Add Indianstaff Details</h6>
+            <h6 className="mb-0 ">Add Foreign Staff</h6>
             
             <hr />
             <div className="border p-4 rounded">                   
               <form action="#" className="row g-3 " method="POST" name="staff" id="staff" encType="multipart/form-data"> 
-                <input type="hidden" name="_token" defaultValue="" />                            <div className="accordion" id="accordionExample">
+                <input type="hidden" name="_token" defaultValue="" />
+                 <div className="accordion" id="accordionExample">
                   <div className="accordion-item">
                     <h2 className="accordion-header" id="headingOne">
                       <button className="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -64,14 +61,14 @@ const Addstaff =()=>{
                           <label className="form-label">Mother’s Name</label><span className="text-danger">*</span>
                           <input type="text" className="form-control" name="mother_name" onkeyup="titleCase(this.value,'mother_name')" id="mother_name" placeholder="Mother\u2019s Name" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
                         </div>
-                        <div className="col-md-4 mt-3">
+                        <div className="col-md-4 mt-2">
                           <label className="form-label">Gender</label><span className="text-danger">*</span><br />
                           <input className="form-check-input" type="radio" name="sex" defaultValue="M" required />
                           <label className="form-label">&nbsp;&nbsp;Male</label>&nbsp;
                           <input className="form-check-input" type="radio" name="sex" defaultValue="F" required />
                           <label className="form-label">&nbsp;&nbsp;Female</label>&nbsp;
                           <input className="form-check-input" type="radio" name="sex" defaultValue="T" required />
-                          <label className="form-label">&nbsp;&nbsp;Transgender</label>&nbsp;
+                          <label className="form-label">&nbsp;&nbsp;Transgender</label>
                           <span id="errorToShow" />
                         </div>
                         <div className="col-md-4 mt-2">
@@ -109,19 +106,46 @@ const Addstaff =()=>{
                     <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                       <div className="accordion-body row">
                         <h6 className="fw-bold">Permanent Address:</h6><hr />
-                        <div className="col-md-12">
+                        <div className="col-md-3 mt-2">
                             <label className="form-label">Address</label><span className="text-danger">*</span>
                               <input type="text" placeholder="Address" id="address"name="address"  style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
                            
                           </div>
                           <div className="col-md-3 mt-2">
+                            <label htmlFor="validationDefault04" className="form-label">Country</label><span className="text-danger">*</span>
+                            <select id="country" name="country" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}><option value disabled selected>Select Country</option>
+                            </select>
+                          </div>
+                          <div className="col-md-3 mt-2">
+                            <label htmlFor className="form-label">State</label><span className="text-danger">*</span>
+                            <input type="text" placeholder="State" id="state"name="state"  style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />                  
+                             
+                          </div>
+                          <div className="col-md-3 mt-2">
+                            <label htmlFor className="form-label">City/Province</label><span className="text-danger">*</span>
+                            <input type="text" placeholder="City/Province" id="City/Province"name="City/Province"  style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
+                          </div>
+                          
+                        <br />
+                        <h6 className="fw-bold mt-3">Present Address:</h6><hr />
+                        <div className="col-md-12">
+                          <div className="form-check">
+                            <input className="form-check-input" type="checkbox" defaultValue id="sameas" onclick="sameAs()"  />
+                            <label className="form-check-label" htmlFor="sameas">Same As Permanent Address</label>
+                          </div>
+                          <div className="col-md-12 ">
+                            <label className="form-label">Address</label><span className="text-danger">*</span>
+                              <input type="text" placeholder="Address" id="address"name="address"  style={{height: '100%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
+                           </div>
+                          </div>
+                          <div className="col-md-3 mt-2">
                             <label className="form-label"> Nearest Landmark</label><span className="text-danger">*</span>
                             <input type="text" placeholder="Landmark" id="landmark" name="landmark" style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
                           </div>
-                        <div className="col-md-4 mt-2">
+                        <div className="col-md-3 mt-2">
                           <label className="form-label">PIN code</label><span className="text-danger">*</span>
-                          <input type="text" onkeyup="inputNumber(this.value,'p_pincode')" maxLength={6} className="form-control" name="p_pincode" id="p_pincode" placeholder="PIN code" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
-                        </div>
+                          <input type="text"  maxLength={6} className="form-label" name="p_pincode" id="p_pincode" placeholder="PIN code" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
+                        </div> 
                         <div className="col-md-3 mt-2">
                             <label htmlFor="validationDefault04" className="form-label">Country</label><span className="text-danger">*</span>
                             <select id="country" name="country" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}><option value disabled selected>Select Country</option>
@@ -137,51 +161,9 @@ const Addstaff =()=>{
                             <select id="district_id" name="district" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}><option value disabled selected>Select District</option>
                             </select>
                           </div>
-                          <div className="col-md-3 mt-2">
-                            <label htmlFor className="form-label">PS</label><span className="text-danger">*</span>
-                            <select className="select" id="ps_id" name="ps" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}><option value disabled selected>Select PS</option>
-                            </select>
-                          </div>
-                        <br />
-                        <h6 className="fw-bold mt-3">Present Address:</h6><hr />
-                        <div className="col-md-12">
-                          <div className="form-check">
-                            <input className="form-check-input" type="checkbox" defaultValue id="sameas" onclick="sameAs()"  />
-                            <label className="form-check-label" htmlFor="sameas">Same As Permanent Address</label>
-                          </div>
-                          <div className="col-md-12">
-                            <label className="form-label">Address</label><span className="text-danger">*</span>
-                              <input type="text" placeholder="Address" id="address"name="address"  style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
-                           </div>
-                          </div>
-                          <div className="col-md-4">
-                            <label className="form-label"> Nearest Landmark</label><span className="text-danger">*</span>
-                            <input type="text" placeholder="Landmark" id="landmark" name="landmark" style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
-                          </div>
-                        <div className="col-md-4">
-                          <label className="form-label">PIN code</label><span className="text-danger">*</span>
-                          <input type="text" onkeyup="inputNumber(this.value,'p_pincode')" maxLength={6} className="form-control" name="p_pincode" id="p_pincode" placeholder="PIN code" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
-                        </div>
-                        <div className="col-md-4">
-                            <label htmlFor="validationDefault04" className="form-label">Country</label><span className="text-danger">*</span>
-                            <select id="country" name="country" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}><option value disabled selected>Select Country</option>
-                            </select>
-                          </div>
-                          <div className="col-md-4 ">
-                            <label htmlFor className="form-label">State</label><span className="text-danger">*</span>
-                            <select id="state" name="state" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}><option value disabled selected>Select State</option>
-                            </select>
-                          </div>
-                          <div className="col-md-4 ">
-                            <label htmlFor className="form-label">District</label><span className="text-danger">*</span>
-                            <select id="district_id" name="district" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}><option value disabled selected>Select District</option>
-                            </select>
-                          </div>
-                       
-                       
-                        <div className="col-md-4 ">
+                        <div className="col-md-3 mt-2">
                           <label className="form-label">Police Station</label><span className="text-danger">*</span>
-                          <select   name="t_ps_id" id="t_ps_id" required  style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}>
+                          <select className="single-select form-select" name="t_ps_id" id="t_ps_id" required  style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}>
                             <option value disabled selected>Select PS</option>
                           </select>
                         </div>
@@ -208,8 +190,28 @@ const Addstaff =()=>{
                           <input type="text" className="form-control" name="mobile" id="mobile" onkeyup="inputNumber(this.value,'mobile')" maxLength={10} placeholder="Mobile" required  style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}/>
                         </div>
                         <div className="col-md-4">
+                          <label className="form-label">Mobile( Mobile of Residing Country)</label><span className="text-danger">*</span>
+                          <input type="text" className="form-control" name="mobile" id="mobile" onkeyup="inputNumber(this.value,'mobile')" maxLength={10} placeholder="Mobile" required  style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}/>
+                        </div>
+                        <div className="col-md-4">
                           <label className="form-label">Landline</label>
                           <input type="text" className="form-control" name="landline" id="landline" placeholder="Landline" maxLength={11} onkeyup="inputNumber(this.value,'landline')" style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}/>
+                        </div>
+                        <div className="col-md-4">
+                          <label className="form-label">Landline(Lanline of residing country)</label>
+                          <input type="text" className="form-control" name="landline" id="landline" placeholder="Landline" maxLength={11} onkeyup="inputNumber(this.value,'landline')" style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}/>
+                        </div>
+                        <div className="col-md-4">
+                          <label className="form-label">Contact Person</label>
+                          <input type="text" className="form-control" name="contact person" id="contact person " placeholder="contact person " maxLength={11} onkeyup="inputNumber(this.value,'landline')" style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}/>
+                        </div>
+                        <div className="col-md-4">
+                          <label className="form-label">Contact Person Mobile</label>
+                          <input type="text" className="form-control" name="contact person mobile" id="contact person mobile" placeholder="contact person mobile" maxLength={11} onkeyup="inputNumber(this.value,'landline')" style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}/>
+                        </div>
+                        <div className="col-md-4">
+                          <label className="form-label">Relation</label>
+                          <input type="text" className="form-control" name="relation" id="relation" placeholder="relation" maxLength={11} onkeyup="inputNumber(this.value,'landline')" style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}/>
                         </div>
                         {}
                       </div>
@@ -260,6 +262,7 @@ const Addstaff =()=>{
                           </div>
                         </div>
                         {}
+
                       </div>
                     </div>
                   </div>
@@ -271,35 +274,53 @@ const Addstaff =()=>{
                     </h2>
                     <div id="collapseFive" className="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
                       <div className="accordion-body row">
-                        <div className="table-responsive">
-                          <table className="table table-light mb-0">
-                            <tbody>
-                              <tr>
-                                <td>
-                                  <label className="form-label">Aadhar No</label><span className="text-danger">*</span>
-                                  <input type="text" className="form-label" name="adhar" id="adhar"  placeholder="Aadhar No" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}/>                                                                
-                                </td>
-                                <td>
-                                  <label className="form-label">Upload Aadhar</label><span className="text-danger">*</span>
-                                  <input type="file" className="form-label" id="aadharpic" name="aadharpic" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />  
-                                </td>
-                              </tr>
-                              <tr>
-                                <td>
-                                  <label className="form-label">PAN No.</label>
-                                  <input type="text" className="form-label" name="pan" id="pan" placeholder="PAN No." style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
-                                </td>
-                                <td>
-                                  <label className="form-label">Upload PAN</label>
-                                  <input type="file" className="form-label" id="panpic" name="panpic" style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} /> 
-                                </td>
-                              </tr>
-                            </tbody>
-                          </table>
+                      <div className="col-md-4 mt-2">
+                          <label className="form-label">Passport</label><span className="text-danger">*</span>
+                          <input type="text" onkeyup="titleCase(this.value,'name')" className="form-control" name="name" id="name" placeholder="Passport" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}/>
                         </div>
-                        <div className="col-md-6 mt-2">
+                        <div className="col-md-4 mt-2">
+                          <label className="form-label">Place of Issue</label>
+                          <select className="" name="bloodgroup" id="bloodgroup" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}>
+                            <option value disabled selected>Select Country</option>
+                           
+                          </select>
+                        </div>
+                        <div className="col-md-4 mt-2">
+                          <label className="form-label">Date of Issue</label><span className="text-danger">*</span>
+                          <input type="date" className="form-control" name="" id="" placeholder="Date of Issue" onchange="ageCalculate()" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}/>
+                        </div>
+                        <div className="col-md-4 mt-2">
+                          <label className="form-label">Expiry Date</label><span className="text-danger">*</span>
+                          <input type="date" className="form-control" name="" id="" placeholder="" onchange="ageCalculate()" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}/>
+                        </div>
+                        <div className="col-md-4 mt-2">
+                          <label className="form-label">Type of VISA</label>
+                          <select className="" name="" id="" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}>
+                            <option value disabled selected>Select </option>
+                            <option value="No">No</option>
+                            <option value="Yes">Yes</option>
+                          </select>
+                        </div>
+                        <div className="col-md-4 mt-2">
+                          <label className="form-label">SubType of VISA</label>
+                          <select className="t" name="" id="" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}>
+                            <option value disabled selected>Select </option>
+                            <option value="No">No</option>
+                            <option value="Yes">Yes</option>
+                          </select>
+                        </div>
+                           <div className="col-md-12">
+                          <label className="form-label">Upload Visa</label><span className="text-danger">*</span>
+                          <input type="file" className="form-control" id="" name="" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
+                        </div>
+                       
+                        
+                       
+                       
+                  
+                          <div className="col-md-6 mt-2">
                           <label className="form-label">Driving License No</label>
-                          <input type="text" className="form-control" name="driving_license" id="driving_license" maxLength={16} placeholder="Driving License No. e.g. XX-0000000000" style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}/>
+                          <input type="text" className="form-label" name="driving_license" id="driving_license" maxLength={16} placeholder="Driving License No. e.g. XX-0000000000" style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}/>
                         </div>
                         <div className="col-md-6 mt-2">
                           <label className="form-label">Personal Vehicle</label>
@@ -389,37 +410,36 @@ const Addstaff =()=>{
                     </div>
                   </div>
                 </div> 
-                <div className="col-md-12 row row-cols-auto mt-2">  
+                
+                <br></br>
+    
+    <div className="col-md-12 row row-cols-auto mt-2">  
                   <div className="col">
                     <button type="submit" className="btn btn-success px-5"><i className="bx bx-check-circle mr-1" /> Submit</button>                                              
                   </div>                                                
                 </div>
+              
               </form>
             </div>
           </div>
-        
+      
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div></div>
+    </div></div>
+   
+   
+
+
     
-    </div>
+  
   
  
-    </div>
-    
-    </div>
-    </div>
-  
- 
-  </div>
-  
-  </div>
-  </div>
-  
- 
-  </div>
-  
-  </div>
-  
 
       );
      }
-     export default Addstaff;
+     export default Addforeign;
      

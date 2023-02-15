@@ -11,6 +11,8 @@ import Addcontract from "../src/component/Addcontract";
 import Addunit from "../src/component/Addunit";
 import Listunit from "../src/component/Listunit";
 import Rolewise from "../src/component/Rolewise";
+import Addforeign from "./component/Addforeign";
+import Release from "./component/Release";
 
 function App() {
   return (
@@ -25,6 +27,8 @@ function App() {
       
       <Route path="/Rolewise" element={<Rolewise/>}/>
       <Route path="/Addstaff" element={<Addstaff/>}/>
+      <Route path="/Addforeign" element={<Addforeign/>}/>
+      <Route path="/Release" element={<Release/>}/>
       <Route path="/Liststaff" element={<Liststaff />}/>
       <Route path="/Addcontract" element={<Addcontract/>}/>
       <Route path="/Addunit" element={<Addunit/>}/>

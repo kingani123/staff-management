@@ -7,7 +7,7 @@ import Sidebar from "./Sidebar";
 import Footer from "./Footer";
 
 
-const Liststaff = ()=>{
+const Release = ()=>{
     return (
       <div>
       <Navbar/>
@@ -16,14 +16,14 @@ const Liststaff = ()=>{
       <div className="body_right">
         <div className="inside">
           <div className="right_body_pagenation">
-            <p> List Unit Details</p>
+            <p> List</p>
           </div>    
           <div className="right_body_section">
             {/*--content here--*/}
             
             <div className="card mt-0">
             <div className="card-body">
-              <div className="heading"><h3> List of Unit Details</h3></div>
+              <div className="heading"><h3> List of Release Person Details</h3></div>
               <div className="report_search_panner">
                 <div className="left">
                   <select className="form-select" aria-label="Default select example">
@@ -47,12 +47,16 @@ const Liststaff = ()=>{
               <div className="user_table_area">
                 <div className="table_header">
                   <div style={{width: '8%'}}>Sl No.</div>
-                  <div style={{width: '15%'}}>Name</div>
-                  <div style={{width: '15%'}}>DOB</div>
-                  <div style={{width: '15%'}}>Email</div>
-                  <div style={{width: '15%'}}>Mobile</div>
-                  <div style={{width: '15%'}}>Type of Job</div>
-                  <div style={{width: '15%'}}>Action </div>
+                  <div style={{width: '8%'}}>Name</div>
+                  <div style={{width: '10%'}}>Father Name</div>
+                  <div style={{width: '10%'}}>Mother Name</div>
+                  <div style={{width: '8%'}}>DOB</div>
+                  <div style={{width: '8%'}}>Email</div>
+                  <div style={{width: '8%'}}>Mobile</div>
+                  <div style={{width: '8%'}}>Landline</div>
+                  <div style={{width: '8%'}}>Status</div>
+                  <div style={{width: '10%'}}>Release Reason</div>
+                  <div style={{width: '8%'}}>Action</div>
                   
                 </div>
                 <div className="table_body">
@@ -117,7 +121,11 @@ const Liststaff = ()=>{
                   </div>
                  
                 </div>
-                <br></br>  
+                <br/>
+                <br/>
+
+
+
                 
                 <div className="row">
             <div className="col-sm-12 col-md-5">
@@ -158,4 +166,4 @@ const Liststaff = ()=>{
 
       );
      }
-export default Liststaff;
+export default Release;
