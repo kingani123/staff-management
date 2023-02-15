@@ -3,7 +3,6 @@ import Navbar from "./Navbar";
 
 
 import Sidebar from "./Sidebar";
-import Footer from "./Footer";
 
 
 const Addstaff =()=>{
@@ -16,7 +15,7 @@ const Addstaff =()=>{
 <div className="body_right">
   <div className="inside">
     <div className="right_body_pagenation">
-      <p> Add Unit Details</p>
+      <p> Add Indianstaff Details</p>
     </div>
     <div className="right_body_section">
       {/*--content here--*/}
@@ -379,9 +378,9 @@ const Addstaff =()=>{
                         <div className="col-md-6 mt-2">
                           <label className="form-label">Verification Type</label><br />
                           <input className="form-check-input verifyModal" type="radio" data-bs-toggle="modal" data-bs-target="#verifyModal" aria-expanded="false" defaultValue="self" name="verification" id="sameas1" onclick="sameAs()" />
-                          <label className="form-check-label" htmlFor="sameas1">Self Verified</label>
+                          <label className="form-check-label" htmlFor="sameas1">&nbsp;Self Verified</label>&nbsp;
                           <input className="form-check-input verifyModal" type="radio" data-bs-toggle="modal" data-bs-target="#verifyModal" aria-expanded="false" defaultValue="ps" name="verification" id="sameas2" onclick="sameAs()" />
-                          <label className="form-check-label" htmlFor="sameas2">Required to Verified</label>  
+                          <label className="form-check-label" htmlFor="sameas2">&nbsp;Required to Verified</label> &nbsp;
                           <input type="hidden" id="verification_value" name="verification_value" />                                              
                         </div>
                         <div className="col-md-6 mt-2" id="otherTextDiv" />

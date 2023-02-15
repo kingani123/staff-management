@@ -3,7 +3,7 @@ import Navbar from "./Navbar";
 
 
 import Sidebar from "./Sidebar";
-import Footer from "./Footer";
+
 
 
 const Addforeign =()=>{
@@ -275,11 +275,11 @@ const Addforeign =()=>{
                     <div id="collapseFive" className="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#accordionExample">
                       <div className="accordion-body row">
                       <div className="col-md-4 mt-2">
-                          <label className="form-label">Passport</label><span className="text-danger">*</span>
+                          <label className="form-label">Passport No.</label><span className="text-danger">*</span>
                           <input type="text" onkeyup="titleCase(this.value,'name')" className="form-control" name="name" id="name" placeholder="Passport" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}/>
                         </div>
                         <div className="col-md-4 mt-2">
-                          <label className="form-label">Place of Issue</label>
+                          <label className="form-label">Place of Issue</label><span className="text-danger">*</span>
                           <select className="" name="bloodgroup" id="bloodgroup" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}>
                             <option value disabled selected>Select Country</option>
                            
@@ -293,38 +293,39 @@ const Addforeign =()=>{
                           <label className="form-label">Expiry Date</label><span className="text-danger">*</span>
                           <input type="date" className="form-control" name="" id="" placeholder="" onchange="ageCalculate()" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}/>
                         </div>
-                        <div className="col-md-4 mt-2">
-                          <label className="form-label">Type of VISA</label>
+                        <div className="col-md-8">
+                          <label className="form-label">Upload Passport(File size should be less than 2mb)</label><span className="text-danger">*</span>
+                          <input type="file" className="form-control" id="" name="" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
+                        </div>
+                       
+
+                        <div className="col-md-3 mt-2">
+                          <label className="form-label">Type of VISA</label><span className="text-danger">*</span>
                           <select className="" name="" id="" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}>
                             <option value disabled selected>Select </option>
                             <option value="No">No</option>
                             <option value="Yes">Yes</option>
                           </select>
                         </div>
-                        <div className="col-md-4 mt-2">
-                          <label className="form-label">SubType of VISA</label>
+                        <div className="col-md-3 mt-2">
+                          <label className="form-label">SubType of VISA</label><span className="text-danger">*</span>
                           <select className="t" name="" id="" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}>
                             <option value disabled selected>Select </option>
                             <option value="No">No</option>
                             <option value="Yes">Yes</option>
                           </select>
                         </div>
-                           <div className="col-md-12">
-                          <label className="form-label">Upload Visa</label><span className="text-danger">*</span>
+                           <div className="col-md-6">
+                          <label className="form-label">Upload Visa(File size should be less than 2mb)</label><span className="text-danger">*</span>
                           <input type="file" className="form-control" id="" name="" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
                         </div>
-                       
-                        
-                       
-                       
-                  
-                          <div className="col-md-6 mt-2">
+                        <div className="col-md-6 mt-2">
                           <label className="form-label">Driving License No</label>
                           <input type="text" className="form-label" name="driving_license" id="driving_license" maxLength={16} placeholder="Driving License No. e.g. XX-0000000000" style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}/>
                         </div>
                         <div className="col-md-6 mt-2">
                           <label className="form-label">Personal Vehicle</label>
-                          <select className="form-select" name="personal_vehicle" id="personal_vehicle" onchange="div_vehicle()"style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}>
+                          <select className="" name="personal_vehicle" id="personal_vehicle" onchange="div_vehicle()"style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}>
                             <option value="No">No</option>
                             <option value="Yes">Yes</option>
                           </select>
@@ -400,9 +401,9 @@ const Addforeign =()=>{
                         <div className="col-md-6 mt-2">
                           <label className="form-label">Verification Type</label><br />
                           <input className="form-check-input verifyModal" type="radio" data-bs-toggle="modal" data-bs-target="#verifyModal" aria-expanded="false" defaultValue="self" name="verification" id="sameas1" onclick="sameAs()" />
-                          <label className="form-check-label" htmlFor="sameas1">Self Verified</label>
+                          <label className="form-check-label" htmlFor="sameas1">&nbsp;Self Verified</label>&nbsp;
                           <input className="form-check-input verifyModal" type="radio" data-bs-toggle="modal" data-bs-target="#verifyModal" aria-expanded="false" defaultValue="ps" name="verification" id="sameas2" onclick="sameAs()" />
-                          <label className="form-check-label" htmlFor="sameas2">Required to Verified</label>  
+                          <label className="form-check-label" htmlFor="sameas2"> &nbsp;Required to Verified</label> &nbsp; 
                           <input type="hidden" id="verification_value" name="verification_value" />                                              
                         </div>
                         <div className="col-md-6 mt-2" id="otherTextDiv" />
