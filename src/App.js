@@ -5,14 +5,21 @@ import Home from '../src/component/Home';
 import Form from './component/Addstaff';
 import Report from '../src/component/Liststaff';
 import Addstaff from "./component/Addstaff";
+import Addforeign from "./component/Addforeign";
 import Liststaff from "../src/component/Liststaff";
 import Login from "./component/Login";
 import Addcontract from "../src/component/Addcontract";
 import Addunit from "../src/component/Addunit";
 import Listunit from "../src/component/Listunit";
 import Rolewise from "../src/component/Rolewise";
+<<<<<<< Updated upstream
 import Addforeign from "./component/Addforeign";
 import Release from "./component/Release";
+=======
+import Release from "../src/component/Release";
+import Contractlist from "../src/component/Contractlist";
+
+>>>>>>> Stashed changes
 
 function App() {
   return (
@@ -27,8 +34,16 @@ function App() {
       
       <Route path="/Rolewise" element={<Rolewise/>}/>
       <Route path="/Addstaff" element={<Addstaff/>}/>
+<<<<<<< Updated upstream
       <Route path="/Addforeign" element={<Addforeign/>}/>
       <Route path="/Release" element={<Release/>}/>
+=======
+      <Route path="/Addforeign" element={<Addforeign />}/>
+    
+    
+      <Route path="/Contractlist" element={<Contractlist />}/>
+      <Route path="/Release" element={<Release />}/>
+>>>>>>> Stashed changes
       <Route path="/Liststaff" element={<Liststaff />}/>
       <Route path="/Addcontract" element={<Addcontract/>}/>
       <Route path="/Addunit" element={<Addunit/>}/>

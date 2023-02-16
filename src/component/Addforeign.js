@@ -22,7 +22,11 @@ const Addforeign =()=>{
 
 
     <div className="container">
+<<<<<<< Updated upstream
 <div className="col-xl-10 mx-10"> 
+=======
+
+>>>>>>> Stashed changes
   <div className="row">
           <div className="col-xl-12 mx-12">        
           <div className="card-body">
@@ -430,7 +434,11 @@ const Addforeign =()=>{
     </div>
     </div>
     </div></div>
+<<<<<<< Updated upstream
     </div></div>
+=======
+    </div>
+>>>>>>> Stashed changes
    
    
 

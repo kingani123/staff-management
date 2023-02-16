@@ -72,7 +72,7 @@ const Home  = ()=>{
      <div className="body_right">
   <div className="inside">
   <div className="container">
-          <div className="col-xl-10 mx-10"> 
+      
    
     <div className="right_body_section">
       {/*--content here--*/}
@@ -225,7 +225,7 @@ const Home  = ()=>{
   </div>
 </div>
 </div>
-</div>
+
       
       );
   

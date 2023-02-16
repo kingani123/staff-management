@@ -1,31 +1,42 @@
-
-import React from "react";
+import React, { useState, useEffect } from 'react';
+import './Sidebar.css';
 import { Link } from "react-router-dom";
-const  Sidebar =(props)=>{
-    return (
-<>
+
+function Sidebar(props) {
+  const [staffCollapsed, setStaffCollapsed] = useState(!props.isSidebarOpen);
+  const [unitCollapsed, setUnitCollapsed] = useState(!props.isSidebarOpen);
+  const [contractorCollapsed, setContractorCollapsed] = useState(!props.isSidebarOpen);
+  const [reportCollapsed, setReportCollapsed] = useState(!props.isSidebarOpen);
+
+  useEffect(() => {
+    setStaffCollapsed(!props.isSidebarOpen);
+    setUnitCollapsed(!props.isSidebarOpen);
+    setContractorCollapsed(!props.isSidebarOpen);
+    setReportCollapsed(!props.isSidebarOpen);
+  }, [props.isSidebarOpen]);
   
-  <div className="body_left">
-    <div className="body_left_push">
-      <i className="fa-solid fa-chevron-left" />
-    </div>
-    <div className="inside">
-      <div className="search_area">
-        <div className="input-group">
-          <input
-            className="form-control search"
-            type="search"
-            defaultValue="search"
-            id="example-search-input"
-          />
-          <span className="input-group-append">
-            <button
-              className="btn btn-outline-secondary bg-white border-start-0 border-bottom-0 border ms-n5"
-              type="button"
-            >
-              <i className="fa fa-search" />
-            </button>
-          </span>
+  // Define two functions to toggle the state variables
+  const toggleStaffMenu = () => {
+    setStaffCollapsed(!staffCollapsed);
+  };
+  
+  const toggleUnitMenu = () => {
+    setUnitCollapsed(!unitCollapsed);
+  };
+  const toggleContractorMenu = () => {
+    setContractorCollapsed(!contractorCollapsed);
+  };
+  const toggleReportMenu = () => {
+    setReportCollapsed(!contractorCollapsed);
+  };
+  
+
+  return (
+    <>
+    
+      <div className="body_left">
+        <div className="body_left_push">
+          <i className="fa-solid fa-chevron-left" />
         </div>
       </div>
       <div className="push_menu">
@@ -169,8 +180,91 @@ const  Sidebar =(props)=>{
     </div>
   </div>
 
+                
+              </div>
+              <li className="nav-item">
+                <a href="#" className={props.className} onClick={toggleUnitMenu}>
+                  <img src="images/owner-list.svg" alt="" /> <b>UNIT SECTION</b>
+                  {unitCollapsed ? (
+                    <i className="fa-solid fa-chevron-down" />
+                  ) : (
+                    <i className="fa-solid fa-chevron-up" />
+                  )}
+                </a>
+              </li>
+              <div className={unitCollapsed ? "collapse" : ""}>
+            
+
+      <li className="nav-item">
+        <Link to="/Addunit" className={props.className}>
+          <img src="images/place-management.svg" alt="" /> Add Unit
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link to="/Listunit" className={props.className}>
+          <img src="images/place-management.svg" alt="" /> List Unit
+        </Link>
+      </li>
+    </div>
+    <li className="nav-item">
+                <a href="#" className={props.className} onClick={toggleContractorMenu}>
+                  <img src="images/owner-list.svg" alt="" /> <b>CONTRACTOR</b>
+                  {contractorCollapsed ? (
+                    <i className="fa-solid fa-chevron-down" />
+                  ) : (
+                    <i className="fa-solid fa-chevron-up" />
+                  )}
+                </a>
+              </li>
+              <div className={contractorCollapsed ? "collapse" : ""}>
+            
+
+      <li className="nav-item">
+        <Link to="/Addcontract" className={props.className}>
+          <img src="images/place-management.svg" alt="" /> Add Contractors
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link to="/Contractlist" className={props.className}>
+          <img src="images/place-management.svg" alt="" /> Contractor List
+        </Link>
+      </li>
+    </div>
+  
+    <li className="nav-item">
+                <a href="#" className={props.className} onClick={toggleReportMenu}>
+                  <img src="images/owner-list.svg" alt="" /> <b>REPORT SECTION</b>
+                  {contractorCollapsed ? (
+                    <i className="fa-solid fa-chevron-down" />
+                  ) : (
+                    <i className="fa-solid fa-chevron-up" />
+                  )}
+                </a>
+              </li>
+              <div className={reportCollapsed ? "collapse" : ""}>
+            
+
+      <li className="nav-item">
+        <Link to="/Addcontract" className={props.className}>
+          <img src="images/place-management.svg" alt="" /> Add Contractors
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link to="/Contractlist" className={props.className}>
+          <img src="images/place-management.svg" alt="" /> Contractor List
+        </Link>
+      </li>
+    </div>
+  
+  </ul>
+</div>
+
+    </div>
+    </div>
+  
 </>
-    
-      );
-}
+
+)};
+
+
 export default Sidebar;

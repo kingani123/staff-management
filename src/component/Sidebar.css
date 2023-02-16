@@ -1,0 +1,136 @@
+.sidebar-nav.open {
+     height: auto;
+   }
+   
+   .push_menu {
+    background: #f8f8f8;
+    border-radius: 10px;
+    padding: 20px;
+    margin-top: 20px;
+  }
+  
+  .nav-item {
+    padding: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .nav-item:hover {
+    background: #dcdcdc;
+  }
+  
+  .nav-item img {
+    margin-right: 10px;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .nav-item:hover img {
+    transform: rotate(90deg);
+  }
+  
+  .collapse {
+    margin-left: 20px;
+    border-left: 3px solid #6c757d;
+  }
+  
+  .collapse li {
+    padding: 5px 0;
+    font-size: 14px;
+    font-weight: 400;
+    color: #6c757d;
+  }
+  
+  .collapse li a {
+    color: #6c757d;
+    text-decoration: none;
+    transition: all 0.2s ease-in-out;
+  }
+  
+  .collapse li a:hover {
+    color: #007bff;
+  }
+  
+  .nav-item:hover {
+    background-color: #f7f7f7;
+  }
+  
+   .nav-item ul {
+     margin: 0;
+     padding: 0;
+     list-style: none;
+     display: none;
+     position: absolute;
+     top: 0;
+     left: 100%;
+     z-index: 1;
+     background-color: #fff;
+     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+   }
+   
+   .nav-item:hover ul {
+     display: block;
+   }
+   
+   .nav-item ul li {
+     border-bottom: none;
+   }
+   
+   .nav-link {
+     display: block;
+     padding: 5px 0;
+   }
+   
+   .sidebar-toggle {
+     background: none;
+     border: none;
+     font-size: 1.5rem;
+     color: #333;
+     cursor: pointer;
+   }
+   .a1
+{
+    width: 50%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100";
+}
+.a2
+{
+    width: 20%" aria-valuenow="20" aria-valuemin="0" aria-valuemax="100";
+}
+.a3
+{
+    width: 40%" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100";
+}
+.a4
+{
+    width: 80%" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100";
+}
+.a5
+{
+    width: 100%" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100";
+}
+.a6
+{
+    width: 25rem;
+}
+.a7
+{
+    width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100";
+}
+.toggled {
+    overflow: visible;
+    width: 6.5rem!important;
+}
+.toggled1 {
+    width: 0!important;
+    overflow: hidden;
+}
+.push_menu .nav-link {
+  color: #bdd3ff;
+  font-size: 15px;
+  padding: 7px;
+  /* margin-top: 1px; */
+}
+.body_left {
+  background: linear-gradient(180deg, #cce7ff 0%, #d8f9f9 100%);
+}
