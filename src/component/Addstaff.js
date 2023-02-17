@@ -34,7 +34,7 @@ const Addstaff =()=>{
             <hr />
             <div className="border p-4 rounded">                   
               <form action="#" className="row g-3 " method="POST" name="staff" id="staff" encType="multipart/form-data"> 
-                <input type="hidden" name="_token" defaultValue="" />                            <div className="accordion" id="accordionExample">
+                <input type="hidden" name="_token" defaultValue="" /><div className="accordion" id="accordionExample">
                   <div className="accordion-item">
                     <h2 className="accordion-header" id="headingOne">
                       <button className="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -63,15 +63,14 @@ const Addstaff =()=>{
                           <label className="form-label">Mother’s Name</label><span className="text-danger">*</span>
                           <input type="text" className="form-control" name="mother_name" onkeyup="titleCase(this.value,'mother_name')" id="mother_name" placeholder="Mother\u2019s Name" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
                         </div>
-                        <div className="col-md-4 mt-3">
+                        <div className="col-md-4 mt-2 ">
                           <label className="form-label">Gender</label><span className="text-danger">*</span><br />
                           <input className="form-check-input" type="radio" name="sex" defaultValue="M" required />
-                          <label className="form-label">&nbsp;&nbsp;Male</label>&nbsp;
+                          <label className="form-label">Male</label>
                           <input className="form-check-input" type="radio" name="sex" defaultValue="F" required />
-                          <label className="form-label">&nbsp;&nbsp;Female</label>&nbsp;
+                          <label className="form-label">Female</label>
                           <input className="form-check-input" type="radio" name="sex" defaultValue="T" required />
-                          <label className="form-label">&nbsp;&nbsp;Transgender</label>&nbsp;
-                          <span id="errorToShow" />
+                          <label className="form-label">Transgender</label>
                         </div>
                         <div className="col-md-4 mt-2">
                           <label className="form-label">DOB</label><span className="text-danger">*</span>

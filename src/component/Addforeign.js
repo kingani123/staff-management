@@ -300,7 +300,7 @@ const Addforeign =()=>{
                        
 
                         <div className="col-md-3 mt-2">
-                          <label className="form-label">Type of VISA</label><span className="text-danger">*</span>
+                          <label className="form-label">VISA Type </label><span className="text-danger">*</span>
                           <select className="" name="" id="" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}>
                             <option value disabled selected>Select </option>
                             <option value="No">No</option>
@@ -308,7 +308,7 @@ const Addforeign =()=>{
                           </select>
                         </div>
                         <div className="col-md-3 mt-2">
-                          <label className="form-label">SubType of VISA</label><span className="text-danger">*</span>
+                          <label className="form-label"> VISA SubType</label><span className="text-danger">*</span>
                           <select className="t" name="" id="" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}>
                             <option value disabled selected>Select </option>
                             <option value="No">No</option>

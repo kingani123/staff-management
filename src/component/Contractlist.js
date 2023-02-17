@@ -49,9 +49,9 @@ const Contractlist = ()=>{
               <div className="user_table_area">
                 <div className="table_header">
                   <div style={{width: '18%'}}>Sl No.</div>
-                  <div style={{width: '18%'}}>Contrctor Type</div>
-                  <div style={{width: '18%'}}>Company Name</div>
-                  <div style={{width: '18%'}}>Trade Lisence</div>
+                  <div style={{width: '18%'}}>Type</div>
+                  <div style={{width: '18%'}}>Company</div>
+                  <div style={{width: '18%'}}>Trade Lic. No.</div>
                    <div style={{width: '18%'}}>Action </div>
                   
                 </div>
@@ -61,22 +61,22 @@ const Contractlist = ()=>{
                     <p className="sl_no">1</p>
                   </div>
                   <div style={{width: '18%'}}>
-                    <p className="mobile_heading">Contractor Type</p>
+                    <p className="mobile_heading"> Type</p>
                     <p>abc</p>
                   </div>
                   <div style={{width: '18%'}}>
-                    <p className="mobile_heading">Company Type</p>
+                    <p className="mobile_heading">Company</p>
                     <p>abc</p>
                   </div>
                   <div style={{width: '18%'}}>
-                    <p className="mobile_heading">Trade Lisence</p>
+                    <p className="mobile_heading">Trade Lic. No.</p>
                     <p>aaa</p>
                   </div>
                   <div style={{width: '18%'}}>
                     <p className="mobile_heading">Action</p>
-                    <button className="btn btn-success"><RemoveRedEyeIcon /></button>&nbsp;
-        <button className="btn btn-primary"><CreateIcon/></button>&nbsp;
-        <button className="btn btn-danger"><DeleteOutlineIcon /></button>
+                    <button className="btn btn-success"><i class="fa-regular fa-eye"></i></button>&nbsp;
+        <button className="btn btn-primary"><i class="fa-regular fa-pen-to-square"></i></button>&nbsp;
+        <button className="btn btn-danger"><i class="fa-regular fa-trash-can"></i></button>
                   </div>
               
                   

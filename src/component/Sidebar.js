@@ -67,7 +67,7 @@ function Sidebar(props) {
               </li>
               <li className="nav-item">
                 <a href="#" className={props.className} onClick={toggleStaffMenu}>
-                  <img src="images/owner-list.svg" alt="" /> <b>STAFF SECTION</b>
+                  <img src="images/owner-list.svg" alt="" /> <b>STAFF </b>
                   {staffCollapsed ? (
                     <i className="fa-solid fa-chevron-down" />
                   ) : (
@@ -101,7 +101,7 @@ function Sidebar(props) {
               </div>
               <li className="nav-item">
                 <a href="#" className={props.className} onClick={toggleUnitMenu}>
-                  <img src="images/owner-list.svg" alt="" /> <b>UNIT SECTION</b>
+                  <img src="images/owner-list.svg" alt="" /> <b>UNIT </b>
                   {unitCollapsed ? (
                     <i className="fa-solid fa-chevron-down" />
                   ) : (
@@ -150,7 +150,7 @@ function Sidebar(props) {
   
     <li className="nav-item">
                 <a href="#" className={props.className} onClick={toggleReportMenu}>
-                  <img src="images/owner-list.svg" alt="" /> <b>REPORT SECTION</b>
+                  <img src="images/owner-list.svg" alt="" /> <b>REPORT </b>
                   {contractorCollapsed ? (
                     <i className="fa-solid fa-chevron-down" />
                   ) : (

@@ -5,6 +5,9 @@ import Navbar from "./Navbar";
 
 import Sidebar from "./Sidebar";
 import Footer from "./Footer";
+import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+import CreateIcon from '@mui/icons-material/Create';
+import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
 
 const Liststaff = ()=>{
@@ -16,14 +19,18 @@ const Liststaff = ()=>{
       <div className="body_right">
         <div className="inside">
           <div className="right_body_pagenation">
+<<<<<<< Updated upstream
             <p> List Unit palui Details</p>
+=======
+            <p> List Staff Details</p>
+>>>>>>> Stashed changes
           </div>    
           <div className="right_body_section">
             {/*--content here--*/}
             
             <div className="card mt-0">
             <div className="card-body">
-              <div className="heading"><h3> List of Unit Details</h3></div>
+              <div className="heading"><h3> List of Staff Details</h3></div>
               <div className="report_search_panner">
                 <div className="left">
                   <select className="form-select" aria-label="Default select example">
@@ -44,79 +51,57 @@ const Liststaff = ()=>{
                 </div>
               </div>
                 
-              <div className="user_table_area">
+              
+                <div className="user_table_area">
                 <div className="table_header">
-                  <div style={{width: '8%'}}>Sl No.</div>
-                  <div style={{width: '15%'}}>Name</div>
-                  <div style={{width: '15%'}}>DOB</div>
-                  <div style={{width: '15%'}}>Email</div>
-                  <div style={{width: '15%'}}>Mobile</div>
-                  <div style={{width: '15%'}}>Type of Job</div>
-                  <div style={{width: '15%'}}>Action </div>
+                  <div style={{width: '18%'}}>Sl No.</div>
+                  <div style={{width: '18%'}}>Name</div>
+                  <div style={{width: '18%'}}>DOB</div>
+                  <div style={{width: '18%'}}>Email</div>
+                  <div style={{width: '18%'}}>Mobile</div>
+                   <div style={{width: '8%'}}>Type of Job </div>
+                   <div style={{width: '18%'}}>Action</div>
                   
                 </div>
                 <div className="table_body">
-                  <div style={{width: '8%'}}>
+                  <div style={{width: '18%'}}>
                     <p className="mobile_heading">Sl No.</p>
-                    <p className="sl_no"></p>
+                    <p className="sl_no">1</p>
                   </div>
-                  <div style={{width: '15%'}}>
+                  <div style={{width: '18%'}}>
                     <p className="mobile_heading">Name</p>
-                    <p></p>
+                    <p>abc</p>
                   </div>
-                  <div style={{width: '15%'}}>
-                    <p className="mobile_heading"></p>
-                    <p></p>
+                  <div style={{width: '18%'}}>
+                    <p className="mobile_heading">DOB</p>
+                    <p>abc</p>
                   </div>
-                  <div style={{width: '15%'}}>
-                    <p className="mobile_heading"></p>
-                    <p></p>
+                  <div style={{width: '18%'}}>
+                    <p className="mobile_heading">Email</p>
+                    <p>aaa</p>
                   </div>
-                  <div style={{width: '15%'}}>
-                    <p className="mobile_heading"></p>
-                    <p></p>
+                  <div style={{width: '18%'}}>
+                    <p className="mobile_heading">Mobile</p>
+                    <p>aaa</p>
                   </div>
-                  <div style={{width: '15%'}}>
-                    <p className="mobile_heading"></p>
-                    <p></p>
+                  <div style={{width: '8%'}}>
+                    <p className="mobile_heading">Type of job</p>
+                    <p>aaa</p>
                   </div>
-                  <div style={{width: '15%'}}>
-                    <p className="mobile_heading"> </p>
-                    <p></p>
+                  <div style={{width: '18%'}}>
+                    <p className="mobile_heading">Action</p>
+                    <button className="btn btn-success"><i class="fa-regular fa-eye"></i></button>&nbsp;
+        <button className="btn btn-primary"><i class="fa-regular fa-pen-to-square"></i></button>&nbsp;
+        <button className="btn btn-danger"><i class="fa-regular fa-trash-can"></i></button>
                   </div>
+              
                   
                 </div>
-                <div className="table_body">
-                  <div style={{width: '8%'}}>
-                    <p className="mobile_heading"></p>
-                    <p className="sl_no"></p>
-                  </div>
-                  <div style={{width: '15%'}}>
-                    <p className="mobile_heading"></p>
-                    <p></p>
-                  </div>
-                  <div style={{width: '15%'}}>
-                    <p className="mobile_heading"></p>
-                    <p></p>
-                  </div>
-                  <div style={{width: '15%'}}>
-                    <p className="mobile_heading"></p>
-                    <p></p>
-                  </div>
-                  <div style={{width: '15%'}}>
-                    <p className="mobile_heading"></p>
-                    <p></p>
-                  </div>
-                  <div style={{width: '15%'}}>
-                    <p className="mobile_heading"></p>
-                    <p></p>
-                  </div>
-                  <div style={{width: '15%'}}>
-                    <p className="mobile_heading"> </p>
-                    <p></p>
-                  </div>
-                 
-                </div>
+              
+
+
+                
+                
                 <br></br>  
                 
                 <div className="row">

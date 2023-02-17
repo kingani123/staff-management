@@ -36,6 +36,7 @@ function App() {
       <Route path="/Release" element={<Release />}/>
       <Route path="/Liststaff" element={<Liststaff />}/>
       <Route path="/Addcontract" element={<Addcontract/>}/>
+      <Route path="/Contractlist" element={<Contractlist />}/>
       <Route path="/Addunit" element={<Addunit/>}/>
       <Route path="/Listunit" element={<Listunit/>}/>
       <Route path="/login" element={<Login />}/>
