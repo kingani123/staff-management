@@ -19,11 +19,7 @@ const Liststaff = ()=>{
       <div className="body_right">
         <div className="inside">
           <div className="right_body_pagenation">
-<<<<<<< Updated upstream
             <p> List Unit palui Details</p>
-=======
-            <p> List Staff Details</p>
->>>>>>> Stashed changes
           </div>    
           <div className="right_body_section">
             {/*--content here--*/}
