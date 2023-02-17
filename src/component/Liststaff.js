@@ -16,7 +16,7 @@ const Liststaff = ()=>{
       <div className="body_right">
         <div className="inside">
           <div className="right_body_pagenation">
-            <p> List Unit thanos Details</p>
+            <p> List Unit tha Details</p>
           </div>    
           <div className="right_body_section">
             {/*--content here--*/}
