@@ -20,11 +20,9 @@ const Navbar =()=>{
           </div>
           <div className="header_profile_img">
             <div className="header_profile_img_box">
-              <p>admin</p>
+              <p>ADMIN</p>
             </div>
-            <h5>Admin</h5>
-            <i className="fa-solid fa-chevron-down" />
-            <div className="profile_drop">
+              <div className="profile_drop">
               <ul>
                 <li>
                   <a href="#">
