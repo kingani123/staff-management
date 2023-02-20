@@ -7,12 +7,14 @@ function Sidebar(props) {
   const [unitCollapsed, setUnitCollapsed] = useState(!props.isSidebarOpen);
   const [contractorCollapsed, setContractorCollapsed] = useState(!props.isSidebarOpen);
   const [reportCollapsed, setReportCollapsed] = useState(!props.isSidebarOpen);
+  const [analyticsCollapsed, setAnalyticsCollapsed] = useState(!props.isSidebarOpen);
 
   useEffect(() => {
     setStaffCollapsed(!props.isSidebarOpen);
     setUnitCollapsed(!props.isSidebarOpen);
     setContractorCollapsed(!props.isSidebarOpen);
     setReportCollapsed(!props.isSidebarOpen);
+    setAnalyticsCollapsed(!props.isSidebarOpen);
   }, [props.isSidebarOpen]);
   
   // Define two functions to toggle the state variables
@@ -27,7 +29,10 @@ function Sidebar(props) {
     setContractorCollapsed(!contractorCollapsed);
   };
   const toggleReportMenu = () => {
-    setReportCollapsed(!contractorCollapsed);
+    setReportCollapsed(!reportCollapsed);
+  };
+  const toggleAnalyticsMenu = () => {
+    setAnalyticsCollapsed(!analyticsCollapsed);
   };
   
 
@@ -67,18 +72,14 @@ function Sidebar(props) {
               </li>
               <li className="nav-item">
                 <a href="#" className={props.className} onClick={toggleStaffMenu}>
-                  <img src="images/owner-list.svg" alt="" /> <b>STAFF </b>
-                  {staffCollapsed ? (
+                  <img src="images/owner-list.svg" alt="" /> <b>STAFF </b>&nbsp;&nbsp;
                     <i className="fa-solid fa-chevron-down" />
-                  ) : (
-                    <i className="fa-solid fa-chevron-up" />
-                  )}
-                </a>
+                  </a>
               </li>
               <div className={staffCollapsed ? "collapse" : ""}>
                 <li className="nav-item">
                   <Link to="/Addstaff" className={props.className}>
-                    <img src="images/top.svg" alt="" /> Add Indian Staff &nbsp;&nbsp;
+                    <img src="images/top.svg" alt="" /> Add Indian Staff 
                   </Link>
                 </li>
                 <li className="nav-item">
@@ -101,13 +102,9 @@ function Sidebar(props) {
               </div>
               <li className="nav-item">
                 <a href="#" className={props.className} onClick={toggleUnitMenu}>
-                  <img src="images/owner-list.svg" alt="" /> <b>UNIT </b>
-                  {unitCollapsed ? (
+                  <img src="images/owner-list.svg" alt="" /> <b>UNIT </b>&nbsp;&nbsp;
                     <i className="fa-solid fa-chevron-down" />
-                  ) : (
-                    <i className="fa-solid fa-chevron-up" />
-                  )}
-                </a>
+                  </a>
               </li>
               <div className={unitCollapsed ? "collapse" : ""}>
             
@@ -125,13 +122,9 @@ function Sidebar(props) {
     </div>
     <li className="nav-item">
                 <a href="#" className={props.className} onClick={toggleContractorMenu}>
-                  <img src="images/owner-list.svg" alt="" /> <b>CONTRACTOR</b>
-                  {contractorCollapsed ? (
+                  <img src="images/owner-list.svg" alt="" /> <b>CONTRACTOR</b>&nbsp;&nbsp;
                     <i className="fa-solid fa-chevron-down" />
-                  ) : (
-                    <i className="fa-solid fa-chevron-up" />
-                  )}
-                </a>
+                  </a>
               </li>
               <div className={contractorCollapsed ? "collapse" : ""}>
             
@@ -150,13 +143,9 @@ function Sidebar(props) {
   
     <li className="nav-item">
                 <a href="#" className={props.className} onClick={toggleReportMenu}>
-                  <img src="images/owner-list.svg" alt="" /> <b>REPORT </b>
-                  {contractorCollapsed ? (
+                  <img src="images/owner-list.svg" alt="" /> <b>REPORT </b>&nbsp;&nbsp;
                     <i className="fa-solid fa-chevron-down" />
-                  ) : (
-                    <i className="fa-solid fa-chevron-up" />
-                  )}
-                </a>
+                  </a>
               </li>
               <div className={reportCollapsed ? "collapse" : ""}>
             
@@ -172,7 +161,98 @@ function Sidebar(props) {
         </Link>
       </li>
     </div>
-  
+    <li className="nav-item">
+                <a href="#" className={props.className} onClick={toggleAnalyticsMenu}>
+                  <img src="images/owner-list.svg" alt="" /> <b>ANALYTICS</b>&nbsp;&nbsp;
+                    <i className="fa-solid fa-chevron-down" />
+                  </a>
+              </li>
+              <div className={analyticsCollapsed ? "collapse" : ""}>
+            
+              <li className="nav-item">
+        <Link to="/Addcontract" className={props.className}>
+          <img src="images/place-management.svg" alt="" /> Qualification Wise
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link to="/Addcontract" className={props.className}>
+          <img src="images/place-management.svg" alt="" /> Age Wise
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link to="/Contractlist" className={props.className}>
+          <img src="images/place-management.svg" alt="" /> Tenue Wise
+        </Link>
+      </li>
+      
+           
+      <li className="nav-item">
+        <Link to="/Addcontract" className={props.className}>
+          <img src="images/place-management.svg" alt="" /> Age Wise
+        </Link>
+      </li>
+      
+      <li className="nav-item">
+        <Link to="/Addcontract" className={props.className}>
+          <img src="images/place-management.svg" alt="" /> Performance Wise
+        </Link>
+      </li>
+      
+      <li className="nav-item">
+        <Link to="/Addcontract" className={props.className}>
+          <img src="images/place-management.svg" alt="" />Local District
+        </Link>
+      </li>
+      
+      <li className="nav-item">
+        <Link to="/Addcontract" className={props.className}>
+          <img src="images/place-management.svg" alt="" /> Outside District
+        </Link>
+      </li>
+      
+      <li className="nav-item">
+        <Link to="/Addcontract" className={props.className}>
+          <img src="images/place-management.svg" alt="" /> Local State
+        </Link>
+      </li>
+      
+      <li className="nav-item">
+        <Link to="/Addcontract" className={props.className}>
+          <img src="images/place-management.svg" alt="" />  Outside State
+        </Link>
+      </li>
+      
+      <li className="nav-item">
+        <Link to="/Addcontract" className={props.className}>
+          <img src="images/place-management.svg" alt="" /> Foreigners
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link to="/Addcontract" className={props.className}>
+          <img src="images/place-management.svg" alt="" /> Inflow Report
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link to="/Addcontract" className={props.className}>
+          <img src="images/place-management.svg" alt="" /> Outflow Report
+        </Link>
+      </li>
+    </div>
+    <li className="nav-item">
+    <Link to="#" className={props.className}>
+              <img src="images/revenue-model.svg" alt="" /><b>TUTORIALS</b>
+            </Link>
+          </li>
+          <li className="nav-item">
+          <Link to="#" className={props.className}>
+              <img src="images/settings.svg" alt="" /><b> CONTACT US</b>
+            </Link>
+          </li>
+          <li className="nav-item">
+          <Link to="#" className={props.className}>
+              <img src="images/logout.svg" alt="" /> <b>LOGOUT</b>
+            </Link>
+          </li>
   </ul>
 </div>
 
