@@ -171,24 +171,24 @@ function Sidebar(props) {
             
 
       <li className="nav-item">
-        <Link to="/Addcontract" className={props.className}>
+        <Link to="/Qualificationwise" className={props.className}>
           <img src="images/top.svg" alt="" /> Qualification Wise
         </Link>
       </li>
       <li className="nav-item">
-        <Link to="/Contractlist" className={props.className}>
+        <Link to="/Agewise" className={props.className}>
           <img src="images/top.svg" alt="" /> Age Wise
         </Link>
       </li>
       
       <li className="nav-item">
-        <Link to="/Addcontract" className={props.className}>
+        <Link to="/Tenurewise" className={props.className}>
           <img src="images/top.svg" alt="" /> Tenure Wise
         </Link>
       </li>
       
       <li className="nav-item">
-        <Link to="/Addcontract" className={props.className}>
+        <Link to="/Performancewise" className={props.className}>
           <img src="images/top.svg" alt="" /> Performance Wise
         </Link>
       </li>
