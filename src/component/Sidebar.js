@@ -199,25 +199,25 @@ function Sidebar(props) {
       </li>
       
       <li className="nav-item">
-        <Link to="/Addcontract" className={props.className}>
+        <Link to="/Localdistrict" className={props.className}>
           <img src="images/place-management.svg" alt="" />Local District
         </Link>
       </li>
       
       <li className="nav-item">
-        <Link to="/Addcontract" className={props.className}>
+        <Link to="/OutsideDISTRICT" className={props.className}>
           <img src="images/place-management.svg" alt="" /> Outside District
         </Link>
       </li>
       
       <li className="nav-item">
-        <Link to="/Addcontract" className={props.className}>
+        <Link to="/Localstate" className={props.className}>
           <img src="images/place-management.svg" alt="" /> Local State
         </Link>
       </li>
       
       <li className="nav-item">
-        <Link to="/Addcontract" className={props.className}>
+        <Link to="/Outsidestate" className={props.className}>
           <img src="images/place-management.svg" alt="" />  Outside State
         </Link>
       </li>

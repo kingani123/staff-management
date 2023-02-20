@@ -14,7 +14,10 @@ import Listunit from "../src/component/Listunit";
 import Rolewise from "../src/component/Rolewise";
 import Release from "../src/component/Release";
 import Contractlist from "../src/component/Contractlist";
-
+import Localdistrict from "../src/component/Localdistrict";
+import Outsidedistrict from "../src/component/Outsidedistrict";
+import Localstate from "../src/component/Localstate";
+import Outsidestate from "../src/component/Outsidestate";
 
 function App() {
   return (
@@ -29,9 +32,7 @@ function App() {
       
       <Route path="/Rolewise" element={<Rolewise/>}/>
       <Route path="/Addstaff" element={<Addstaff/>}/>
-      <Route path="/Addforeign" element={<Addforeign />}/>
-    
-    
+      <Route path="/Addforeign" element={<Addforeign />}/>  
       <Route path="/Contractlist" element={<Contractlist />}/>
       <Route path="/Release" element={<Release />}/>
       <Route path="/Liststaff" element={<Liststaff />}/>
@@ -39,6 +40,10 @@ function App() {
       <Route path="/Contractlist" element={<Contractlist />}/>
       <Route path="/Addunit" element={<Addunit/>}/>
       <Route path="/Listunit" element={<Listunit/>}/>
+      <Route path="/Localdistrict" element={<Localdistrict />}/>
+      <Route path="/Outsidedistrict" element={<Outsidedistrict />}/>
+      <Route path="/Localstate" element={<Localstate />}/>
+      <Route path="/Outsidestate" element={<Outsidestate />}/>
       <Route path="/login" element={<Login />}/>
       
     </Routes>
