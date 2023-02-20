@@ -4,7 +4,8 @@ import Navbar from "./Navbar";
 
 
 import Sidebar from "./Sidebar";
-import Footer from "./Footer";
+// import Footer from "./Footer";
+
 
 
 const Liststaff = ()=>{
@@ -65,58 +66,32 @@ const Liststaff = ()=>{
                     <p></p>
                   </div>
                   <div style={{width: '15%'}}>
-                    <p className="mobile_heading"></p>
+                    <p className="mobile_heading">Country</p>
                     <p></p>
                   </div>
                   <div style={{width: '15%'}}>
-                    <p className="mobile_heading"></p>
+                    <p className="mobile_heading">State</p>
                     <p></p>
                   </div>
                   <div style={{width: '15%'}}>
-                    <p className="mobile_heading"></p>
+                    <p className="mobile_heading">District</p>
                     <p></p>
                   </div>
                   <div style={{width: '15%'}}>
-                    <p className="mobile_heading"></p>
+                    <p className="mobile_heading">Police Station</p>
                     <p></p>
                   </div>
                   <div style={{width: '15%'}}>
-                    <p className="mobile_heading"> </p>
-                    <p></p>
+                    <p className="mobile_heading">Action</p>
+                    
+                    <button className="btn btn-success"><i class="fa-regular fa-eye"></i></button>&nbsp;
+        <button className="btn btn-primary"><i class="fa-regular fa-pen-to-square"></i></button>&nbsp;
+        <button className="btn btn-danger"><i class="fa-regular fa-trash-can"></i></button>
+                  </div>
                   </div>
                   
                 </div>
-                <div className="table_body">
-                  <div style={{width: '8%'}}>
-                    <p className="mobile_heading"></p>
-                    <p className="sl_no"></p>
-                  </div>
-                  <div style={{width: '15%'}}>
-                    <p className="mobile_heading"></p>
-                    <p></p>
-                  </div>
-                  <div style={{width: '15%'}}>
-                    <p className="mobile_heading"></p>
-                    <p></p>
-                  </div>
-                  <div style={{width: '15%'}}>
-                    <p className="mobile_heading"></p>
-                    <p></p>
-                  </div>
-                  <div style={{width: '15%'}}>
-                    <p className="mobile_heading"></p>
-                    <p></p>
-                  </div>
-                  <div style={{width: '15%'}}>
-                    <p className="mobile_heading"></p>
-                    <p></p>
-                  </div>
-                  <div style={{width: '15%'}}>
-                    <p className="mobile_heading"> </p>
-                    <p></p>
-                  </div>
-                 
-                </div>
+                
                 <br></br>  
                 
                 <div className="row">
@@ -151,7 +126,7 @@ const Liststaff = ()=>{
   
 </div>
 
-</div>
+
 
 
 
