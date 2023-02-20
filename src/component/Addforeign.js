@@ -4,10 +4,10 @@ import Navbar from "./Navbar";
 
 import Sidebar from "./Sidebar";
 
-
+import "./Addforiegn.css";
 
 const Addforeign =()=>{
-    return (
+   return (
       <div>
       <Navbar/>
       <div className="wrapper">  
@@ -29,7 +29,7 @@ const Addforeign =()=>{
             <h6 className="mb-0 ">Add Foreign Staff</h6>
             
             <hr />
-            <div className="border p-4 rounded">                   
+                         
               <form action="#" className="row g-3 " method="POST" name="staff" id="staff" encType="multipart/form-data"> 
                 <input type="hidden" name="_token" defaultValue="" />
                  <div className="accordion" id="accordionExample">
@@ -47,7 +47,9 @@ const Addforeign =()=>{
                         </div>
                         <div className="col-md-4">
                           <label className="form-label">Upload Image</label><span className="text-danger">*</span>
-                          <input type="file" className="form-control" id="profile_pic" name="profile_pic" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
+                          <input   type="file"  className="form-control" id="profile_pic" name="profile_pic" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
+                        
+         
                         </div>
                         <div className="col-md-4">
                           <label className="form-label">Religion</label><span className="text-danger" />
@@ -62,14 +64,15 @@ const Addforeign =()=>{
                           <input type="text" className="form-control" name="mother_name" onkeyup="titleCase(this.value,'mother_name')" id="mother_name" placeholder="Mother\u2019s Name" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
                         </div>
                         <div className="col-md-4 mt-2">
-                          <label className="form-label">Gender</label><span className="text-danger">*</span><br />
+                          <label className="form-label">Gender</label><span className="text-danger">*</span>
+                          <br/>
                           <input className="form-check-input" type="radio" name="sex" defaultValue="M" required />
-                          <label className="form-label">&nbsp;&nbsp;Male</label>&nbsp;
+                          <label className="form-label">&nbsp;Male</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                           <input className="form-check-input" type="radio" name="sex" defaultValue="F" required />
-                          <label className="form-label">&nbsp;&nbsp;Female</label>&nbsp;
+                          <label className="form-label">&nbsp;Female</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                           <input className="form-check-input" type="radio" name="sex" defaultValue="T" required />
-                          <label className="form-label">&nbsp;&nbsp;Transgender</label>
-                          <span id="errorToShow" />
+                          <label className="form-label">&nbsp;Transgender</label>
+                          
                         </div>
                         <div className="col-md-4 mt-2">
                           <label className="form-label">DOB</label><span className="text-danger">*</span>
@@ -105,7 +108,7 @@ const Addforeign =()=>{
                     </h2>
                     <div id="collapseTwo" className="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
                       <div className="accordion-body row">
-                        <h6 className="fw-bold">Permanent Address:</h6><hr />
+                        <h6 className="fw-normal">Permanent Address:</h6><hr />
                         <div className="col-md-3 mt-2">
                             <label className="form-label">Address</label><span className="text-danger">*</span>
                               <input type="text" placeholder="Address" id="address"name="address"  style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
@@ -133,9 +136,9 @@ const Addforeign =()=>{
                             <input className="form-check-input" type="checkbox" defaultValue id="sameas" onclick="sameAs()"  />
                             <label className="form-check-label" htmlFor="sameas">Same As Permanent Address</label>
                           </div>
-                          <div className="col-md-12 ">
+                          <div className="col-md-12 mt-2 ">
                             <label className="form-label">Address</label><span className="text-danger">*</span>
-                              <input type="text" placeholder="Address" id="address"name="address"  style={{height: '100%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
+                              <input type="text" placeholder="Address" id="address"name="address"  style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
                            </div>
                           </div>
                           <div className="col-md-3 mt-2">
@@ -399,11 +402,11 @@ const Addforeign =()=>{
                           </select>                                                
                         </div>
                         <div className="col-md-6 mt-2">
-                          <label className="form-label">Verification Type</label><br />
+                          <label className="form-label">Verification Type</label><br />&nbsp;
                           <input className="form-check-input verifyModal" type="radio" data-bs-toggle="modal" data-bs-target="#verifyModal" aria-expanded="false" defaultValue="self" name="verification" id="sameas1" onclick="sameAs()" />
-                          <label className="form-check-label" htmlFor="sameas1">&nbsp;Self Verified</label>&nbsp;
+                          <label className="form-check-label" htmlFor="sameas1">Self Verified</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                           <input className="form-check-input verifyModal" type="radio" data-bs-toggle="modal" data-bs-target="#verifyModal" aria-expanded="false" defaultValue="ps" name="verification" id="sameas2" onclick="sameAs()" />
-                          <label className="form-check-label" htmlFor="sameas2"> &nbsp;Required to Verified</label> &nbsp; 
+                          <label className="form-check-label" htmlFor="sameas2">Required to Verified</label> 
                           <input type="hidden" id="verification_value" name="verification_value" />                                              
                         </div>
                         <div className="col-md-6 mt-2" id="otherTextDiv" />
@@ -430,17 +433,7 @@ const Addforeign =()=>{
     </div>
     </div>
     </div></div>
-    </div>
-   
-   
-
-
-    
-  
-  
- 
-
-      );
+   );
      }
      export default Addforeign;
-     
+          
