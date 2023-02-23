@@ -4,10 +4,10 @@ import Navbar from "./Navbar";
 
 
 import Sidebar from "./Sidebar";
-import Footer from "./Footer";
-import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
-import CreateIcon from '@mui/icons-material/Create';
-import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
+
+// import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
+// import CreateIcon from '@mui/icons-material/Create';
+// import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
 
 const Liststaff = ()=>{
