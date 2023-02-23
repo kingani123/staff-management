@@ -33,9 +33,7 @@ function App() {
       
       <Route path="/Rolewise" element={<Rolewise/>}/>
       <Route path="/Addstaff" element={<Addstaff/>}/>
-      <Route path="/Addforeign" element={<Addforeign />}/>
-    
-    
+      <Route path="/Addforeign" element={<Addforeign />}/>  
       <Route path="/Contractlist" element={<Contractlist />}/>
       <Route path="/Release" element={<Release />}/>
       <Route path="/Liststaff" element={<Liststaff />}/>
@@ -43,6 +41,10 @@ function App() {
       <Route path="/Contractlist" element={<Contractlist />}/>
       <Route path="/Addunit" element={<Addunit/>}/>
       <Route path="/Listunit" element={<Listunit/>}/>
+      <Route path="/Localdistrict" element={<Localdistrict />}/>
+      <Route path="/Outsidedistrict" element={<Outsidedistrict />}/>
+      <Route path="/Localstate" element={<Localstate />}/>
+      <Route path="/Outsidestate" element={<Outsidestate />}/>
       <Route path="/login" element={<Login />}/>
       <Route path="/Qualificationwise" element={<Qualificationwise />}/>
       <Route path="/Agewise" element={<Agewise />}/>

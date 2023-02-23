@@ -161,7 +161,98 @@ function Sidebar(props) {
         </Link>
       </li>
     </div>
-  
+    <li className="nav-item">
+                <a href="#" className={props.className} onClick={toggleAnalyticsMenu}>
+                  <img src="images/owner-list.svg" alt="" /> <b>ANALYTICS</b>&nbsp;&nbsp;
+                    <i className="fa-solid fa-chevron-down" />
+                  </a>
+              </li>
+              <div className={analyticsCollapsed ? "collapse" : ""}>
+            
+              <li className="nav-item">
+        <Link to="/Addcontract" className={props.className}>
+          <img src="images/place-management.svg" alt="" /> Qualification Wise
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link to="/Addcontract" className={props.className}>
+          <img src="images/place-management.svg" alt="" /> Age Wise
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link to="/Contractlist" className={props.className}>
+          <img src="images/place-management.svg" alt="" /> Tenue Wise
+        </Link>
+      </li>
+      
+           
+      <li className="nav-item">
+        <Link to="/Addcontract" className={props.className}>
+          <img src="images/place-management.svg" alt="" /> Age Wise
+        </Link>
+      </li>
+      
+      <li className="nav-item">
+        <Link to="/Addcontract" className={props.className}>
+          <img src="images/place-management.svg" alt="" /> Performance Wise
+        </Link>
+      </li>
+      
+      <li className="nav-item">
+        <Link to="/Localdistrict" className={props.className}>
+          <img src="images/place-management.svg" alt="" />Local District
+        </Link>
+      </li>
+      
+      <li className="nav-item">
+        <Link to="/OutsideDISTRICT" className={props.className}>
+          <img src="images/place-management.svg" alt="" /> Outside District
+        </Link>
+      </li>
+      
+      <li className="nav-item">
+        <Link to="/Localstate" className={props.className}>
+          <img src="images/place-management.svg" alt="" /> Local State
+        </Link>
+      </li>
+      
+      <li className="nav-item">
+        <Link to="/Outsidestate" className={props.className}>
+          <img src="images/place-management.svg" alt="" />  Outside State
+        </Link>
+      </li>
+      
+      <li className="nav-item">
+        <Link to="/Addcontract" className={props.className}>
+          <img src="images/place-management.svg" alt="" /> Foreigners
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link to="/Addcontract" className={props.className}>
+          <img src="images/place-management.svg" alt="" /> Inflow Report
+        </Link>
+      </li>
+      <li className="nav-item">
+        <Link to="/Addcontract" className={props.className}>
+          <img src="images/place-management.svg" alt="" /> Outflow Report
+        </Link>
+      </li>
+    </div>
+    <li className="nav-item">
+    <Link to="#" className={props.className}>
+              <img src="images/revenue-model.svg" alt="" /><b>TUTORIALS</b>
+            </Link>
+          </li>
+          <li className="nav-item">
+          <Link to="#" className={props.className}>
+              <img src="images/settings.svg" alt="" /><b> CONTACT US</b>
+            </Link>
+          </li>
+          <li className="nav-item">
+          <Link to="#" className={props.className}>
+              <img src="images/logout.svg" alt="" /> <b>LOGOUT</b>
+            </Link>
+          </li>
   </ul>
 </div>
 
