@@ -170,30 +170,23 @@ function Sidebar(props) {
               <div className={analyticsCollapsed ? "collapse" : ""}>
             
               <li className="nav-item">
-        <Link to="/Addcontract" className={props.className}>
+        <Link to="/Qualificationwise" className={props.className}>
           <img src="images/place-management.svg" alt="" /> Qualification Wise
         </Link>
       </li>
       <li className="nav-item">
-        <Link to="/Addcontract" className={props.className}>
+        <Link to="/Agewise" className={props.className}>
           <img src="images/place-management.svg" alt="" /> Age Wise
         </Link>
       </li>
       <li className="nav-item">
-        <Link to="/Contractlist" className={props.className}>
+        <Link to="/Tenuewise" className={props.className}>
           <img src="images/place-management.svg" alt="" /> Tenue Wise
         </Link>
-      </li>
-      
-           
+      </li>   
+         
       <li className="nav-item">
-        <Link to="/Addcontract" className={props.className}>
-          <img src="images/place-management.svg" alt="" /> Age Wise
-        </Link>
-      </li>
-      
-      <li className="nav-item">
-        <Link to="/Addcontract" className={props.className}>
+        <Link to="/Performancewise" className={props.className}>
           <img src="images/place-management.svg" alt="" /> Performance Wise
         </Link>
       </li>
@@ -205,7 +198,7 @@ function Sidebar(props) {
       </li>
       
       <li className="nav-item">
-        <Link to="/OutsideDISTRICT" className={props.className}>
+        <Link to="/Outsidedistrict" className={props.className}>
           <img src="images/place-management.svg" alt="" /> Outside District
         </Link>
       </li>
@@ -223,17 +216,17 @@ function Sidebar(props) {
       </li>
       
       <li className="nav-item">
-        <Link to="/Addcontract" className={props.className}>
+        <Link to="/Foreigners" className={props.className}>
           <img src="images/place-management.svg" alt="" /> Foreigners
         </Link>
       </li>
       <li className="nav-item">
-        <Link to="/Addcontract" className={props.className}>
+        <Link to="/Inflow" className={props.className}>
           <img src="images/place-management.svg" alt="" /> Inflow Report
         </Link>
       </li>
       <li className="nav-item">
-        <Link to="/Addcontract" className={props.className}>
+        <Link to="/Outflow" className={props.className}>
           <img src="images/place-management.svg" alt="" /> Outflow Report
         </Link>
       </li>
