@@ -18,6 +18,13 @@ import Qualificationwise from "./component/Qualificationwise";
 import Agewise from "./component/Agewise";
 import Tenurewise from "./component/Tenurewise";
 import Performancewise from "./component/Performancewise";
+import Localdistrict from "./component/Localdistrict";
+import Localstate from "./component/Localstate";
+import Outsidestate from "./component/Outsidestate";
+import Foreigners from "./component/Foreigners";
+import Inflow from "./component/Inflow";
+import Outflow from "./component/Outflow";
+ 
 
 
 function App() {
@@ -41,16 +48,19 @@ function App() {
       <Route path="/Contractlist" element={<Contractlist />}/>
       <Route path="/Addunit" element={<Addunit/>}/>
       <Route path="/Listunit" element={<Listunit/>}/>
-      <Route path="/Localdistrict" element={<Localdistrict />}/>
-      <Route path="/Outsidedistrict" element={<Outsidedistrict />}/>
-      <Route path="/Localstate" element={<Localstate />}/>
-      <Route path="/Outsidestate" element={<Outsidestate />}/>
       <Route path="/login" element={<Login />}/>
       <Route path="/Qualificationwise" element={<Qualificationwise />}/>
       <Route path="/Agewise" element={<Agewise />}/>
       <Route path="/Tenurewise" element={<Tenurewise />}/>
       <Route path="/Performancewise" element={<Performancewise />}/>
-      
+     
+
+      <Route path="/Localdistrict" element={<Localdistrict/>}/>
+      <Route path="/Localstate" element={<Localstate />}/>
+      <Route path="/Outsidestate" element={<Outsidestate />}/>
+      <Route path="/Foreigners" element={<Foreigners />}/>
+      <Route path="/Inflow" element={<Inflow />}/>
+      <Route path="/Outflow" element={<Outflow />}/>
     </Routes>
   </BrowserRouter>
 </div>

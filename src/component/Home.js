@@ -82,7 +82,7 @@ const Home  = ()=>{
             <div className="card-body">
                 <div className="d-flex align-items-center">
                     <div>
-                       <b> <p className="mb-1 text-white">Total.. </p></b>
+                       <b> <p className="mb-1 text-white">Total Emplopyee </p></b>
                        <center> <h4 className="my-1 text-white">1</h4></center>
                         
                     </div>
