@@ -1,11 +1,13 @@
+
 import React from "react";
 import Navbar from "./Navbar";
 
 
 import Sidebar from "./Sidebar";
 
-
+import "./Addforiegn.css";
 const Addstaff =()=>{
+  
     return (
       <div>
       <Navbar/>
@@ -19,11 +21,6 @@ const Addstaff =()=>{
     </div>
     <div className="right_body_section">
       {/*--content here--*/}
-
-
-
-
-
 <div className="container">
 
   <div className="row">
@@ -32,9 +29,9 @@ const Addstaff =()=>{
             <h6 className="mb-0 ">Add Indianstaff Details</h6>
             
             <hr />
-            <div className="border p-4 rounded">                   
+                          
               <form action="#" className="row g-3 " method="POST" name="staff" id="staff" encType="multipart/form-data"> 
-                <input type="hidden" name="_token" defaultValue="" />                            <div className="accordion" id="accordionExample">
+                <input type="hidden" name="_token" defaultValue="" /><div className="accordion" id="accordionExample">
                   <div className="accordion-item">
                     <h2 className="accordion-header" id="headingOne">
                       <button className="accordion-button fw-bold" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
@@ -49,7 +46,8 @@ const Addstaff =()=>{
                         </div>
                         <div className="col-md-4">
                           <label className="form-label">Upload Image</label><span className="text-danger">*</span>
-                          <input type="file" className="form-control" id="profile_pic" name="profile_pic" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
+                          <input   type="file"  className="form-control" id="profile_pic" name="profile_pic" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
+                       
                         </div>
                         <div className="col-md-4">
                           <label className="form-label">Religion</label><span className="text-danger" />
@@ -63,16 +61,16 @@ const Addstaff =()=>{
                           <label className="form-label">Mother’s Name</label><span className="text-danger">*</span>
                           <input type="text" className="form-control" name="mother_name" onkeyup="titleCase(this.value,'mother_name')" id="mother_name" placeholder="Mother\u2019s Name" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
                         </div>
-                        <div className="col-md-4 mt-3">
-                          <label className="form-label">Gender</label><span className="text-danger">*</span><br />
+                        <div className="col-md-4 mt-2">
+                          <label className="form-label">Gender</label><span className="text-danger">*</span>
+                          <br/>
                           <input className="form-check-input" type="radio" name="sex" defaultValue="M" required />
-                          <label className="form-label">&nbsp;&nbsp;Male</label>&nbsp;
+                          <label className="form-label">&nbsp;Male</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                           <input className="form-check-input" type="radio" name="sex" defaultValue="F" required />
-                          <label className="form-label">&nbsp;&nbsp;Female</label>&nbsp;
+                          <label className="form-label">&nbsp;Female</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                           <input className="form-check-input" type="radio" name="sex" defaultValue="T" required />
-                          <label className="form-label">&nbsp;&nbsp;Transgender</label>&nbsp;
-                          <span id="errorToShow" />
-                        </div>
+                          <label className="form-label">&nbsp;Transgender</label>
+                          </div>
                         <div className="col-md-4 mt-2">
                           <label className="form-label">DOB</label><span className="text-danger">*</span>
                           <input type="date" className="form-control" name="dob" id="dob" placeholder="DOB" onchange="ageCalculate()" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}/>
@@ -376,11 +374,11 @@ const Addstaff =()=>{
                           </select>                                                
                         </div>
                         <div className="col-md-6 mt-2">
-                          <label className="form-label">Verification Type</label><br />
+                          <label className="form-label">Verification Type</label><br />&nbsp;
                           <input className="form-check-input verifyModal" type="radio" data-bs-toggle="modal" data-bs-target="#verifyModal" aria-expanded="false" defaultValue="self" name="verification" id="sameas1" onclick="sameAs()" />
-                          <label className="form-check-label" htmlFor="sameas1">&nbsp;Self Verified</label>&nbsp;
+                          <label className="form-check-label" htmlFor="sameas1">Self Verified</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                           <input className="form-check-input verifyModal" type="radio" data-bs-toggle="modal" data-bs-target="#verifyModal" aria-expanded="false" defaultValue="ps" name="verification" id="sameas2" onclick="sameAs()" />
-                          <label className="form-check-label" htmlFor="sameas2">&nbsp;Required to Verified</label> &nbsp;
+                          <label className="form-check-label" htmlFor="sameas2">Required to Verified</label> 
                           <input type="hidden" id="verification_value" name="verification_value" />                                              
                         </div>
                         <div className="col-md-6 mt-2" id="otherTextDiv" />
@@ -413,7 +411,7 @@ const Addstaff =()=>{
   </div>
   
  
-  </div>
+ 
   
   
   
@@ -421,4 +419,5 @@ const Addstaff =()=>{
       );
      }
      export default Addstaff;
+
      

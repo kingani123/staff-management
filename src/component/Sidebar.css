@@ -26,9 +26,9 @@
     transition: all 0.2s ease-in-out;
   }
   
-  .nav-item:hover img {
+  /* .nav-item:hover img {
     transform: rotate(90deg);
-  }
+  } */
   
   .collapse {
     margin-left: 20px;

@@ -1,69 +1,102 @@
 import React from "react";
+
 import Navbar from "./Navbar";
 
 
 import Sidebar from "./Sidebar";
+// import Footer from "./Footer";
 
-const Listunit =()=>{
+
+
+const Liststaff = ()=>{
     return (
       <div>
       <Navbar/>
       <div className="wrapper">  
-      <Sidebar className="nav-link active"/>            
-
-<div className="body_right">
-  <div className="inside">
-    <div className="right_body_pagenation">
-      <p> Add Contract Details</p>
-    </div>
-    <div className="right_body_section">
-      {/*--content here--*/}
-      
-     
-
-  
-        <div className="container">
-
-<div>
-<div className="row">
-  <div className="col-md-12">
-          <div className="card-body">
-        <div className="d-flex align-items-center p-1">
-          <h5 className="mb-0">Unit Details</h5>
-        </div>
-        <div className="table-responsive">
-          <div id="staff_wrapper" className="dataTables_wrapper dt-bootstrap5 no-footer">
-            <div className="row">
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-sm-12">
-              <table id="staff" className="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="staff_info">
-                <thead>
-                  <tr role="row"><th className="sorting_asc" tabIndex={0} aria-controls="staff" rowSpan={1} colSpan={1} aria-sort="ascending" aria-label="Sl NO.: activate to sort column descending">Sl NO.</th>
-                    <th className="sorting" tabIndex={0} aria-controls="staff" rowSpan={1} colSpan={1} aria-label="NAME: activate to sort column ascending">NAME</th><th className="sorting" tabIndex={0} aria-controls="staff" rowSpan={1} colSpan={1} aria-label="DOB: activate to sort column ascending">Country</th>
-                    <th className="sorting" tabIndex={0} aria-controls="staff" rowSpan={1} colSpan={1} aria-label="Email: activate to sort column ascending">State</th>
-                    <th className="sorting" tabIndex={0} aria-controls="staff" rowSpan={1} colSpan={1} aria-label="Mobile: activate to sort column ascending">Police Station</th>
-                    <th className="sorting" tabIndex={0} aria-controls="staff" rowSpan={1} colSpan={1} aria-label="Action: activate to sort column ascending">Action</th></tr>
-                </thead>
-                <tbody>
-                  <tr role="row" className="odd"><td className="sorting_1">1</td>
-                    <td />
-                    <td />
-                    <td />
-                    <td />
-                    <td>
-                    </td>
-                  </tr>
-                </tbody>
-              </table>
-              <div id="staff_processing" className="dataTables_processing card" style={{display: 'none'}}>
-                Processing...</div>
-            </div>
-          </div>
-          <div className="row">
+      <Sidebar className="nav-link active"/>  
+      <div className="body_right">
+        <div className="inside">
+          <div className="right_body_pagenation">
+            <p> List Unit Details</p>
+          </div>    
+          <div className="right_body_section">
+            {/*--content here--*/}
+            
+            <div className="card mt-0">
+            <div className="card-body">
+              <div className="heading"><h3> List of Unit Details</h3></div>
+              <div className="report_search_panner">
+                <div className="left">
+                  <select className="form-select" aria-label="Default select example">
+                    <option selected>All</option>
+                  </select>
+                  </div>
+                  <div className="right">
+                  <div className="search_area">
+                    <div className="input-group">
+                      <input className="form-control search" type="search" defaultValue="search" id="example-search-input" />
+                      <span className="input-group-append">
+                        <button className="btn btn-outline-secondary bg-white border-start-0 border-bottom-0 border ms-n5" type="button">
+                          <i className="fa fa-search" />
+                        </button>
+                      </span>
+                    </div>
+                  </div>         
+                </div>
+              </div>
+                
+              <div className="user_table_area">
+                <div className="table_header">
+                  <div style={{width: '8%'}}>Sl No.</div>
+                  <div style={{width: '15%'}}>Name</div>
+                  <div style={{width: '15%'}}>Country</div>
+                  <div style={{width: '15%'}}>State</div>
+                  <div style={{width: '15%'}}>District</div>
+                  <div style={{width: '15%'}}>Police Station</div>
+                  <div style={{width: '15%'}}>Action </div>
+                  
+                </div>
+                <div className="table_body">
+                  <div style={{width: '8%'}}>
+                    <p className="mobile_heading">Sl No.</p>
+                    <p className="sl_no"></p>
+                  </div>
+                  <div style={{width: '15%'}}>
+                    <p className="mobile_heading">Name</p>
+                    <p></p>
+                  </div>
+                  <div style={{width: '15%'}}>
+                    <p className="mobile_heading">Country</p>
+                    <p></p>
+                  </div>
+                  <div style={{width: '15%'}}>
+                    <p className="mobile_heading">State</p>
+                    <p></p>
+                  </div>
+                  <div style={{width: '15%'}}>
+                    <p className="mobile_heading">District</p>
+                    <p></p>
+                  </div>
+                  <div style={{width: '15%'}}>
+                    <p className="mobile_heading">Police Station</p>
+                    <p></p>
+                  </div>
+                  <div style={{width: '15%'}}>
+                    <p className="mobile_heading">Action</p>
+                    
+                    <button className="btn btn-success"><i class="fa-regular fa-eye"></i></button>&nbsp;
+        <button className="btn btn-primary"><i class="fa-regular fa-pen-to-square"></i></button>&nbsp;
+        <button className="btn btn-danger"><i class="fa-regular fa-trash-can"></i></button>
+                  </div>
+                  </div>
+                  
+                </div>
+                
+                <br></br>  
+                
+                <div className="row">
             <div className="col-sm-12 col-md-5">
-              <div className="dataTables_info" id="staff_info" role="status" aria-live="polite">Showing 1 to 2 of 2 entries</div>
+              <div className="dataTables_info" id="staff_info" role="status" aria-live="polite">Showing 2 to 2 of 2 entries</div>
             </div>
             <div className="col-sm-12 col-md-7">
               <div className="dataTables_paginate paging_simple_numbers" id="staff_paginate"><ul className="pagination">
@@ -78,31 +111,26 @@ const Listunit =()=>{
             <div className="wrapper input-data">
               <input type="text" style={{height: '100%', width: '100%', border: 'none', fontSize: '17px', borderBottom: '2px solid silver'}} />
             </div>
+            <div className="overlay nav-toggle-icon" />
+            <a href="javaScript:;" className="back-to-top"><i className="bx bxs-up-arrow-alt" /></a>  
+                </div>
+              </div>    
+            </div>
+            
           </div>
         </div>
       </div>
-  </div>
+  
+
+    </div>
+  
 </div>
-{/* END: Page Main*/}
-{/* BEGIN: Page Main*/}
-{/*start overlay*/}
-<div className="overlay nav-toggle-icon" />
-{/*end overlay*/}
-{/*Start Back To Top Button*/}
-<a href="javaScript:;" className="back-to-top"><i className="bx bxs-up-arrow-alt" /></a>
-{/*End Back To Top Button*/}
-{/*start switcher*/}
-{/*end switcher*/}    {/* END: Page Main*/}
-{/* BEGIN: Footer*/}
-{/* Modal */}
-{/*end page main*/}
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-</div>
-);
+
+
+
+
+
+
+      );
      }
-     export default Listunit;
+export default Liststaff;
