@@ -18,6 +18,7 @@ import Qualificationwise from "./component/Qualificationwise";
 import Agewise from "./component/Agewise";
 import Tenurewise from "./component/Tenurewise";
 import Performancewise from "./component/Performancewise";
+import Registration from "./component/Registration";
 
 
 function App() {
@@ -43,6 +44,7 @@ function App() {
       <Route path="/Addunit" element={<Addunit/>}/>
       <Route path="/Listunit" element={<Listunit/>}/>
       <Route path="/login" element={<Login />}/>
+      <Route path="/registration" element={<Registration />}/>
       <Route path="/Qualificationwise" element={<Qualificationwise />}/>
       <Route path="/Agewise" element={<Agewise />}/>
       <Route path="/Tenurewise" element={<Tenurewise />}/>
