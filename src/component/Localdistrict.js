@@ -46,6 +46,7 @@ const Localdistrict =()=>{
                   <div style={{width: '20%'}}>Sl No.</div>
                   <div style={{width: '50%'}}>Category</div>
                   <div style={{width: '50%'}}>Total</div>
+                  <div style={{width: '50%'}}>Action</div>
                   </div>
                               
                 <div className="table_body">
@@ -61,24 +62,15 @@ const Localdistrict =()=>{
                     <p className="mobile_heading">ID</p>
                     <p>123467890</p>
                   </div>
-                  
+                  <div style={{width: '50%'}}>
+                    <p className="mobile_heading">Action</p>
+                    <button className="btn btn-success"><i class="fa-regular fa-eye"></i></button>&nbsp;
+        <button className="btn btn-primary"><i class="fa-regular fa-pen-to-square"></i></button>&nbsp;
+        <button className="btn btn-danger"><i class="fa-regular fa-trash-can"></i></button>
+                  </div>
                  
                 </div>
-                <div className="table_body">
-                  <div style={{width: '20%'}}>
-                    <p className="mobile_heading">Sl No.</p>
-                    <p className="sl_no">2</p>
-                  </div>
-                  <div style={{width: '50%'}}>
-                    <p className="mobile_heading">Name</p>
-                    <p>T.koley</p>
-                  </div>
-                  <div style={{width: '50%'}}>
-                    <p className="mobile_heading">ID</p>
-                    <p>123467890</p>
-                  </div>
-                 
-                  </div> 
+             
                   <br></br>  
                 
                 <div className="row">

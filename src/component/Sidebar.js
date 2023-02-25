@@ -94,7 +94,7 @@ function Sidebar(props) {
                 </li>
                 <li className="nav-item">
                   <Link to="/Release" className={props.className}>
-                    <img src="images/top.svg" alt="" /> Release Staff
+                    <img src="images/top.svg" alt="" /> Released Staff
                   </Link>
                 </li>
 
@@ -143,7 +143,7 @@ function Sidebar(props) {
   
     <li className="nav-item">
                 <a href="#" className={props.className} onClick={toggleReportMenu}>
-                  <img src="images/owner-list.svg" alt="" /> <b>REPORT </b>&nbsp;&nbsp;
+                  <img src="images/owner-list.svg" alt="" /> <b>STAFF-STRENGTH REPORT </b>&nbsp;&nbsp;
                     <i className="fa-solid fa-chevron-down" />
                   </a>
               </li>
@@ -151,13 +151,13 @@ function Sidebar(props) {
             
 
       <li className="nav-item">
-        <Link to="/Addcontract" className={props.className}>
-          <img src="images/place-management.svg" alt="" /> Add Contractors
+        <Link to="/Rolewise" className={props.className}>
+          <img src="images/place-management.svg" alt="" />Role-wise Report
         </Link>
       </li>
       <li className="nav-item">
-        <Link to="/Contractlist" className={props.className}>
-          <img src="images/place-management.svg" alt="" /> Contractor List
+        <Link to="/Categorywise" className={props.className}>
+          <img src="images/place-management.svg" alt="" /> Category-Wise Report
         </Link>
       </li>
     </div>
@@ -180,8 +180,8 @@ function Sidebar(props) {
         </Link>
       </li>
       <li className="nav-item">
-        <Link to="/Tenuewise" className={props.className}>
-          <img src="images/place-management.svg" alt="" /> Tenue Wise
+        <Link to="/Tenurewise" className={props.className}>
+          <img src="images/place-management.svg" alt="" /> Tenure Wise
         </Link>
       </li>   
          

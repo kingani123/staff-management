@@ -23,7 +23,7 @@ const Release = ()=>{
             
             <div className="card mt-0">
             <div className="card-body">
-              <div className="heading"><h3> List of Release Person Details</h3></div>
+              <div className="heading"><h3> List of Released Staff Details</h3></div>
               <div className="report_search_panner">
                 <div className="left">
                   <select className="form-select" aria-label="Default select example">

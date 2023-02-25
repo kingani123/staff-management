@@ -49,9 +49,9 @@ const Qualificationwise = ()=>{
               <div className="user_table_area">
                 <div className="table_header">
                   <div style={{width: '10%'}}>Sl. No.</div>
-                  <div style={{width: '40%'}}>Qualification</div>
+                  <div style={{width: '50%'}}>Qualification</div>
                   <div style={{width: '50%'}}>Total</div>
-                  
+                  <div style={{width: '50%'}}>Action</div>
                   
                 </div>
                 <div className="table_body">
@@ -59,14 +59,21 @@ const Qualificationwise = ()=>{
                     <p className="mobile_heading">Sl. No.</p>
                     <p className="sl_no">1</p>
                   </div>
-                  <div style={{width: '40%'}}>
+                  <div style={{width: '50%'}}>
                     <p className="mobile_heading">Qualification</p>
                     <p>Higher Secondary</p>
                   </div>
                   <div style={{width: '50%'}}>
                     <p className="mobile_heading">Total</p>
                     <p>0</p>
+                    
                   </div>
+                  <div style={{width: '50%'}}>
+                    <p className="mobile_heading">Action</p>
+                    <button className="btn btn-success"><i class="fa-regular fa-eye"></i></button>&nbsp;
+        <button className="btn btn-primary"><i class="fa-regular fa-pen-to-square"></i></button>&nbsp;
+        <button className="btn btn-danger"><i class="fa-regular fa-trash-can"></i></button>
+                  </div>    
                                    
                 </div>
               
