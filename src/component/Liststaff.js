@@ -19,14 +19,14 @@ const Liststaff = ()=>{
       <div className="body_right">
         <div className="inside">
           <div className="right_body_pagenation">
-            <p> List Unit palui Details</p>
+            <p> List Of Staff Details</p>
           </div>    
           <div className="right_body_section">
             {/*--content here--*/}
             
             <div className="card mt-0">
             <div className="card-body">
-              <div className="heading"><h3> List of Staff Details</h3></div>
+              <div className="heading"><h3><b> LIST OF STAFF DETAILS</b></h3></div>
               <div className="report_search_panner">
                 <div className="left">
                   <select className="form-select" aria-label="Default select example">

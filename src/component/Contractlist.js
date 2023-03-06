@@ -18,14 +18,14 @@ const Contractlist = ()=>{
       <div className="body_right">
         <div className="inside">
           <div className="right_body_pagenation">
-            <p> List Unit Details</p>
+            <p> List of Contractor Details</p>
           </div>    
           <div className="right_body_section">
             {/*--content here--*/}
             
             <div className="card mt-0">
             <div className="card-body">
-              <div className="heading"><h3> List of Contract Details</h3></div>
+              <div className="heading"><h3> <b>LIST OF CONTRACTOR DETAILS</b></h3></div>
               <div className="report_search_panner">
                 <div className="left">
                   <select className="form-select" aria-label="Default select example">

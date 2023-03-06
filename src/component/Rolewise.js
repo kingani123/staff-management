@@ -47,8 +47,10 @@ const Rolewise =()=>{
                   <div style={{width: '30%'}}>Name Of The Role</div>
                   <div style={{width: '30%'}}>Name Of The Employee</div>
                   <div style={{width: '30%'}}>Date Of Joining</div>
+                  <div style={{width: '30%'}}>Action</div>
                   </div>
                               
+               
                 <div className="table_body">
                   <div style={{width: '10%'}}>
                     <p className="mobile_heading">Sl No.</p>
@@ -66,25 +68,13 @@ const Rolewise =()=>{
                     <p className="mobile_heading">Mobile</p>
                     <p>1234567890</p>
                   </div>
-                 
-                </div>
-                <div className="table_body">
-                  <div style={{width: '10%'}}>
-                    <p className="mobile_heading">Sl No.</p>
-                    <p className="sl_no">#1</p>
-                  </div>
                   <div style={{width: '30%'}}>
-                    <p className="mobile_heading">Name</p>
-                    <p>T.koley</p>
+                    <p className="mobile_heading">Action</p>
+                    <button className="btn btn-success"><i class="fa-regular fa-eye"></i></button>&nbsp;
+        <button className="btn btn-primary"><i class="fa-regular fa-pen-to-square"></i></button>&nbsp;
+        <button className="btn btn-danger"><i class="fa-regular fa-trash-can"></i></button>
                   </div>
-                  <div style={{width: '30%'}}>
-                    <p className="mobile_heading">ID</p>
-                    <p>#123467890</p>
-                  </div>
-                  <div style={{width: '30%'}}>
-                    <p className="mobile_heading">Mobile</p>
-                    <p>1234567890</p>
-                  </div>  
+                
                   </div> 
                   <br></br>  
                 
