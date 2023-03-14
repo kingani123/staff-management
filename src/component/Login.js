@@ -84,7 +84,7 @@ const Login = () => {
   
       <div className="">
         <div className="form-container">
-          <h1 className="text-center mb-4">Staff $$$$$$$$$$$$$$$$$$$$ Management</h1>
+          <h1 className="text-center mb-4">Staff Management</h1>
     
           <form onSubmit={handleSubmit}>
             <div className="form-group">
