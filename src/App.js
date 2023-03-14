@@ -2,8 +2,7 @@
 import { BrowserRouter , Routes, Route,Link } from "react-router-dom";
 import AdminLayout from '../src/component/Admin.Layout';
 import Home from '../src/component/Home';
-import Form from './component/Addstaff';
-import Report from '../src/component/Liststaff';
+
 import Addstaff from "./component/Addstaff";
 import Addforeign from "./component/Addforeign";
 import Liststaff from "../src/component/Liststaff";
@@ -26,8 +25,10 @@ import Outsidestate from "./component/Outsidestate";
 import Foreigners from "./component/Foreigners";
 import Inflow from "./component/Inflow";
 import Outflow from "./component/Outflow";
- 
+import Signup from './component/Signup';
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function App() {
   return (
@@ -35,11 +36,14 @@ function App() {
   
 
                 <BrowserRouter>
+                <ToastContainer autoClose={3000} position={"top-center"} hideProgressBar={true} />
     <Routes>
+
       <Route path="/" element={<AdminLayout />}/>
   
       <Route path="/" element={<Home />}/>
-      
+      <Route path="/Signup" element={<Signup />}/>
+      <Route path="/Login" element={<Login />}/>
       <Route path="/Rolewise" element={<Rolewise/>}/>
       <Route path="/Categorywise" element={<Categorywise/>}/>
       <Route path="/Addstaff" element={<Addstaff/>}/>
@@ -51,7 +55,7 @@ function App() {
       <Route path="/Contractlist" element={<Contractlist />}/>
       <Route path="/Addunit" element={<Addunit/>}/>
       <Route path="/Listunit" element={<Listunit/>}/>
-      <Route path="/login" element={<Login />}/>
+
       <Route path="/Qualificationwise" element={<Qualificationwise />}/>
       <Route path="/Agewise" element={<Agewise />}/>
       <Route path="/Tenurewise" element={<Tenurewise />}/>

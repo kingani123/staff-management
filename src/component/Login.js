@@ -1,63 +1,139 @@
-import React from "react";
-const Login =()=>{
-    return (
-<>
-  <link
-    rel="stylesheet"
-    href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
-  />
-  <style
-    dangerouslySetInnerHTML={{
-      __html:
-        "\n    /* custom styles go here */\n    body {\n      background-color: #f5f5f5;\n    }\n    .form-container {\n      background-color: #f4f9ff;\n      border: 1px solid #ddd;\n      border-radius: 4px;\n      box-shadow: 0 2px 2px rgb(0 46 142);\n      padding: 20px;\n    }\n    .form-group {\n      margin-bottom: 15px;\n    }\n    .form-control {\n      border-radius: 4px;\n      box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset;\n      font-size: 14px;\n      padding: 6px 12px;\n      width: 100%;\n    }\n    .btn {\n      border-radius: 4px;\n      font-size: 14px;\n      font-weight: 600;\n      letter-spacing: 0.1em;\n      padding: 10px 16px;\n      text-transform: uppercase;\n    }\n    .btn-primary {\n      background-color: #007bff;\n      border-color: #007bff;\n      color: #fff;\n    }\n    .btn-primary:hover,\n    .btn-primary:focus {\n      background-color: #0069d9;\n      border-color: #0062cc;\n      color: #fff;\n    }\n  "
-    }}
-  />
+import React, { useState } from "react";
+import { toast } from "react-toastify";
+import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
-  <div className="container mt-5">
-    <div className="row">
-      <div className="col-md-4 offset-md-4">
+const Login = () => {
+  
+  const navigate = useNavigate();
+  const [user_name_email, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    // Make API request to authenticate user
+    axios
+      .post("http://localhost:3036/api/auth/login", { user_name_email, password })
+      .then((response) => {
+        console.log(response.data);
+        toast.success("Login Successfully!!!"); 
+        navigate("/");// Handle successful authentication
+      })
+      .catch((error) => {
+        console.error(error); // Handle authentication error
+        toast.error("Passwords do not match!");
+      });
+  };
+
+  return (
+    <>
+      <link
+        rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      />
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+            body {
+              background-color: #f5f5f5;
+            }
+            .form-container {
+              background-color: #f4f9ff;
+              border: 1px solid #ddd;
+              border-radius: 4px;
+              box-shadow: 0 2px 2px rgb(0 46 142);
+              padding: 20px;
+              margin: auto;
+              margin-top:45px;
+              width: 24%;
+              height:502px;
+            }
+            .form-group {
+              margin-bottom: 15px;
+            }
+            .form-control {
+              border-radius: 4px;
+              box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1) inset;
+              font-size: 14px;
+              padding: 6px 12px;
+              width: 100%;
+            }
+            .btn {
+              border-radius: 4px;
+              font-size: 14px;
+              font-weight: 600;
+              letter-spacing: 0.1em;
+              padding: 10px 16px;
+              text-transform: uppercase;
+            }
+            .btn-primary {
+              background-color: #007bff;
+              border-color: #007bff;
+              color: #fff;
+            }
+            .btn-primary:hover,
+            .btn-primary:focus {
+              background-color: #0069d9;
+              border-color: #0062cc;
+              color: #fff;
+            }
+          `,
+        }}
+      />
+  
+      <div className="">
         <div className="form-container">
           <h1 className="text-center mb-4">Staff Management</h1>
-          <form id="login-form">
+    
+          <form onSubmit={handleSubmit}>
             <div className="form-group">
             <br></br>
-              <label htmlFor="username">Username</label>
+
+              <label htmlFor="username">Username/Email</label>
               <input
                 type="text"
                 className="form-control"
-                id="username"
+        
+                id="user_name_email"
                 name="username"
+                value={user_name_email}
+                onChange={(e) => setUsername(e.target.value)}
               />
             </div>
             <br></br>
             <div className="form-group">
               <label htmlFor="password">Password</label>
               <input
-                type="password"
+            
                 className="form-control"
                 id="password"
                 name="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            <br></br>
+          
             <button type="submit" className="btn btn-primary btn-block">
               Log In
             </button>
           </form>
         </div>
       </div>
-    </div>
-  </div>
-  <script>$('#login-form').submit(function(event</script>
-  <style
-    dangerouslySetInnerHTML={{
-      __html:
-        "\n.modal-content {\n  background-color: #afdaffb5;\n  border: 1px solid #ddd;\n  border-radius: 4px;\n}\n\n.modal-header {\n  border-bottom: 1px solid #ddd;\n  background-color: #f5f5f5;\n}\n\n.modal-body {\n  padding: 20px;\n}\n\n.modal-footer {\n  border-top: 1px solid #ddd;\n  background-color: #f5f5f5;\n}\n"
-    }}
-  />
-</>
 
-    
-      );
-}
-export default Login;
+  
+      <style
+        dangerouslySetInnerHTML={{
+          __html: `
+            .container {
+              background-color: #d3d3d3;
+              height: 100%;
+            }
+          `,
+        }}
+      />
+    </>
+  );
+      }
+  export default Login;
+  
