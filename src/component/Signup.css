@@ -1,12 +1,12 @@
 form {
       display: flex;
       flex-direction: column;
-      align-items: center;
+    
     }
     
     label {
       margin-bottom: 0.5rem;
-      font-weight: bold;
+      font-weight:normal;
     }
     
     input {
@@ -36,10 +36,10 @@ form {
       margin-bottom: 1rem;
     }
     body {
-      background-color: #f5f5f5;
+      background-color: #ffffff;
     }
     .form-container {
-      background-color: #f4f9ff;
+      background-color: #ffffff;
       border: 1px solid #ddd;
       border-radius: 4px;
       box-shadow: 0 2px 2px rgb(0 46 142);
@@ -47,8 +47,8 @@ form {
       margin: auto;
       margin-top:45px;
       margin-bottom:45px;
-      width: 44%;
-      height:602px;
+      width: 45%;
+      height:500px;
     }
     .form-group {
       margin-bottom: 15px;
@@ -78,4 +78,8 @@ form {
       background-color: #0069d9;
       border-color: #0062cc;
       color: #fff;
+    }
+    .text{
+      font-size: small;
+      
     }
