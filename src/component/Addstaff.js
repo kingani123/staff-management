@@ -1,5 +1,5 @@
 
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "./Navbar";
 
 
@@ -8,6 +8,39 @@ import Sidebar from "./Sidebar";
 import "./Addforiegn.css";
 const Addstaff =()=>{
   
+  const [preview, setPreview] = useState(null);
+  const [showPreview, setShowPreview] = useState(false);
+
+  
+    function previewImage(event) {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+  
+      reader.onloadend = function () {
+        const img = new Image();
+        img.src = reader.result;
+        img.onload = function () {
+          const canvas = document.createElement("canvas");
+          const ctx = canvas.getContext("2d");
+          canvas.width = 80;
+          canvas.height = 70;
+          ctx.drawImage(img, 0, 0, 80, 70);
+          setPreview(canvas.toDataURL());
+          setShowPreview(true);
+        };
+      };
+  
+      if (file) {
+        reader.readAsDataURL(file);
+      } else {
+        setPreview(null);
+        setShowPreview(false);
+      }
+    }
+  
+    function togglePreview() {
+      setShowPreview((show) => !show);
+    }
     return (
       <div>
       <Navbar/>
@@ -44,10 +77,30 @@ const Addstaff =()=>{
                           <label className="form-label">Name</label><span className="text-danger">*</span>
                           <input type="text" onkeyup="titleCase(this.value,'name')" className="form-control" name="name" id="name" placeholder="Name" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}/>
                         </div>
-                        <div className="col-md-4">
+                        <div className="col-md-3">
                           <label className="form-label">Upload Image</label><span className="text-danger">*</span>
-                          <input   type="file"  className="form-control" id="profile_pic" name="profile_pic" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
-                       
+                          <input   type="file"  onChange={previewImage} className="form-control" id="profile_pic" name="profile_pic" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
+                         </div> <div className="col-md-1"><button
+                         className="btn-success"
+        id="preview-btn"
+        style={{ display: preview && !showPreview ? "block" : "none" }}
+        onClick={togglePreview}
+      >
+       <i class="fa-regular fa-eye"></i>
+      </button>
+      <button className="btn-success"
+        id="unpreview-btn"
+        style={{ display: preview && showPreview ? "block" : "none" }}
+        onClick={togglePreview}
+      >
+       <i class="fa-regular fa-eye-slash" />
+      </button>
+      <div
+        id="image-preview"
+        style={{ display: showPreview ? "block" : "none" }}
+      >
+        {preview && <img src={preview} />}
+      </div>
                         </div>
                         <div className="col-md-4">
                           <label className="form-label">Religion</label><span className="text-danger" />

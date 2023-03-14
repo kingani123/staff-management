@@ -24,11 +24,12 @@
   .nav-item img {
     margin-right: 10px;
     transition: all 0.2s ease-in-out;
+    
   }
   
-  /* .nav-item:hover img {
+   /* .nav-item:hover img {
     transform: rotate(90deg);
-  } */
+  } */ 
   
   .collapse {
     margin-left: 20px;
@@ -132,5 +133,6 @@
   /* margin-top: 1px; */
 }
 .body_left {
+  
   background: linear-gradient(180deg, #cce7ff 0%, #d8f9f9 100%);
 }

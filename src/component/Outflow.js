@@ -1,5 +1,4 @@
 import React from "react";
-
 import Navbar from "./Navbar";
 
 
@@ -8,31 +7,31 @@ import Footer from "./Footer";
 import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
 import CreateIcon from '@mui/icons-material/Create';
 import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-
-const Agewise = ()=>{
+const Outflow =()=>{
     return (
       <div>
       <Navbar/>
       <div className="wrapper">  
-      <Sidebar className="nav-link active"/>  
+      <Sidebar className="nav-link active"/> 
       <div className="body_right">
-        <div className="inside">
-          <div className="right_body_pagenation">
-            <p> List Unit Details</p>
-          </div>    
-          <div className="right_body_section">
+  <div className="inside">
+    <div className="right_body_pagenation">
+      <p>Outflow Report</p>
+    </div>           
+
+            <div className="right_body_section">
             {/*--content here--*/}
-            
             <div className="card mt-0">
             <div className="card-body">
-              <div className="heading"><h3>Staff List (Age Wise)</h3></div>
+              <div className="heading"><h3>Staff List(Outflow Report)</h3></div>
               <div className="report_search_panner">
                 <div className="left">
                   <select className="form-select" aria-label="Default select example">
                     <option selected>All</option>
                   </select>
-                  </div>
-                  <div className="right">
+                  
+                </div>
+                <div className="right">
                   <div className="search_area">
                     <div className="input-group">
                       <input className="form-control search" type="search" defaultValue="search" id="example-search-input" />
@@ -45,42 +44,38 @@ const Agewise = ()=>{
                   </div>         
                 </div>
               </div>
-                
               <div className="user_table_area">
                 <div className="table_header">
-                  <div style={{width: '10%'}}>Sl. No.</div>
-                  <div style={{width: '40%'}}>Age</div>
+                  <div style={{width: '20%'}}>Sl No.</div>
+                  <div style={{width: '50%'}}>Category</div>
                   <div style={{width: '50%'}}>Total</div>
                   <div style={{width: '50%'}}>Action</div>
-                  
-                  
-                </div>
-                <div className="table_body">
-                  <div style={{width: '10%'}}>
-                    <p className="mobile_heading">Sl. No.</p>
-                    <p className="sl_no">1</p>
                   </div>
-                  <div style={{width: '40%'}}>
-                    <p className="mobile_heading">Age</p>
-                    <p>36</p>
+                              
+              
+                  
+            
+                <div className="table_body">
+                  <div style={{width: '20%'}}>
+                    <p className="mobile_heading">Sl No.</p>
+                    <p className="sl_no">2</p>
                   </div>
                   <div style={{width: '50%'}}>
-                    <p className="mobile_heading">Total</p>
-                    <p>0</p>
+                    <p className="mobile_heading">Name</p>
+                    <p>T.koley</p>
+                  </div>
+                  <div style={{width: '50%'}}>
+                    <p className="mobile_heading">ID</p>
+                    <p>123467890</p>
                   </div>
                   <div style={{width: '50%'}}>
                     <p className="mobile_heading">Action</p>
                     <button className="btn btn-success"><i class="fa-regular fa-eye"></i></button>&nbsp;
         <button className="btn btn-primary"><i class="fa-regular fa-pen-to-square"></i></button>&nbsp;
         <button className="btn btn-danger"><i class="fa-regular fa-trash-can"></i></button>
-                  </div>   
-                                   
-                </div>
-              
-                 
-                 
-            
-                <br></br>  
+                  </div>
+                  </div> 
+                  <br></br>  
                 
                 <div className="row">
             <div className="col-sm-12 col-md-5">
@@ -100,25 +95,17 @@ const Agewise = ()=>{
               <input type="text" style={{height: '100%', width: '100%', border: 'none', fontSize: '17px', borderBottom: '2px solid silver'}} />
             </div>
             <div className="overlay nav-toggle-icon" />
-            <a href="javaScript:;" className="back-to-top"><i className="bx bxs-up-arrow-alt" /></a>  
-                </div>
-              </div>    
+            <a href="javaScript:;" className="back-to-top"><i className="bx bxs-up-arrow-alt" /></a>     
             </div>
-            
+            </div>
           </div>
         </div>
       </div>
-  
+  </div>
 
     </div>
-  
-</div>
-
-</div>
-
-
-
-
-      );
+  </div>
+  </div>
+  );
      }
-export default Agewise;
+  export default Outflow;

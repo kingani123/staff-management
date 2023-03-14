@@ -82,8 +82,8 @@ const Home  = ()=>{
             <div className="card-body">
                 <div className="d-flex align-items-center">
                     <div>
-                       <b> <p className="mb-1 text-white">Total.. </p></b>
-                       <center> <h4 className="my-1 text-white">1</h4></center>
+                       <b> <p className="mb-1 text-dark">Total Employee </p></b>
+                       <center> <h4 className="my-1 text-dark">1</h4></center>
                         
                     </div>
                     
@@ -96,8 +96,8 @@ const Home  = ()=>{
             <div className="card-body">
                 
                     <div>
-                    <b><p className="text-white">Direct Employee</p></b>
-                        <center><h4 className="my-1 text-white">0</h4></center>
+                    <b><p className="text-dark">Direct Employee</p></b>
+                        <center><h4 className="my-1 text-dark">0</h4></center>
                         
                     </div>
                    
@@ -111,7 +111,7 @@ const Home  = ()=>{
                 <div className="d-flex align-items-center">
                     <div>
                     <b><p className="mb-0 text-dark">Via Contractors</p></b>
-                        <center><h4 className="my-1 text-white">1</h4></center>
+                        <center><h4 className="my-1 text-dark">1</h4></center>
                         
                     </div>
                     
@@ -124,8 +124,8 @@ const Home  = ()=>{
             <div className="card-body">
                 <div className="d-flex align-items-center">
                     <div>
-                    <b><p className="mb-0 text-white">Daily Wagers</p></b>
-                        <center> <h4 class="my-1 text-white">0</h4></center>
+                    <b><p className="mb-0 text-dark">Daily Wagers</p></b>
+                        <center> <h4 class="my-1 text-dark">0</h4></center>
                        
                     </div>
                    
@@ -138,8 +138,8 @@ const Home  = ()=>{
             <div className="card-body">
                 <div className="d-flex align-items-center">
                     <div>
-                       <b> <p className="mb-0 text-white">Casuals</p></b>
-                        <center><h4 className="my-1 text-white">0</h4></center>
+                       <b> <p className="mb-0 text-dark">Casuals</p></b>
+                        <center><h4 className="my-1 text-dark">0</h4></center>
                        
                     </div>
                     
