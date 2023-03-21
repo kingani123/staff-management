@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate,Link } from "react-router-dom";
 const Navbar =()=>{
     return (
 <>
@@ -9,14 +10,15 @@ const Navbar =()=>{
         <div className="left">
           <div className="logo">
             <a href="#">
-              <img src="images/ani.svg" alt="" />
+            <Link style={{ float: 'left' }} to={'/'}>     <img src="images/ani.svg" alt="" /></Link>
+          
             </a>
           </div>
         </div>
         <div className="right">
           <div className="header_notification">
             <i className="fa-regular fa-bell" />
-            <span className="notification_number">01</span>
+            <span className="notification_number">05</span>
           </div>
           <div className="header_profile_img">
             <div className="header_profile_img_box">
@@ -24,16 +26,23 @@ const Navbar =()=>{
             </div>
               <div className="profile_drop">
               <ul>
-                <li>
-                  <a href="#">
-                    <i className="fas fa-user-alt" /> Profile
-                  </a>
-                </li>
-                <li>
-                  <a href="#">
-                    <i className="fas fa-power-off" /> Logout
-                  </a>
-                </li>
+              <li>
+  <Link style={{ float: 'left' }} to={'/loginhh'}> 
+  
+      <i className="fas fa-power-off" style={{ marginRight: '10px' }} />
+      Profile
+    
+  </Link>
+</li>
+<br></br>
+<li>
+  <Link style={{ float: 'left' }} to={'/login'}> 
+  
+      <i className="fas fa-power-off" style={{ marginRight: '10px' }} />
+      Logout
+
+  </Link>
+</li>
               </ul>
             </div>
           </div>

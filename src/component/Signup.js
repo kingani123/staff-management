@@ -1,13 +1,13 @@
-import React, { useState, useRef } from "react";
+import React, { useState, useRef} from "react";
 import axios from "axios";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { useNavigate,Link } from "react-router-dom";
 import './Signup.css';
 
 
 const Signup = () => {
   const [formData, setFormData] = useState({
-    role_id: 3,
+    role_id: 2,
     organizationType_id: "",
     Organization_name: "",
     email: "",
@@ -44,7 +44,7 @@ const Signup = () => {
     event.preventDefault();
 
     if (passwordRef.current.value !== confirmPasswordRef.current.value) {
-      toast.error("Passwords do not match!");
+      toast.error("Password and Confrim Password does not  match!");
       return;
     }
 
@@ -67,28 +67,14 @@ const Signup = () => {
     
     <div>
           <div className="form-container">
-          <h3 className="text-center mb-4">Staff Management User Registration</h3>
+          <h3 className="text-center mb-4">Organization Registration</h3>
+          <br></br>
           <br></br>
       <form onSubmit={handleSubmit}>
       
       <div className="row">
-          <div className="col-md-6">
-            <label htmlFor="organizationType_id" className="text">Organization Type </label>
-                 
-          <input
-            type="text"
-             
-            id="organizationType_id"
-            name="organizationType_id"
-            placeholder="Organization Type "
-            value={organizationType_id}
-            onChange={handleInputChange}
-            style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver', backgroundColor: 'transparent'}}
-               
-            required
-          />
- </div><div className="col-md-6"> 
-          <label htmlFor="Organization_name" className="text">Organization Name</label> 
+      <div className="col-md-6"> 
+          <label htmlFor="Organization_name" className="text">Organization Name :- <span style={{color: 'red'}}>*</span></label> 
           <input
             type="text"
             id="Organization_name"
@@ -100,10 +86,9 @@ const Signup = () => {
               
             required
           />
-        </div></div>
-        <div className="row">
-          <div className="col-md-6">
-          <label htmlFor="email" className="text">E-mail</label>
+        </div>
+        <div className="col-md-6">
+          <label htmlFor="email" className="text">E-mail <span style={{color: 'red'}}>*</span></label>
           <input
             type="email"
             id="email"
@@ -116,9 +101,30 @@ const Signup = () => {
             required
           />
         </div>
+
+        </div><br></br>
+        <div className="row">
+      <div className="col-md-6">
+            <label htmlFor="organizationType_id" className="text">Organization Type </label>
+                 
+            <select
+    id="organizationType_id"
+    name="organizationType_id"
+    value={organizationType_id}
+    onChange={handleInputChange}
+    style={{ height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver', backgroundColor: 'transparent' }}
+    required
+  >
+    <option value="">-- Select Organization Type --</option>
+    <option value="1">Industry</option>
+    <option value="2">Service</option>
+    <option value="3">Commercial</option>
+    <option value="4">Others</option>
+  </select>
+ </div>
         <div className="col-md-6">
           <label htmlFor="partner_proprietor_director_name" className="text">
-            Partner/Proprietor/Director Name
+            Partner/Proprietor/Director Name  <span style={{color: 'red'}}>*</span>
           </label>
           <input
             type="text"
@@ -131,10 +137,10 @@ const Signup = () => {
             
             required
           />
-        </div></div>
+        </div></div><br></br>
         <div className="row">
           <div className="col-md-6">
-          <label htmlFor="usernam" className="text">User Name</label>
+          <label htmlFor="usernam" className="text">Username <span style={{color: 'red'}}>*</span></label>
           <input
             type="text"
             id="usernam"
@@ -148,7 +154,7 @@ const Signup = () => {
           />
         </div>
         <div className="col-md-6">
-          <label htmlFor="mobile_no" className="text">Mobile Number</label>
+          <label htmlFor="mobile_no" className="text">Mobile No: <span style={{color: 'red'}}>*</span></label>
           <input
             type="text"
             id="mobile_no"
@@ -161,9 +167,10 @@ const Signup = () => {
             required
           />
         </div></div>
+        <br></br>
         <div className="row">
         <div className="col-md-6">
-          <label htmlFor="password" className="text">Password</label>
+          <label htmlFor="password" className="text">Password <span style={{color: 'red'}}>*</span></label>
           <input
             type="password"
             id="password"
@@ -178,7 +185,7 @@ const Signup = () => {
           />
         </div>
         <div className="col-md-6">
-          <label htmlFor="confirm_password" className="text">Confirm Password</label>
+          <label htmlFor="confirm_password" className="text">Confirm Password  <span style={{color: 'red'}}>*</span></label>
           <input
             type="password"
             id="confirm_password"
@@ -191,9 +198,13 @@ const Signup = () => {
             
             required
           />
-        </div></div>
+        </div>
+        
+        </div>
         <div text-align="center">
-        <button type="submit">Register</button>
+          <br></br>
+        <button type="submit"  className="btn btn-primary ">Register</button> |
+        <Link  style={{ padding: "0.5rem",height:"38px" }} className="btn btn-info" to={'/login'}>Login Account</Link>
       </div>
       </form>
     </div>
@@ -203,4 +214,162 @@ const Signup = () => {
 export default Signup;
 
         
-  
+
+
+
+
+// import { useState } from "react";
+// import { Link, useNavigate } from "react-router-dom";
+// import { toast } from "react-toastify";
+
+// const Register = () => {
+
+//     const [id, idchange] = useState("");
+//     const [name, namechange] = useState("");
+//     const [password, passwordchange] = useState("");
+//     const [email, emailchange] = useState("");
+//     const [phone, phonechange] = useState("");
+//     const [country, countrychange] = useState("india");
+//     const [address, addresschange] = useState("");
+//     const [gender, genderchange] = useState("female");
+
+//     const navigate = useNavigate();
+
+//     const IsValidate = () => {
+//         let isproceed = true;
+//         let errormessage = 'Please enter the value in ';
+//         if (id === null || id === '') {
+//             isproceed = false;
+//             errormessage += ' Username';
+//         }
+//         if (name === null || name === '') {
+//             isproceed = false;
+//             errormessage += ' Fullname';
+//         }
+//         if (password === null || password === '') {
+//             isproceed = false;
+//             errormessage += ' Password';
+//         }
+//         if (email === null || email === '') {
+//             isproceed = false;
+//             errormessage += ' Email';
+//         }
+
+//         if(!isproceed){
+//             toast.warning(errormessage)
+//         }else{
+//             if(/^[a-zA-Z0-9]+@[a-zA-Z0-9]+\.[A-Za-z]+$/.test(email)){
+
+//             }else{
+//                 isproceed = false;
+//                 toast.warning('Please enter the valid email')
+//             }
+//         }
+//         return isproceed;
+//     }
+
+
+//     const handlesubmit = (e) => {
+//             e.preventDefault();
+//             let regobj = { id, name, password, email, phone, country, address, gender };
+//             if (IsValidate()) {
+//             //console.log(regobj);
+//             fetch("http://localhost:8000/user", {
+//                 method: "POST",
+//                 headers: { 'content-type': 'application/json' },
+//                 body: JSON.stringify(regobj)
+//             }).then((res) => {
+//                 toast.success('Registered successfully.')
+//                 navigate('/login');
+//             }).catch((err) => {
+//                 toast.error('Failed :' + err.message);
+//             });
+//         }
+//     }
+//     return (
+//         <div>
+//             <div className="offset-lg-3 col-lg-6">
+//                 <form className="container" onSubmit={handlesubmit}>
+//                     <div className="card">
+//                         <div className="card-header">
+//                             <h1>User Registeration</h1>
+//                         </div>
+//                         <div className="card-body">
+
+//                             <div className="row">
+//                                 <div className="col-lg-6">
+//                                     <div className="form-group">
+//                                         <label>User Name <span className="errmsg">*</span></label>
+//                                         <input value={id} onChange={e => idchange(e.target.value)} className="form-control"></input>
+//                                     </div>
+//                                 </div>
+//                                 <div className="col-lg-6">
+//                                     <div className="form-group">
+//                                         <label>Password <span className="errmsg">*</span></label>
+//                                         <input value={password} onChange={e => passwordchange(e.target.value)} type="password" className="form-control"></input>
+//                                     </div>
+//                                 </div>
+//                                 <div className="col-lg-6">
+//                                     <div className="form-group">
+//                                         <label>Full Name <span className="errmsg">*</span></label>
+//                                         <input value={name} onChange={e => namechange(e.target.value)} className="form-control"></input>
+//                                     </div>
+//                                 </div>
+//                                 <div className="col-lg-6">
+//                                     <div className="form-group">
+//                                         <label>Email <span className="errmsg">*</span></label>
+//                                         <input value={email} onChange={e => emailchange(e.target.value)} className="form-control"></input>
+//                                     </div>
+//                                 </div>
+//                                 <div className="col-lg-6">
+//                                     <div className="form-group">
+//                                         <label>Phone <span className="errmsg"></span></label>
+//                                         <input value={phone} onChange={e => phonechange(e.target.value)} className="form-control"></input>
+//                                     </div>
+//                                 </div>
+//                                 <div className="col-lg-6">
+//                                     <div className="form-group">
+//                                         <label>Country <span className="errmsg">*</span></label>
+//                                         <select value={country} onChange={e => countrychange(e.target.value)} className="form-control">
+//                                             <option value="india">India</option>
+//                                             <option value="usa">USA</option>
+//                                             <option value="singapore">Singapore</option>
+//                                         </select>
+//                                     </div>
+//                                 </div>
+//                                 <div className="col-lg-12">
+//                                     <div className="form-group">
+//                                         <label>Address</label>
+//                                         <textarea value={address} onChange={e => addresschange(e.target.value)} className="form-control"></textarea>
+//                                     </div>
+//                                 </div>
+//                                 <div className="col-lg-6">
+//                                     <div className="form-group">
+//                                         <label>Gender</label>
+//                                         <br></br>
+//                                         <input type="radio" checked={gender === 'male'} onChange={e => genderchange(e.target.value)} name="gender" value="male" className="app-check"></input>
+//                                         <label>Male</label>
+//                                         <input type="radio" checked={gender === 'female'} onChange={e => genderchange(e.target.value)} name="gender" value="female" className="app-check"></input>
+//                                         <label>Female</label>
+//                                     </div>
+//                                 </div>
+
+//                             </div>
+
+//                         </div>
+//                         <div className="card-footer">
+//                             <button type="submit" className="btn btn-primary">Register</button> |
+//                             <Link to={'/login'} className="btn btn-danger">Close</Link>
+//                         </div>
+//                     </div>
+//                 </form>
+//             </div>
+
+
+//         </div>
+//     );
+// }
+
+
+
+

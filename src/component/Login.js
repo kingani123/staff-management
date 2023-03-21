@@ -1,30 +1,62 @@
-import React, { useState } from "react";
+import React, { useState,useEffect} from "react";
 import { toast } from "react-toastify";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-
+import { FaEye, FaEyeSlash } from 'react-icons/fa';
 const Login = () => {
-  
   const navigate = useNavigate();
   const [user_name_email, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    // Make API request to authenticate user
-    axios
-      .post("http://localhost:3036/api/auth/login", { user_name_email, password })
-      .then((response) => {
-        console.log(response.data);
-        toast.success("Login Successfully!!!"); 
-        navigate("/");// Handle successful authentication
-      })
-      .catch((error) => {
-        console.error(error); // Handle authentication error
-        toast.error("Passwords do not match!");
-      });
+  const togglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
   };
+  useEffect(()=>{
+    sessionStorage.clear();
+        },[]);
+  const validate = () => {
+    let result = true;
+    const username = user_name_email;
+    const passwordValue = password;
+
+    if (username === "" || username === null) {
+      result = false;
+      toast.warning("Please Enter Username");
+    }
+    if (passwordValue === "" || passwordValue === null) {
+      result = false;
+      toast.warning("Please Enter Password");
+    }
+    return result;
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const isValid = validate();
+    if (isValid) {
+      try {
+        // Make API request to authenticate user
+        const response = await axios.post("http://localhost:3036/api/auth/login", { user_name_email, password });
+        const { playLoad } = response.data;
+         //console.log("API response:", playLoad);
+        if (playLoad && playLoad.status) {
+           sessionStorage.setItem('user_name_email',user_name_email);
+           toast.success("Login Successfully!!!");
+          //console.log("animeah:", sessionStorage);
+                      //  sessionStorage.setItem('userrole',resp.role);
+          navigate("/");
+        } else {
+          toast.error("Invalid login credentials.");
+        }
+      } catch (error) {
+        console.error(error); // Handle authentication error
+        toast.error("Authentication failed!");
+      }
+    }
+  };
+  
+  
 
   return (
     <>
@@ -84,13 +116,13 @@ const Login = () => {
   
       <div className="">
         <div className="form-container">
-          <h1 className="text-center mb-4">Staff Management</h1>
+          <h1 className="text-center mb-4">Staff Management </h1>
     
           <form onSubmit={handleSubmit}>
             <div className="form-group">
             <br></br>
 
-              <label htmlFor="username">Username/Email</label>
+              <label htmlFor="username">Username/Email <span style={{color: 'red'}}>*</span></label>
               <input
                 type="text"
                 className="form-control"
@@ -103,20 +135,37 @@ const Login = () => {
             </div>
             <br></br>
             <div className="form-group">
-              <label htmlFor="password">Password</label>
-              <input
-            
-                className="form-control"
-                id="password"
-                name="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </div>
+  <label htmlFor="password">Password <span style={{color: 'red'}}>*</span></label>
+  <div className="input-group">
+    <input
+      type={showPassword ? 'text' : 'password'}
+      className="form-control"
+      id="password"
+      name="password"
+      value={password}
+      onChange={(e) => setPassword(e.target.value)}
+    />
+    <div className="input-group-append">
+    <button
+  className="btn btn-secondary"
+  type="button"
+  onClick={togglePasswordVisibility}
+  style={{ padding: "0.25rem",height:"35px" }}
+>
+  {showPassword ? <i className="fa fa-eye-slash" style={{ fontSize: "0.75rem" }}></i> : <i className="fa fa-eye" style={{ fontSize: "0.75rem" }}></i>}
+</button>
+
+    </div>
+  </div>
+</div>
+
           
-            <button type="submit" className="btn btn-primary btn-block">
+            <button type="submit" className="btn btn-primary btn-block"  style={{ padding: "0.25rem",height:"35px" }} >
+              
               Log In
             </button>
+            <br></br>
+            <Link style={{ padding: "0.5rem",height:"33px" }} className="btn btn-info" to={'/signup'}>Register as an Organization</Link>
           </form>
         </div>
       </div>
@@ -136,4 +185,7 @@ const Login = () => {
   );
       }
   export default Login;
+  
+
+
   

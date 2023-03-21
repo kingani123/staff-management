@@ -1,5 +1,8 @@
 import React  from "react";
+import { useState, useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Home.css";
+
 import {
   ResponsiveContainer,
   LineChart,
@@ -12,6 +15,7 @@ import {
   Legend,PieChart, Pie, Sector, Cell
  
 } from 'recharts';
+
 
 const data = [
   {
@@ -66,7 +70,21 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
   );
 };
 
+
+
+
+
 const Home  = ()=>{
+  const usenavigate = useNavigate();
+
+  useEffect(() => {
+    
+          let username = sessionStorage.getItem('user_name_email');
+          if (username === '' || username === null) {
+              usenavigate('/login');
+          }
+      });
+
     return (
 
      <div className="body_right">

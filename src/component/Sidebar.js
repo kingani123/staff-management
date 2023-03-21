@@ -143,7 +143,7 @@ function Sidebar(props) {
   
     <li className="nav-item">
                 <a href="#" className={props.className} onClick={toggleReportMenu}>
-                  <img src="images/owner-list.svg" alt="" /> <b>STAFF-STRENGTH REPORT </b>&nbsp;&nbsp;
+                  <img src="images/owner-list.svg" alt="" /> <b>STAFF REPORT </b>&nbsp;&nbsp;
                     <i className="fa-solid fa-chevron-down" />
                   </a>
               </li>
