@@ -43,6 +43,7 @@ const Addcontract =()=>{
                             <h5 className="display-7 mt-2">Address Details</h5>
                             <div className="my-3 border-top" />
                           </div>
+                          <div className="row">
                           <div className="col-md-3">
                             <label htmlFor="validationDefault04" className="form-label">Country</label><span className="text-danger">*</span>
                             <select id="country" name="country" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}><option value disabled selected>Select Country</option>
@@ -63,6 +64,9 @@ const Addcontract =()=>{
                             <select className="select" id="ps_id" name="ps" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}><option value disabled selected>Select PS</option>
                             </select>
                           </div>
+                          </div>
+                          <div className="row">
+                          
                           <div className="col-md-3">
                             <label className="form-label">Address</label><span className="text-danger">*</span>
                               <input type="text" placeholder="Address" id="address"name="address"  style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
@@ -83,6 +87,7 @@ const Addcontract =()=>{
                           <div className="col-12">
                             <div id="appdiv">
                             </div>
+                          </div>
                           </div>
                           <div className="col-12">
                             <button type="submit" className="btn btn-success px-5"> Submit</button>                           

@@ -56,7 +56,7 @@ const Release = ()=>{
                   <div style={{width: '8%'}}>Landline</div>
                   <div style={{width: '8%'}}>Status</div>
                   <div style={{width: '10%'}}>Release Reason</div>
-                  <div style={{width: '8%'}}>Action</div>
+                  <div style={{width: '15%'}}>Action</div>
                   
                 </div>
                 <div className="table_body">
@@ -64,27 +64,27 @@ const Release = ()=>{
                     <p className="mobile_heading">Sl No.</p>
                     <p className="sl_no"></p>
                   </div>
-                  <div style={{width: '15%'}}>
+                  <div style={{width:'15%'}}>
                     <p className="mobile_heading">Name</p>
                     <p></p>
                   </div>
-                  <div style={{width: '15%'}}>
+                  <div style={{width:'15%'}}>
                     <p className="mobile_heading"></p>
                     <p></p>
                   </div>
-                  <div style={{width: '15%'}}>
+                  <div style={{width:'15%'}}>
                     <p className="mobile_heading"></p>
                     <p></p>
                   </div>
-                  <div style={{width: '15%'}}>
+                  <div style={{width:'15%'}}>
                     <p className="mobile_heading"></p>
                     <p></p>
                   </div>
-                  <div style={{width: '15%'}}>
+                  <div style={{width:'15%'}}>
                     <p className="mobile_heading"></p>
                     <p></p>
                   </div>
-                  <div style={{width: '15%'}}>
+                  <div >
                    
                     <p className="mobile_heading">Action</p>
                     <button className="btn btn-success"><i class="fa-regular fa-eye"></i></button>&nbsp;

@@ -26,7 +26,7 @@ import Foreigners from "./component/Foreigners";
 import Inflow from "./component/Inflow";
 import Outflow from "./component/Outflow";
 import Signup from './component/Signup';
-
+import Profile from './component/Profile';
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
@@ -44,6 +44,7 @@ function App() {
   
       <Route path="/" element={<Home />}/>
       <Route path="/Signup" element={<Signup />}/>
+      <Route path="/Profile" element={<Profile />}/>
       <Route path="/Login" element={<Login />}/>
       <Route path="/Rolewise" element={<Rolewise/>}/>
       <Route path="/Categorywise" element={<Categorywise/>}/>
