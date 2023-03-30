@@ -2,3 +2,14 @@
       margin-left: 0px;  
       border-left: 0px ; 
 }
+.container .text{
+      text-align: center;
+     
+      font-weight: 600;
+      background: -webkit-linear-gradient(right, #020511, #4101ea, #1a34e8, #024c81);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    textarea {
+      height: 50px t;
+  }

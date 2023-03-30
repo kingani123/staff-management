@@ -39,7 +39,10 @@ const Signup = () => {
       [event.target.name]: event.target.value,
     });
   };
-
+  const [usernameError, setUsernameError] = useState("");
+  const [mobileError, setMobileError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -48,20 +51,49 @@ const Signup = () => {
       return;
     }
 
+
     try {
       const response = await axios.post(
         "http://localhost:3036/api/organization/create",
         formData
       );
-      console.log(response.data);
-      toast.success("Account Created Successfully!!!");
-          navigate("/login");
-      // redirect to login page
+      //console.log(response.data);
+      if (response.data.errorCode === 0) {
+        toast.success("Account Created Successfully!!!");
+        navigate("/login");
+      } else {
+        let errorMessage = response.data.message;
+        if (errorMessage.includes("user name is already register")) {
+          setUsernameError("Username already taken.");
+          toast.error("Username already taken.");
+        }
+        
+    if (errorMessage.includes("mobile number is already register")) {
+          setMobileError("Mobile number already registered.");
+          toast.error("Mobile number already registered.");
+        }
+        if (errorMessage.includes("mail is already regiter")) {
+          setEmailError("Email already registered.");
+          toast.error("Email already registered.");
+        }
+        if (errorMessage.includes("password and confrim  not match")) {
+          setPasswordError("Passwords do not match.");
+          toast.error("Passwords do not match.");
+        }
+        // handle other error cases if necessary
+      }
     } catch (error) {
       console.error(error);
       toast.error("An error occurred while creating the account.");
     }
-  };
+  }
+  // render function
+
+
+
+
+
+
 
   return (
     
@@ -204,7 +236,7 @@ const Signup = () => {
         <div text-align="center">
           <br></br>
         <button type="submit"  className="btn btn-primary ">Register</button> |
-        <Link  style={{ padding: "0.5rem",height:"38px" }} className="btn btn-info" to={'/login'}>Login Account</Link>
+        <Link  style={{ padding: "0.5rem",height:"38px" }} className="btn btn-info" to={'/login'}>Login</Link>
       </div>
       </form>
     </div>

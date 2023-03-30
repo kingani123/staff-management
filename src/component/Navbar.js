@@ -27,7 +27,7 @@ const Navbar =()=>{
               <div className="profile_drop">
               <ul>
               <li>
-  <Link style={{ float: 'left' }} to={'/loginhh'}> 
+  <Link style={{ float: 'left' }} to={'/profile'}> 
   
       <i className="fas fa-power-off" style={{ marginRight: '10px' }} />
       Profile

@@ -29,6 +29,10 @@ import Signup from './component/Signup';
 
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Profile from "./component/Profile";
+import Admin from "./component/Admin";
+import AdminLayout2 from "./component/Admin2.Layout";
+import ApproveOrganizationPage from "./component/Approve";
 
 
 function App() {
@@ -43,6 +47,11 @@ function App() {
       <Route path="/" element={<AdminLayout />}/>
   
       <Route path="/" element={<Home />}/>
+  
+      <Route path="/Admin" element={<AdminLayout2 />}/>
+  <Route path="/" element={<Admin />} />
+
+
       <Route path="/Signup" element={<Signup />}/>
       <Route path="/Login" element={<Login />}/>
       <Route path="/Rolewise" element={<Rolewise/>}/>
@@ -56,6 +65,7 @@ function App() {
       <Route path="/Contractlist" element={<Contractlist />}/>
       <Route path="/Addunit" element={<Addunit/>}/>
       <Route path="/Listunit" element={<Listunit/>}/>
+      <Route path="/Profile" element={<Profile/>}/>
 
       <Route path="/Qualificationwise" element={<Qualificationwise />}/>
       <Route path="/Agewise" element={<Agewise />}/>
@@ -69,6 +79,7 @@ function App() {
       <Route path="/Outsidestate" element={<Outsidestate />}/>
       <Route path="/Foreigners" element={<Foreigners />}/>
       <Route path="/Inflow" element={<Inflow />}/>
+      <Route path="/Approve" element={<ApproveOrganizationPage />}/>
       <Route path="/Outflow" element={<Outflow />}/>
     </Routes>
   </BrowserRouter>

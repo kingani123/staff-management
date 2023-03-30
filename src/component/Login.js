@@ -15,6 +15,8 @@ const Login = () => {
   useEffect(()=>{
     sessionStorage.clear();
         },[]);
+
+        
   const validate = () => {
     let result = true;
     const username = user_name_email;
@@ -40,18 +42,34 @@ const Login = () => {
         const response = await axios.post("http://localhost:3036/api/auth/login", { user_name_email, password });
         const { playLoad } = response.data;
          //console.log("API response:", playLoad);
-        if (playLoad && playLoad.status) {
-           sessionStorage.setItem('user_name_email',user_name_email);
-           toast.success("Login Successfully!!!");
-          //console.log("animeah:", sessionStorage);
-                      //  sessionStorage.setItem('userrole',resp.role);
-          navigate("/");
+
+         if(response.data.errorCode === 1){
+          let errorMessage = response.data.message;
+          if (errorMessage.includes("your request in procees.................")) {
+          
+            toast.error("Your Account is Under Verification");
+          }
+        
+         }else{
+         
+         if (playLoad && playLoad.status) {
+          const user_type = playLoad.user_tye; // Define the user_type variable
+          if (user_type === "Organization") {
+            navigate("/");
+            toast.success("Login Successfully!!!");
+            sessionStorage.setItem('user_name_email', user_name_email);
+          } else if (user_type === "Admin") {
+            navigate("/Admin");
+            toast.success("Login Successfully!!!");
+            sessionStorage.setItem('user_name_email', user_name_email);
+          }
         } else {
           toast.error("Invalid login credentials.");
         }
-      } catch (error) {
-        console.error(error); // Handle authentication error
-        toast.error("Authentication failed!");
+      }
+    } catch (error) {
+        console.error(error);
+        toast.error("An error occurred while trying to log in.");
       }
     }
   };
