@@ -828,40 +828,43 @@ special_skill,
                       
                       
                      
-                        {/* <div className="col-md-6 mt-2">
+                         <div className="col-md-6 mt-2">
                           <label htmlFor="emp_type" className="text">Type of Employment</label><span className="text-danger">*</span>
                           <select  
-                          name="emp_type" 
-                          id="emp_type" 
-                          value={emp_type}
-                          onchange={handleInputChange}    
-                          style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
-                          required>
-                               {/* <option value="" disabled="" selected="">Select Type of Employment</option>
-                                                        <option value="direct">Direct</option>
-                                                        <option value="contractual">Contractual</option> 
-                                                </select>
+  name="emp_type" 
+  id="emp_type" 
+  value={emp_type}
+  onChange={handleInputChange}    
+  style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
+  required
+>
+  <option value="" disabled="" selected="">Select Type of Employment</option>
+  <option value="direct">Direct</option>
+  <option value="contractual">Contractual</option> 
+</select>
+
                         
-                        </div> */}
-                        {/* <div className="col-md-6 mt-2">
-                          <label htmlFor="job_category" className="text">Type of Job</label><span className="text-danger">*</span>
-                          <select
-                           name="job_category" 
-                           id="job_category" 
-                           value={job_category}
-                           onchange={handleInputChange}  
-                           style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
-                           required >
-                          
-                                                    <option value="" disabled="" selected="">Type of Job</option>
-                                                                                                                                                                    <option value="5" class="jobopt jobopt5">Daily Labourer</option>
-                                                                                                                <option value="4" class="jobopt jobopt4">Casual</option>
-                                                                                                                <option value="3" class="jobopt jobopt3">Operational</option>
-                                                                                                                <option value="2" class="jobopt jobopt2">Managerial</option>
-                                                                                                                <option value="1" class="jobopt jobopt1">Executive</option>
-                                                                                                                                                            </select>
+                        </div> 
+                         <div className="col-md-6 mt-2">
+                         <label htmlFor="job_category" className="text">Type of Job</label><span className="text-danger">*</span>
+            <select
+                name="job_category" 
+                id="job_category" 
+                value={job_category}
+                onChange={handleInputChange}  
+                style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
+                required
+            >
+                <option value="">Select job category</option>
+                <option value="5" className="jobopt jobopt5">Daily Labourer</option>
+                <option value="4" className="jobopt jobopt4">Casual</option>
+                <option value="3" className="jobopt jobopt3">Operational</option>
+                <option value="2" className="jobopt jobopt2">Managerial</option>
+                <option value="1" className="jobopt jobopt1">Executive</option>
+            </select>
+
                       
-                        </div> */}
+                        </div> 
                         <div className="col-md-12" id="job_role_id">
                         </div>
 
@@ -878,36 +881,44 @@ special_skill,
                           required/>
                         </div>
                         <div className="col-md-6 mt-2">
-                          <label  htmlFor="special_skill" className="text" >Special Skill</label>
-                          <select 
-                           name="special_skill" 
-                           id="special_skill" 
-                           value={special_skill}
-                           onchange={handleInputChange}  
-                           style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}>
-                                                               <option value="" disabled="" selected="">Select Skill</option>
-                                                                                                                                                                    <option value="Other" class="">Other</option>
-                                                                                                                <option value="Salon &amp; Spa" class="">Salon &amp; Spa</option>
-                                                                                                                <option value="Pest Control" class="">Pest Control</option>
-                                                                                                                <option value="Lift Servicing" class="">Lift Servicing</option>
-                                                                                                                <option value="Gardening" class="">Gardening</option>
-                                                                                                                <option value="Iron Grill Fixing" class="">Iron Grill Fixing</option>
-                                                                                                                <option value="A/C &amp; Refrigerator Service &amp; Repair" class="">A/C &amp; Refrigerator Service &amp; Repair</option>
-                                                                                                                <option value="Pet Care" class="">Pet Care</option>
-                                                                                                                <option value="Child Care" class="">Child Care</option>
-                                                                                                                <option value="Car Cleaning" class="">Car Cleaning</option>
-                                                                                                                <option value="Cooking" class="">Cooking</option>
-                                                                                                                <option value="Cleaning (Sweeping / Dusting)" class="">Cleaning (Sweeping / Dusting)</option>
-                                                                                                                <option value="Laundry" class="">Laundry</option>
-                                                                                                                <option value="Beautician" class="">Beautician</option>
-                                                                                                                <option value="Computer Repairing and Maintenance" class="">Computer Repairing and Maintenance</option>
-                                                                                                                <option value="Mason" class="">Mason</option>
-                                                                                                                <option value="Plumbing" class="">Plumbing</option>
-                                                                                                                <option value="Carpeting" class="">Carpeting</option>
-                                                                                                                <option value="Electrician" class="">Electrician</option>
-                                                                                                                <option value="Painting" class="">Painting</option>
-                                                                                                                <option value="Driving" class="">Driving</option>
-                                                                                                                                                            </select>
+                        <label htmlFor="special_skill" className="text">Special Skill</label>
+<select
+  name="special_skill"
+  id="special_skill"
+  value={special_skill}
+  style={{
+    height: '50%',
+    width: '100%',
+    border: 'none',
+    fontSize: '12px',
+    borderBottom: '2px solid silver',
+    backgroundColor: 'transparent'
+  }}
+  required
+>
+  <option value="">Select Skill</option>
+  <option value="Other">Other</option>
+  <option value="Salon &amp; Spa">Salon &amp; Spa</option>
+  <option value="Pest Control">Pest Control</option>
+  <option value="Lift Servicing">Lift Servicing</option>
+  <option value="Gardening">Gardening</option>
+  <option value="Iron Grill Fixing">Iron Grill Fixing</option>
+  <option value="A/C &amp; Refrigerator Service &amp; Repair">A/C &amp; Refrigerator Service &amp; Repair</option>
+  <option value="Pet Care">Pet Care</option>
+  <option value="Child Care">Child Care</option>
+  <option value="Car Cleaning">Car Cleaning</option>
+  <option value="Cooking">Cooking</option>
+  <option value="Cleaning (Sweeping / Dusting)">Cleaning (Sweeping / Dusting)</option>
+  <option value="Laundry">Laundry</option>
+  <option value="Beautician">Beautician</option>
+  <option value="Computer Repairing and Maintenance">Computer Repairing and Maintenance</option>
+  <option value="Mason">Mason</option>
+  <option value="Plumbing">Plumbing</option>
+  <option value="Carpeting">Carpeting</option>
+  <option value="Electrician">Electrician</option>
+  <option value="Painting">Painting</option>
+  <option value="Driving">Driving</option>
+</select>
                                                                        
                         </div>
                         <div className="col-md-6 mt-2">
