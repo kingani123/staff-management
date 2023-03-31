@@ -12,7 +12,10 @@ import { toast } from "react-toastify";
 //import { useNavigate } from "react-router-dom";
 
 const Addstaff =()=>{
-
+  
+    //const [gender, setGender] = useState('');
+  
+  
   const [formData, setFormData] = useState({
     role_id: 2,
     organizationtype_id: 1,
@@ -22,8 +25,7 @@ const Addstaff =()=>{
     religion:"",
     father_name:"",
     mother_name:"",
-    male:"",
-    female:"",
+    gen:"",
     dob:"",
     age:"",
     bloodgroup:"",
@@ -62,7 +64,9 @@ const Addstaff =()=>{
     job_category:"",
     join_date:"",
     special_skill:"",
-
+    kind_job:"",
+    engaged_for:"",
+    job_sub_category:"",
 
 
   });
@@ -75,8 +79,7 @@ const Addstaff =()=>{
  religion,
  father_name,
  mother_name,
- male,
- female,
+ gen,
  dob,
  age,
  bloodgroup,
@@ -115,7 +118,9 @@ const Addstaff =()=>{
 job_category,
 join_date,
 special_skill,
-
+kind_job,
+engaged_for,
+job_sub_category,
   } = formData;
   const handleInputChange = (event) => {
     setFormData({
@@ -123,9 +128,14 @@ special_skill,
       [event.target.name]: event.target.value,
     });
   };
+  // function handleGenderChange(event) {
+  //   setGender(event.target.value);
+  // }
   const handleSubmit = async (event) => {
     event.preventDefault();
 
+    //console.log(`Selected gender: ${gender}`);
+   
 
     try {
       const response = await axios.post(
@@ -285,41 +295,20 @@ special_skill,
                           placeholder="Mothers Name"  
                           style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}} />
                         </div>
-                        <div className="col-md-4 mt-2">
-                          <label  htmlFor="gender"className="text" >Gender</label><span className="text-danger">*</span>
-                          <br/>
-                          <input 
-                          className="form-check-input"
-                          type="radio"
-                          name="gender" 
-                          id="male" 
-                          defaultValue={male}
-                          />
-                          <label  htmlFor="male">&nbsp;Male</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <input 
-                          className="form-check-input" 
-                          type="radio" 
-                          name="gender" 
-                          defaultValue={female}  />
-                          <label  htmlFor="gender">&nbsp;Female</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                          <input 
-                          className="form-check-input" 
-                          type="radio" 
-                          name="sex" defaultValue="T" required />
-                          <label className="form-label">&nbsp;Transgender</label>
-                          </div>
-                        <div className="col-md-4 mt-2">
-                          <label  htmlFor="dob" className="text">DOB</label><span className="text-danger">*</span>
-                          <input 
-                          type="date" 
-                          name="dob" 
-                          id="dob"
-                          value={dob}
-                          onChange={handleInputChange}
-                          placeholder="DOB"   
-                          style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}} 
-                          required/>
-                        </div>
+
+kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+  {/* <div className="col-md-4 mt-2">
+  <label  htmlFor="gen" className="text">Gender</label><span className="text-danger">*</span>
+        <br/>
+      <input type="radio" name="gender" value="male" checked={gender === 'male'} onChange={handleGenderChange} />
+      <label>Male</label>
+      <input type="radio" name="gender" value="female" checked={gender === 'female'} onChange={handleGenderChange} />
+      <label>Female</label>
+      <input type="radio" name="gender" value="transgender" checked={gender === 'transgender'} onChange={handleGenderChange} />
+      <label>Transgender</label>
+       
+,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,                         
+                        </div> */}
                         <div className="col-md-4 mt-2">
                           <label htmlFor="age" className="text" >Age</label><span className="text-danger">*</span>
                           <input 
@@ -864,9 +853,76 @@ special_skill,
             </select>
 
                       
-                        </div> 
-                        <div className="col-md-12" id="job_role_id">
                         </div>
+
+{/* dependency options */}
+
+                          <div className="col-md-6 mt-2">
+                          <label htmlFor="kind_job" className="text" >What kind of job</label>
+                          <input 
+                          type="text"  
+                          name="kind_job" 
+                          id="kind_job" 
+                          value={kind_job}
+                          onChange={handleInputChange}  
+                          placeholder="Enter kind of job" 
+                          style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
+                          required/>
+                        </div>
+                        <div className="col-md-6 mt-2">
+                          <label htmlFor="engaged_for" className="text" >Engaged For</label>
+                          <input 
+                          type="text"  
+                          name="engaged_for" 
+                          id="engaged_for" 
+                          value={engaged_for}
+                          onChange={handleInputChange}  
+                          placeholder="Enter kind of job" 
+                          style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
+                          required/>
+                        </div>
+                        <div className="col-md-6 mt-2">
+                         <label htmlFor="job_sub_category" className="text">Job Sub-catyegory</label><span className="text-danger">*</span>
+            <select
+                name="job_sub_category" 
+                id="job_sub_category" 
+                value={job_sub_category}
+                onChange={handleInputChange}  
+                style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
+                required
+            >
+                <option value="">Select job category</option>
+                <option value="5" className="jobopt jobopt5">Daily Labourer</option>
+                <option value="4" className="jobopt jobopt4">Casual</option>
+                <option value="3" className="jobopt jobopt3">Operational</option>
+                <option value="2" className="jobopt jobopt2">Managerial</option>
+                <option value="1" className="jobopt jobopt1">Executive</option>
+            </select>
+
+                      
+                        </div>
+                        <div className="col-md-6 mt-2">
+                         <label htmlFor="special_skill" className="text">Special Skill</label><span className="text-danger">*</span>
+     
+                        <select
+                name="special_skill" 
+                id="special_skill" 
+                value={special_skill}
+                onChange={handleInputChange}
+                placeholder="special skill"  
+                style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
+                required
+            >
+                <option value="">Select skill</option>
+                <option value="5" className="jobopt jobopt5">Daily Labourer</option>
+                <option value="4" className="jobopt jobopt4">Casual</option>
+                <option value="3" className="jobopt jobopt3">Operational</option>
+                <option value="2" className="jobopt jobopt2">Managerial</option>
+                <option value="1" className="jobopt jobopt1">Executive</option>
+            </select>
+
+                     </div> 
+
 
                         <div className="col-md-6 mt-2">
                           <label  htmlFor="dob" className="text">Date of Joining</label><span className="text-danger">*</span>
@@ -880,47 +936,7 @@ special_skill,
                           style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}} 
                           required/>
                         </div>
-                        <div className="col-md-6 mt-2">
-                        <label htmlFor="special_skill" className="text">Special Skill</label>
-<select
-  name="special_skill"
-  id="special_skill"
-  value={special_skill}
-  style={{
-    height: '50%',
-    width: '100%',
-    border: 'none',
-    fontSize: '12px',
-    borderBottom: '2px solid silver',
-    backgroundColor: 'transparent'
-  }}
-  required
->
-  <option value="">Select Skill</option>
-  <option value="Other">Other</option>
-  <option value="Salon &amp; Spa">Salon &amp; Spa</option>
-  <option value="Pest Control">Pest Control</option>
-  <option value="Lift Servicing">Lift Servicing</option>
-  <option value="Gardening">Gardening</option>
-  <option value="Iron Grill Fixing">Iron Grill Fixing</option>
-  <option value="A/C &amp; Refrigerator Service &amp; Repair">A/C &amp; Refrigerator Service &amp; Repair</option>
-  <option value="Pet Care">Pet Care</option>
-  <option value="Child Care">Child Care</option>
-  <option value="Car Cleaning">Car Cleaning</option>
-  <option value="Cooking">Cooking</option>
-  <option value="Cleaning (Sweeping / Dusting)">Cleaning (Sweeping / Dusting)</option>
-  <option value="Laundry">Laundry</option>
-  <option value="Beautician">Beautician</option>
-  <option value="Computer Repairing and Maintenance">Computer Repairing and Maintenance</option>
-  <option value="Mason">Mason</option>
-  <option value="Plumbing">Plumbing</option>
-  <option value="Carpeting">Carpeting</option>
-  <option value="Electrician">Electrician</option>
-  <option value="Painting">Painting</option>
-  <option value="Driving">Driving</option>
-</select>
-                                                                       
-                        </div>
+                      
                         <div className="col-md-6 mt-2">
                           <label className="text">Verification Type</label><br />&nbsp;
                           <input className="form-check-input verifyModal" type="radio" data-bs-toggle="modal" data-bs-target="#verifyModal" aria-expanded="false" defaultValue="self" name="verification" id="sameas1" onclick="sameAs()" />
