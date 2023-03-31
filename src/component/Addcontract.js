@@ -8,7 +8,7 @@ import { toast } from "react-toastify";
 //import { useNavigate } from "react-router-dom;
 
 const Addcontract =()=>{
-
+  const [selectedOption, setSelectedOption] = useState('');
 
   const [formData, setFormData] = useState({
     role_id: 2,
@@ -90,6 +90,37 @@ const Addcontract =()=>{
   // function handleGenderChange(event) {
   //   setGender(event.target.value);
   // }
+
+  const handleOptionChange1 = (e) => {
+    setSelectedOption(e.target.value);
+  };
+ 
+  const [showField, setShowField] = useState(false);
+  const [showField1, setShowField1] = useState(false);
+  const [showField2, setShowField2] = useState(false);
+  const [showField3, setShowField3] = useState(false);
+  function handleOptionChange(option) {
+    if (option === 'inv') {
+      setShowField(true);
+    } else {
+      setShowField(false);}
+  if (option === 'pat' ) {
+     setShowField1(true);
+    } else {
+      setShowField1(false);
+    }
+    if (option === 'pvt' || option === 'pub' ) {
+      setShowField2(true);
+     } else {
+       setShowField2(false);
+     }
+     if (option === 'ab' ) {
+      setShowField3(true);
+     } else {
+       setShowField3(false);
+     }
+  }
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -142,12 +173,13 @@ const Addcontract =()=>{
                             <label htmlFor="count" className="text">Contractor Type</label><span className="text-danger">*</span>
                             <select 
                             id="contractor_type" 
-                            name="contractor_type" 
-                            value={contractor_type}
-                            onChange={handleInputChange}
-                            style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
-                            required >
-                              <option value disabled selected>Select Option</option>
+                             style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
+                value={selectedOption} onChange={(e) => {
+                  setSelectedOption(e.target.value);
+                  handleOptionChange(e.target.value);
+                }} 
+                   required >
+                              <option value="ab" >Select Option</option>
                               <option value="inv">Individual</option>
                            <option value="pat">Partnership</option> 
                            <option value="pvt">PVT.LTD.</option> 
@@ -287,7 +319,8 @@ const Addcontract =()=>{
                           </div>
 
                           <div className="row"> 
-                          <div className="col-md-4">
+                   
+    <div className="col-md-6">
                             <label htmlFor="company_name" className="text">Company name</label><span className="text-danger">*</span>
                             <input 
                             type="text" 
@@ -302,8 +335,8 @@ const Addcontract =()=>{
                           </div>                          
                          
 
-                          {/* dependency */}
-                          <div className="col-md-4">
+  {showField && (<>                {/* dependency */}
+                          <div className="col-md-6">
                             <label htmlFor="prop_name" className="text">Proprieter name</label><span className="text-danger">*</span>
                             <input 
                             type="text" 
@@ -316,7 +349,9 @@ const Addcontract =()=>{
                             style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}} 
                             required/>
                           </div>  
-                          <div className="col-md-4">
+
+                          </> )}
+  {showField1 && (<>         <div className="col-md-6">
                             <label htmlFor="partner_name" className="text">Partners Name</label><span className="text-danger">*</span>
                             <input 
                             type="text" 
@@ -329,7 +364,8 @@ const Addcontract =()=>{
                             style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}} 
                             required/>
                           </div>  
-                          <div className="col-md-4">
+     </> )}
+     {showField2 && (<>   <div className="col-md-6">
                             <label htmlFor="Director_name" className="text">Director Name</label><span className="text-danger">*</span>
                             <input 
                             type="text" 
@@ -343,7 +379,7 @@ const Addcontract =()=>{
                             required/>
                           </div>    
                         
-                         
+    </> )}
                           
                           </div>
 <br/>
@@ -405,7 +441,7 @@ const Addcontract =()=>{
             name="trdno"
             value={trdno}
             onChange={handleInputChange}
-            placeholder=""
+            placeholder="Enter here"
             
             
             style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver', backgroundColor: 'transparent'}}
@@ -423,7 +459,7 @@ const Addcontract =()=>{
             name="expiry"
             value={expiry}
             onChange={handleInputChange}
-            placeholder=" "
+            placeholder=" Enter here"
             
             
             style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver', backgroundColor: 'transparent'}}
@@ -441,7 +477,7 @@ const Addcontract =()=>{
             name="issu"
             value={issu}
             onChange={handleInputChange}
-            placeholder="Enter the Name "
+            placeholder="Enter here "
             
             
             style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver', backgroundColor: 'transparent'}}
@@ -515,7 +551,7 @@ const Addcontract =()=>{
             value={gst}
             onChange={handleInputChange}
           
-            placeholder="Aadhar no."
+            placeholder="GST no."
             style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver', backgroundColor: 'transparent'}}
             
             required
@@ -549,7 +585,7 @@ const Addcontract =()=>{
             value={esi}
             onChange={handleInputChange}
           
-            placeholder="Aadhar no."
+            placeholder="Esi no."
             style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver', backgroundColor: 'transparent'}}
             
             required
