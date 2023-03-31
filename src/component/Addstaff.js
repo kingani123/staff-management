@@ -14,7 +14,7 @@ import { toast } from "react-toastify";
 const Addstaff =()=>{
   
     //const [gender, setGender] = useState('');
-  
+    const [selectedOption, setSelectedOption] = useState('');
   
   const [formData, setFormData] = useState({
     role_id: 2,
@@ -66,7 +66,9 @@ const Addstaff =()=>{
     special_skill:"",
     kind_job:"",
     engaged_for:"",
+    select_contractor:"",
     job_sub_category:"",
+    regular_peri:"",
 
 
   });
@@ -86,6 +88,8 @@ const Addstaff =()=>{
  addrss,
  landmark,
  p_pincode,
+ select_contractor,
+ regular_peri,
  country,
  state,
  district,
@@ -131,6 +135,34 @@ job_sub_category,
   // function handleGenderChange(event) {
   //   setGender(event.target.value);
   // }
+
+  const handleOptionChange1 = (e) => {
+    setSelectedOption(e.target.value);
+  };
+ 
+  const [showField, setShowField] = useState(false);
+  const [showField1, setShowField1] = useState(false);
+  const [showField2, setShowField2] = useState(false);
+
+  function handleOptionChange(option) {
+    if (option === 'dl' || option === 'cas') {
+      setShowField(true);
+    } else {
+      setShowField(false);}
+  if (option === 'oper' || option === 'mana' || option === 'exe') {
+     setShowField1(true);
+    } else {
+      setShowField1(false);
+    }
+
+    if (option === 'contractual') {
+      setShowField2(true);
+     } else {
+       setShowField2(false);
+     }
+  }
+
+
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -337,6 +369,9 @@ kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
                                                     <option value="A+">A+</option>
                                                     <option value="A-">A-</option>
                                                     <option value="B+">B+</option>
+                                                    
+                                                    
+                                                    
                                                     <option value="B-">B-</option>
                                                     <option value="AB+">AB+</option>
                                                     <option value="AB-">AB-</option>
@@ -820,12 +855,19 @@ kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
                          <div className="col-md-6 mt-2">
                           <label htmlFor="emp_type" className="text">Type of Employment</label><span className="text-danger">*</span>
                           <select  
+
   name="emp_type" 
   id="emp_type" 
-  value={emp_type}
-  onChange={handleInputChange}    
+  //value={emp_type}
+  //onChange={handleInputChange}    
   style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
-  required
+  value={selectedOption} onChange={(e) => {
+    setSelectedOption(e.target.value);
+    handleOptionChange(e.target.value);
+  }} 
+ 
+ 
+ required
 >
   <option value="" disabled="" selected="">Select Type of Employment</option>
   <option value="direct">Direct</option>
@@ -839,24 +881,31 @@ kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
             <select
                 name="job_category" 
                 id="job_category" 
-                value={job_category}
-                onChange={handleInputChange}  
+                //value={job_category}
+                //onChange={handleInputChange}  
                 style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
+                value={selectedOption} onChange={(e) => {
+                  setSelectedOption(e.target.value);
+                  handleOptionChange(e.target.value);
+                }} 
+                
                 required
             >
                 <option value="">Select job category</option>
-                <option value="5" className="jobopt jobopt5">Daily Labourer</option>
-                <option value="4" className="jobopt jobopt4">Casual</option>
-                <option value="3" className="jobopt jobopt3">Operational</option>
-                <option value="2" className="jobopt jobopt2">Managerial</option>
-                <option value="1" className="jobopt jobopt1">Executive</option>
+                <option value="dl" className="jobopt jobopt5">Daily Labourer</option>
+                <option value="cas" className="jobopt jobopt4">Casual</option>
+                <option value="oper" className="jobopt jobopt3">Operational</option>
+                <option value="mana" className="jobopt jobopt2">Managerial</option>
+                <option value="exe" className="jobopt jobopt1">Executive</option>
             </select>
 
                       
                         </div>
 
-{/* dependency options */}
 
+
+
+{showField && (<>
                           <div className="col-md-6 mt-2">
                           <label htmlFor="kind_job" className="text" >What kind of job</label>
                           <input 
@@ -881,6 +930,8 @@ kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
                           style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
                           required/>
                         </div>
+                        </> )}
+    {showField1 && (<>
                         <div className="col-md-6 mt-2">
                          <label htmlFor="job_sub_category" className="text">Job Sub-catyegory</label><span className="text-danger">*</span>
             <select
@@ -901,6 +952,67 @@ kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
 
                       
                         </div>
+       </> )}
+
+
+
+{showField2 && (<>
+
+       <div className="col-md-6 mt-2">
+                         <label htmlFor="select_contractor" className="text">Select Contractor</label><span className="text-danger">*</span>
+            <select
+                name="select_contractor" 
+                id="select_contractor" 
+                value={select_contractor}
+                onChange={handleInputChange}  
+                style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
+                required
+            >
+                <option value="">Select job category</option>
+                <option value="visito" className="jobopt jobopt5">Visito Ventures IndiaPvt Ltd(Partnership)</option>
+                <option value="anil" className="jobopt jobopt4">Anil Enterptises(individual)</option>
+               
+            </select>
+
+                      
+                        </div>
+                        <div className="col-md-6 mt-2">
+                         <label htmlFor="regular_peri" className="text">Regular/Periodic</label><span className="text-danger">*</span>
+            <select
+                name="regular_peri" 
+                id="regular_peri" 
+                value={regular_peri}
+                onChange={handleInputChange}  
+                style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
+                required
+            >
+                <option value="">Select job category</option>
+                <option value="5" className="jobopt jobopt5">Regular</option>
+                <option value="4" className="jobopt jobopt4">Periodic</option>
+         
+            </select>
+
+                      
+                        </div>
+      
+                        </> )} 
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
                         <div className="col-md-6 mt-2">
                          <label htmlFor="special_skill" className="text">Special Skill</label><span className="text-danger">*</span>
      
