@@ -38,6 +38,7 @@ const Addunit =()=>{
                   <label className="form-label">Unit Name</label><span className="text-danger">*</span>
                   <input type="text" placeholder="enter unit name" id="unit" name="unit" style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}} />
                 </div>
+                <div className="row">
                 <div className="col-md-3">
                   <label htmlFor="validationDefault04" className="form-label">Country</label><span className="text-danger">*</span>
                   <select id="country" name="country"  style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}><option value disabled selected>Select Country</option>
@@ -57,6 +58,7 @@ const Addunit =()=>{
                   <label htmlFor className="form-label">PS</label><span className="text-danger">*</span>
                   <select className="select" id="ps_id" name="ps" required style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver'}}><option value disabled selected>Select PS</option>
                   </select>
+                </div>
                 </div>
                 <div className="col-12">
                   <div id="appdiv">

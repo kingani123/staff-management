@@ -84,9 +84,9 @@ const Release = ()=>{
                     <p className="mobile_heading"></p>
                     <p></p>
                   </div>
-                  <div style={{width: '15%'}}>
+                  <div style={{}}>
                    
-                    <p className="mobile_heading">Action</p>
+                    <p className="mobile_heading">&nbsb;Action</p>
                     <button className="btn btn-success"><i class="fa-regular fa-eye"></i></button>&nbsp;
         <button className="btn btn-primary"><i class="fa-regular fa-pen-to-square"></i></button>&nbsp;
         <button className="btn btn-danger"><i class="fa-regular fa-trash-can"></i></button>
