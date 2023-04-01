@@ -3,6 +3,7 @@ import Navbar from "./Navbar";
 
 
 import Sidebar from "./Sidebar";
+import "./Addforiegn.css";
 import axios from "axios";
 import { toast } from "react-toastify";
 //import { useNavigate } from "react-router-dom;
@@ -168,9 +169,9 @@ const Addcontract =()=>{
                       <hr />
                       <div className="p-4 border rounded">
                         <form onSubmit={handleSubmit}>
-                                             
+                          <div className="row">                  
                         <div className="col-md-12">
-                            <label htmlFor="count" className="text">Contractor Type</label><span className="text-danger">*</span>
+                            <label htmlFor="contractor_type" className="text">Contractor Type</label><span className="text-danger">*</span>
                             <select 
                             id="contractor_type" 
                              style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
@@ -186,11 +187,12 @@ const Addcontract =()=>{
                            <option value="pub">Public.LTD.</option>
                             </select>
                           </div>
-                          
-                          
+                          </div> 
+                          <div className="row">
                           <div className="col-md-12">
                             <h5 className="display-7 mt-2">Address Details</h5>
                             <div className="my-3 border-top" />
+                          </div>
                           </div>
                           <div className="row">
                           <div className="col-md-3">
@@ -313,12 +315,15 @@ const Addcontract =()=>{
                           </div>
 
 
-                          <div className="col-md-12">
-                            <h5 className="display-7 mt-2">Other Details</h5>
+                  <div className="row">
+                   <div className="col-md-12">
+
+                     <h5 className="display-7 mt-2">Other Details</h5>
                             <div className="my-3 border-top" />
                           </div>
-
-                          <div className="row"> 
+                        </div>
+             
+                       <div className="row"> 
                    
     <div className="col-md-6">
                             <label htmlFor="company_name" className="text">Company name</label><span className="text-danger">*</span>
@@ -619,7 +624,7 @@ const Addcontract =()=>{
             value={epf}
             onChange={handleInputChange}
           
-            placeholder="Aadhar no."
+            placeholder="Enter EPF A/C No."
             style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver', backgroundColor: 'transparent'}}
             
             required
@@ -693,16 +698,19 @@ const Addcontract =()=>{
             required
           />
         </div>
+       
         </div>
-    
+     
                       <div className="col-12">
                             <div id="appdiv">
                             </div>
                           </div>
+                          
                           <div className="col-12">
                             <button type="submit" className="btn btn-success px-5"> Submit</button>                           
                           </div>
                         </form>
+                       
                       </div>
                     </div>
                 </div>

@@ -15,7 +15,7 @@ const Addstaff =()=>{
   
     //const [gender, setGender] = useState('');
     const [selectedOption, setSelectedOption] = useState('');
-  
+   
   const [formData, setFormData] = useState({
     role_id: 2,
     organizationtype_id: 1,
@@ -69,7 +69,7 @@ const Addstaff =()=>{
     select_contractor:"",
     job_sub_category:"",
     regular_peri:"",
-
+    
 
   });
   const {
@@ -125,6 +125,7 @@ special_skill,
 kind_job,
 engaged_for,
 job_sub_category,
+
   } = formData;
   const handleInputChange = (event) => {
     setFormData({
@@ -136,14 +137,17 @@ job_sub_category,
   //   setGender(event.target.value);
   // }
 
-  const handleOptionChange1 = (e) => {
-    setSelectedOption(e.target.value);
-  };
- 
+//  handleOptionChange1 = (e) => {
+//     setSelectedOption(e.target.value);
+//   };
+  
   const [showField, setShowField] = useState(false);
   const [showField1, setShowField1] = useState(false);
   const [showField2, setShowField2] = useState(false);
 
+  
+   
+  
   function handleOptionChange(option) {
     if (option === 'dl' || option === 'cas') {
       setShowField(true);
@@ -261,7 +265,8 @@ job_sub_category,
                           value={in_staff_name}
                           onChange={handleInputChange}
                           placeholder=" Enter Name" 
-                          style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver', backgroundColor: 'transparent'}}/>
+                          style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver', backgroundColor: 'transparent'}}
+                          required/>
                         </div>
                         <div className="col-md-4">
                           <label htmlFor="up_image" className="text">Upload Image</label><span className="text-danger">*</span>
@@ -328,7 +333,31 @@ job_sub_category,
                           style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}} />
                         </div>
 
-kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
+                         <div className="col-md-4 mt-2">
+                          <label className="form-label">Gender</label><span className="text-danger">*</span>
+                          <br/>
+                          <input className="form-check-input" type="radio" name="sex" defaultValue="M" required />
+                          <label className="form-label">&nbsp;Male</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <input className="form-check-input" type="radio" name="sex" defaultValue="F" required />
+                          <label className="form-label">&nbsp;Female</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                          <input className="form-check-input" type="radio" name="sex" defaultValue="T" required />
+                          <label className="form-label">&nbsp;Transgender</label>
+                          
+                        </div> 
+
+                        <div className="col-md-4 mt-2">
+                          <label  htmlFor="dob" className="text">DOB</label><span className="text-danger">*</span>
+                          <input 
+                          type="date" 
+                          name="dob" 
+                          id="dob"
+                          value={dob}
+                          onChange={handleInputChange}
+                          placeholder=" Enter DOB"   
+                          style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}} 
+                          required/>
+                        </div>
+
   {/* <div className="col-md-4 mt-2">
   <label  htmlFor="gen" className="text">Gender</label><span className="text-danger">*</span>
         <br/>
@@ -338,9 +367,8 @@ kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
       <label>Female</label>
       <input type="radio" name="gender" value="transgender" checked={gender === 'transgender'} onChange={handleGenderChange} />
       <label>Transgender</label>
-       
-,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,                         
-                        </div> */}
+        </div>  */}
+
                         <div className="col-md-4 mt-2">
                           <label htmlFor="age" className="text" >Age</label><span className="text-danger">*</span>
                           <input 
@@ -484,10 +512,22 @@ kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
                         <br />
                         <h6 className="fw-bold mt-3">Present Address:</h6><hr />
                         <div className="col-md-12">
-                          <div className="form-check">
-                            <input className="form-check-input" type="checkbox" defaultValue id="sameas" onclick="sameAs()"  />
-                            <label className="form-check-label" htmlFor="sameas">Same As Permanent Address</label>
-                          </div>
+       
+      
+                        {/* <div className="form-check">
+  <input
+    className="form-check-input"
+    type="checkbox"
+    id="sameas"
+    checked={sameAsPermanent}
+    onClick={handleSameAsPermanent}
+  />
+  <label className="form-check-label" htmlFor="sameas">
+    Same As Permanent Address
+  </label>
+  
+</div> */}
+
                           <div className="col-md-12">
                             <label htmlFor="add" className="text" >Address</label><span className="text-danger">*</span>
                             <textarea 
@@ -891,7 +931,7 @@ kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
                 
                 required
             >
-                <option value="">Select job category</option>
+                <option value="">Select job </option>
                 <option value="dl" className="jobopt jobopt5">Daily Labourer</option>
                 <option value="cas" className="jobopt jobopt4">Casual</option>
                 <option value="oper" className="jobopt jobopt3">Operational</option>
@@ -942,7 +982,7 @@ kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
                 style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
                 required
             >
-                <option value="">Select job category</option>
+                <option value="">Select job  sub category</option>
                 <option value="5" className="jobopt jobopt5">Daily Labourer</option>
                 <option value="4" className="jobopt jobopt4">Casual</option>
                 <option value="3" className="jobopt jobopt3">Operational</option>
@@ -968,7 +1008,7 @@ kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
                 style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
                 required
             >
-                <option value="">Select job category</option>
+                <option value="">Select</option>
                 <option value="visito" className="jobopt jobopt5">Visito Ventures IndiaPvt Ltd(Partnership)</option>
                 <option value="anil" className="jobopt jobopt4">Anil Enterptises(individual)</option>
                
@@ -986,7 +1026,7 @@ kkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkk
                 style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
                 required
             >
-                <option value="">Select job category</option>
+                <option value="">Select </option>
                 <option value="5" className="jobopt jobopt5">Regular</option>
                 <option value="4" className="jobopt jobopt4">Periodic</option>
          
