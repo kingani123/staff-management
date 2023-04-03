@@ -15,6 +15,25 @@ const Addstaff =()=>{
   
     //const [gender, setGender] = useState('');
     const [selectedOption, setSelectedOption] = useState('');
+
+    //same as above
+    const [sameAsPermanent, setSameAsPermanent] = useState(false);
+    const [permanentAddress, setPermanentAddress] = useState("");
+    const [permanentLandmark, setPermanentLandmark] = useState("");
+    const [permanentCountry, setPermanentCountry] = useState("");
+    const [permanentState, setPermanentState] = useState("");
+    const [permanentPincode, setPermanentPincode] = useState("");
+    const [permanentDistrict, setPermanentDistrict] = useState("");
+    const [permanentPolice, setPermanentPolice] = useState("");
+
+
+    const [presentDistrct, setPresentDistrict] = useState("");
+    const [presentAddress, setPresentAddress] = useState("");
+    const [presentLandmark, setPresentLandmark] = useState("");
+    const [presentPincode, setPresentPincode] = useState("");
+    const [presentCountry, setPresentCountry] = useState("");
+    const [presentState, setPresentState] = useState("");
+    const [presentPolice, setPresentPolice] = useState("");
    
   const [formData, setFormData] = useState({
     role_id: 2,
@@ -29,16 +48,16 @@ const Addstaff =()=>{
     dob:"",
     age:"",
     bloodgroup:"",
-    addrss:"",
-    landmark:"",
-    p_pincode:"",
+    permanentAddress:"",
+    permanentLandmark:"",
+    permanentPincode:"",
     country:"",
     state:"",
     district:"",
     police:"",
-    add:"",
-    land:"",
-    pin:"",
+    presentAddress:"",
+    presentLandmark:"",
+    presentPincode:"",
     count:"",
     stat:"",
     dist:"",
@@ -85,9 +104,8 @@ const Addstaff =()=>{
  dob,
  age,
  bloodgroup,
- addrss,
- landmark,
- p_pincode,
+ 
+ 
  select_contractor,
  regular_peri,
  country,
@@ -137,7 +155,7 @@ job_sub_category,
   //   setGender(event.target.value);
   // }
 
-//  handleOptionChange1 = (e) => {
+//  //handleOptionChange1 = (e) => {
 //     setSelectedOption(e.target.value);
 //   };
   
@@ -188,7 +206,91 @@ job_sub_category,
     }
 };
 
+//same as above
+const handleSameAsPermanentChange = () => {
+  setSameAsPermanent(!sameAsPermanent);
 
+  if (!sameAsPermanent) {
+    setPresentAddress(permanentAddress);
+    setPresentLandmark(permanentLandmark);
+    setPresentCountry(permanentCountry);
+    setPresentState(permanentState);
+    setPresentDistrict(permanentDistrict);
+    setPresentPolice(permanentPolice);
+    setPresentPincode(permanentPincode);
+  } else {
+    setPresentAddress("");
+    setPresentLandmark("");
+    setPresentCountry("");
+    setPresentDistrict("");
+    setPresentPincode("");
+    setPresentState("");
+    setPresentPolice("");
+  }
+};
+
+const handlePermanentAddressChange = (event) => {
+  setPermanentAddress(event.target.value);
+  console.log(permanentAddress);
+};
+const handlePermanentLandmarkChange = (event) => {
+  setPermanentLandmark(event.target.value);
+};
+
+const handlePermanentCountryChange = (event) => {
+  setPermanentCountry(event.target.value);
+};
+const handlePermanentPincodeChange = (event) => {
+  setPermanentPincode(event.target.value);
+};
+const handlePermanentDistrictChange = (event) => {
+  setPermanentDistrict(event.target.value);
+};
+
+
+const handlePermanentStateChange = (event) => {
+  setPermanentState(event.target.value);
+};
+
+const handlePermanentPoliceChange = (event) => {
+  setPermanentPolice(event.target.value);
+};
+
+
+
+
+
+const handlePresentAddressChange = (event) => {
+  setPresentAddress(event.target.value);
+};
+const handlePresentLandmarkChange = (event) => {
+  setPresentLandmark(event.target.value);
+};
+
+const handlePresentCountryChange = (event) => {
+  setPresentCountry(event.target.value);
+};
+const handlePresentPincodeChange = (event) => {
+  setPresentPincode(event.target.value);
+};
+const handlePresentDistrictChange = (event) => {
+  setPermanentDistrict(event.target.value);
+};
+const handlePresentStateChange = (event) => {
+  setPresentState(event.target.value);
+};
+
+const handlePresentPoliceChange = (event) => {
+  setPresentPolice(event.target.value);
+};
+
+
+
+
+
+
+
+ 
 
   
   // const [preview, setPreview] = useState(null);
@@ -423,13 +525,13 @@ job_sub_category,
                       <div className="accordion-body row">
                         <h6 className="fw-bold">Permanent Address:</h6><hr />
                         <div className="col-md-12">
-                            <label htmlFor="addrss" className="text">Address</label><span className="text-danger">*</span>
+                            <label htmlFor="permanentAddress" className="text">Address</label><span className="text-danger">*</span>
                               <textarea
                              
-                              id="addrss"
-                              name="addrss"
-                              value={addrss}
-                              onChange={handleInputChange}
+                              id="permanentAddress"
+                              name="permanentAddress"
+                              value={permanentAddress}
+                              onChange={handlePermanentAddressChange}
                               placeholder="Address"  
                               style={{height: '10px', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}} 
                                required 
@@ -437,80 +539,90 @@ job_sub_category,
                            
                           </div>
                           <div className="col-md-3 mt-2">
-                            <label htmlFor="landmark" className="text"> Nearest Landmark</label><span className="text-danger">*</span>
+                            <label htmlFor="permanentLandmark" className="text"> Nearest Landmark</label><span className="text-danger">*</span>
                             <input 
                             type="text"
-                            id="landmark" 
-                            name="landmark" 
-                            value={landmark}
-                            onChange={handleInputChange}
+                            id="permanentLandmark" 
+                            name="permanentLandmark" 
+                            value={permanentLandmark} 
+                            onChange={handlePermanentLandmarkChange}
                             placeholder="Landmark"  
                             style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}} 
                             required/>
                           </div>
                         <div className="col-md-4 mt-2">
-                          <label  htmlFor="p_pincode" className="text">PIN code</label><span className="text-danger">*</span>
+                          <label  htmlFor="permanentPincode" className="text">PIN code</label><span className="text-danger">*</span>
                           <input 
                           type="text"  
-                          name="p_pincode"
-                          id="p_pincode"
-                          value={p_pincode}
-                          onChange={handleInputChange}
+                          name="permanentPincode"
+                          id="permanentPincode"
+                          value={permanentPincode} 
+                            onChange={handlePermanentPincodeChange}
                           maxLength={6}   
                           placeholder="PIN code"
                           style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}} 
                           required />
                         </div>
                         <div className="col-md-3 mt-2">
-                            <label htmlFor="country" className="text">Country</label><span className="text-danger">*</span>
+                            <label htmlFor="permanentCountry" className="text">Country</label><span className="text-danger">*</span>
                             <select 
-                            id="country" 
-                            name="country"
-                            value={country}
-                            onChange={handleInputChange}  
+                            id="permanentCountry" 
+                            name="permanentCountry"
+                            value={permanentCountry} 
+                            onChange={handlePermanentCountryChange}
                             style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
                             required >
                               <option value disabled selected>Select Country</option>
                             </select>
                           </div>
                           <div className="col-md-3 mt-2">
-                            <label htmlFor="state" className="text">State</label><span className="text-danger">*</span>
+                            <label htmlFor="permanentState" className="text">State</label><span className="text-danger">*</span>
                             <select 
-                            id="state" 
-                            name="state"
-                            value={state}
-                            onChange={handleInputChange}   
+                            id="permanentState" 
+                            name="permanentState"
+                            value={permanentState} 
+                            onChange={handlePermanentStateChange}
                             style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
                             required > 
                             <option value disabled selected>Select State</option>
                             </select>
                           </div>
                           <div className="col-md-3 mt-2">
-                            <label htmlFor="district" className="text">District</label><span className="text-danger">*</span>
+                            <label htmlFor="permanentDistrict" className="text">District</label><span className="text-danger">*</span>
                             <select 
-                            id="district" 
-                            name="district"
-                            value={district}
-                            onChange={handleInputChange}   
+                            id="permanentDistrict" 
+                            name="permanentDistrict"
+                            value={permanentDistrict} 
+                            onChange={handlePermanentDistrictChange}
                             style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
                             required >
                             <option value disabled selected>Select District</option>
                             </select>
                           </div>
                           <div className="col-md-3 mt-2">
-                            <label htmlFor="police" className="text">PS</label><span className="text-danger">*</span>
+                            <label htmlFor="permanentPolice" className="text">PS</label><span className="text-danger">*</span>
                             <select 
-                             id="police" 
-                             name="police"
-                             value={police}
-                             onChange={handleInputChange}   
+                             id="permanentPolice" 
+                             name="permanentPolice"
+                             value={permanentPolice} 
+                             onChange={handlePermanentPoliceChange}  
                              style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
                              required>
                               <option value disabled selected>Select PS</option>
                             </select>
                           </div>
                         <br />
+                        
                         <h6 className="fw-bold mt-3">Present Address:</h6><hr />
+                        <label>
+        Same as Permanent Address:
+        <input
+          type="checkbox"
+          checked={sameAsPermanent}
+          onChange={handleSameAsPermanentChange}
+        />
+      </label>
+      <br/>
                         <div className="col-md-12">
        
       
@@ -529,47 +641,51 @@ job_sub_category,
 </div> */}
 
                           <div className="col-md-12">
-                            <label htmlFor="add" className="text" >Address</label><span className="text-danger">*</span>
+                            <label htmlFor="presentAddress" className="text" >Address</label><span className="text-danger">*</span>
                             <textarea 
-                              id="add"
-                              name="add" 
-                              value={add}
-                              onChange={handleInputChange}  
+                              id="presentAddress"
+                              name="presentAddress" 
+                              value={presentAddress}
+                              onChange={handlePresentAddressChange}
+                              disabled={sameAsPermanent}
                               placeholder="Enter your address..."   
                               style={{height: '10px', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}} />
                            </div>
                           </div>
                           <div className="col-md-4">
-                            <label htmlFor="land" className="text"> Nearest Landmark</label><span className="text-danger">*</span>
+                            <label htmlFor="presentLandmark" className="text"> Nearest Landmark</label><span className="text-danger">*</span>
                             <input 
                             type="text"
-                            id="land" 
-                            name="land" 
-                            value={land}
-                            onChange={handleInputChange}  
+                            id="presentLandmark" 
+                            name="presentLandmark" 
+                            value={presentLandmark}
+                              onChange={handlePresentLandmarkChange}
+                              disabled={sameAsPermanent}
                             placeholder="Landmark"  
                             style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}} />
                           </div>
                         <div className="col-md-4">
-                          <label htmlFor="pin" className="text">PIN code</label><span className="text-danger">*</span>
+                          <label htmlFor="presentPincode" className="text">PIN code</label><span className="text-danger">*</span>
                           <input 
                           type="text" 
-                          name="pin" 
-                          id="pin"
-                          value={pin}
-                          onChange={handleInputChange}  
+                          name="presentPincode" 
+                          id="presentPincode"
+                          value={presentPincode}
+                          onChange={handlePresentPincodeChange}
+                          disabled={sameAsPermanent}
                           maxLength={6}   
                           placeholder="PIN code"  
                           style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}} 
                           required/>
                         </div>
                         <div className="col-md-4">
-                            <label htmlFor="count" className="text">Country</label><span className="text-danger">*</span>
+                            <label htmlFor="presentCountry" className="text">Country</label><span className="text-danger">*</span>
                             <select 
-                            id="count" 
-                            name="count" 
-                            value={count}
-                            onChange={handleInputChange}
+                            id="presentCountry" 
+                            name="presentCountry" 
+                            value={presentCountry}
+                            onChange={handlePresentCountryChange}
+                            disabled={sameAsPermanent}
                             style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
                             required 
                             ><option value disabled selected>Select Country</option>
@@ -580,20 +696,22 @@ job_sub_category,
                             <select 
                             id="stat" 
                             name="stat" 
-                            value={stat}
-                            onChange={handleInputChange} 
+                            value={presentState}
+                            onChange={handlePresentStateChange}
+                            disabled={sameAsPermanent}
                             style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
                             required>
                             <option value disabled selected>Select State</option>
                             </select>
                           </div>
                           <div className="col-md-4 ">
-                            <label htmlFor="dist" className="text">District</label><span className="text-danger">*</span>
+                            <label htmlFor="presentDistrct" className="text">District</label><span className="text-danger">*</span>
                             <select 
-                            id="dist" 
-                            name="dist"
-                            value={dist}
-                            onChange={handleInputChange}   
+                            id="presentDistrct" 
+                            name="presentDistrct"
+                            value={presentDistrct}
+                            onChange={handlePresentDistrictChange}
+                            disabled={sameAsPermanent}
                             style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
                             required
                             ><option value disabled selected>Select District</option>
@@ -602,12 +720,13 @@ job_sub_category,
                        
                        
                         <div className="col-md-4 ">
-                          <label htmlFor="station" className="text">Police Station</label><span className="text-danger">*</span>
+                          <label htmlFor="presentPolice" className="text">Police Station</label><span className="text-danger">*</span>
                           <select   
-                          name="station" 
-                          id="station"
-                          value={station}
-                          onChange={handleInputChange}    
+                          name="presentPolice" 
+                          id="presentPolice"
+                          value={presentPolice}
+                          onChange={handlePresentPoliceChange}
+                          disabled={sameAsPermanent} 
                           style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
                           required  >
                             <option value disabled selected>Select PS</option>
@@ -907,7 +1026,7 @@ job_sub_category,
   }} 
  
  
- required
+
 >
   <option value="" disabled="" selected="">Select Type of Employment</option>
   <option value="direct">Direct</option>
