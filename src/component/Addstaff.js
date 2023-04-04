@@ -34,6 +34,20 @@ const Addstaff =()=>{
     const [presentCountry, setPresentCountry] = useState("");
     const [presentState, setPresentState] = useState("");
     const [presentPolice, setPresentPolice] = useState("");
+  
+    // add or remove in education
+    const [education, setEducation] = useState([{ slno:"",qualify: "", institute: "", year: "" }]);
+    const addEducation = () => {
+      setEducation([...education, {slno: "",qualify:"", institute: "", year: "" }]);
+    };
+  
+    const removeEducation = (index) => {
+      const newEducation = [...education];
+      newEducation.splice(index, 1);
+      setEducation(newEducation);
+    };
+
+
    
   const [formData, setFormData] = useState({
     role_id: 2,
@@ -285,7 +299,11 @@ const handlePresentPoliceChange = (event) => {
 };
 
 
-
+const handleFormSubmit = (event) => {
+  handleSubmit(event);
+  handleSameAsPermanentChange(event);
+  
+};
 
 
 
@@ -348,7 +366,7 @@ const handlePresentPoliceChange = (event) => {
             
             <hr />
                           
-              <form onSubmit={handleSubmit}> 
+              <form onSubmit={handleFormSubmit}> 
                 <input type="hidden" name="_token" defaultValue="" /><div className="accordion" id="accordionExample">
                   <div className="accordion-item">
                     <h2 className="accordion-header" id="headingOne">
@@ -798,6 +816,7 @@ const handlePresentPoliceChange = (event) => {
                         <div className="col-12">
                           <div className="table-responsive">
                             <table className="table table-light mb-0">
+                               <tbody id="educational">
                               <thead>
                                 <tr>
                                   <th className="text">Sl.No.</th>
@@ -808,10 +827,30 @@ const handlePresentPoliceChange = (event) => {
                                   <th className="text">Add/Remove</th>
                                 </tr>
                               </thead>
-                              <tbody id="educational">
+                             
                                 <tr>
-                                  <td width="18%">
-                                    <input 
+                                
+
+                                 {education.map((edu, index) => (
+                                    <div key={index}>
+                                       <td >
+                                        <input
+                                        type="text"
+                                        placeholder="Slno"
+                                        id="slno"
+                                        name="slno" 
+                                        value={edu.slno}
+                                        onChange={(e) =>
+                                       setEducation((prev) => [
+                                      ...prev.slice(0, index),
+                                      { ...prev[index], slno: e.target.value },
+                                      ...prev.slice(index + 1),
+                                              ])
+                                      }
+                                      style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
+                                     required/>
+                                      
+                                    {/* <input 
                                      type="text" 
                                      id="slno"
                                      name="slno" 
@@ -819,10 +858,28 @@ const handlePresentPoliceChange = (event) => {
                                      onChange={handleInputChange} 
                                      placeholder="Sl.No."  
                                      style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
-                                     required/>
+                                     required/> */}
                                   </td>
-                                  <td width="18%">
-                                    <select 
+                                  {}
+                                  <td >
+                                    <select
+           id="qualify"
+           name="qualify" 
+            placeholder="Qualify"
+            value={edu.qualify}
+            onChange={(e) =>
+              setEducation((prev) => [
+                ...prev.slice(0, index),
+                { ...prev[index], qualify: e.target.value },
+                ...prev.slice(index + 1),
+              ])
+            }
+            style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
+            required>
+              <option value disabled selected>Select qualification</option>
+              </select>
+        
+                                    {/* <select 
                                     id="qualify"
                                     name="qualify" 
                                     value={qualify}
@@ -830,23 +887,58 @@ const handlePresentPoliceChange = (event) => {
                                     style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
                                     required>
                                       <option value disabled selected>Select qualification</option>
-                                      </select>
+                                      </select> */}
                                   </td>
+                                  {}
                                   <td width="18%">
-                                    <input 
-                                    type="text"
-                                    id="institute"
-                                    name="institute" 
-                                    value={institute}
+                                     <input
+                                      type="text"
+                                      id="institute"
+                                      name="institute" 
+                                      placeholder="Institute"
+                                      value={edu.institute}
+                                      onChange={(e) =>
+                                     setEducation((prev) => [
+                                      ...prev.slice(0, index),
+                                      { ...prev[index], institute: e.target.value },
+                                      ...prev.slice(index + 1),
+                           ])
+            }
+                         style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}} 
+                                       required 
+                                           />
+          {/*                         <input 
+                                   type="text"
+                                     id="institute"
+                                   name="institute" 
+                                   value={institute}
                                     onChange={handleInputChange} 
-                                    placeholder="Institution" 
-                                     style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}} 
-                                     required 
-                                     />
+          //                           placeholder="Institution" 
+          //                            style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}} 
+          //                            required 
+          //                            /> */}
                                   </td>
                                   {}
                                   <td >
-                                    <select 
+                                       <select
+                                       type="text"
+                                       id="year"
+                                       name="year" 
+                                       placeholder="Year of Completion"
+                                       value={edu.year}
+                                       onChange={(e) =>
+                                       setEducation((prev) => [
+                                       ...prev.slice(0, index),
+                                       { ...prev[index], year: e.target.value },
+                                      ...prev.slice(index + 1),
+                                        ])
+                                       }
+                                       style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
+                                    required >
+                                      <option value disabled selected>Select year</option>
+                                      </select>
+          
+                                    {/* <select 
                                     id="year"
                                     name="year" 
                                     value={year}
@@ -855,11 +947,16 @@ const handlePresentPoliceChange = (event) => {
                                     style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
                                     required >
                                       <option value disabled selected>Select year</option>
-                                      </select>
+                                      </select> */}
                                   </td>
-                                  <td>
-                                    <span onclick="add()"><button type="button" className="btn btn-outline-success radius-30">Add</button></span>
-                                  </td>                                                                
+                                  {/* // <td>
+                                  //   <span onclick="add()"><button type="button" className="btn btn-outline-success radius-30">Add</button></span>
+                                  // </td>   */}
+                                  <button onClick={() => removeEducation(index)}>Remove</button>
+                                  </div>
+                                ))}
+                                <button onClick={addEducation}>Add Education</button>
+                                                                                        
                                 </tr>
                               </tbody>
                             </table>
