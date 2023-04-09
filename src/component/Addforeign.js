@@ -7,12 +7,35 @@ import Sidebar from "./Sidebar";
 import axios from "axios";
 import { toast } from "react-toastify";
 //import { useNavigate } from "react-router-dom";
-
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import "./Addforiegn.css";
 
-
-
+ 
 const Addforeign =()=>{
+const navigate = useNavigate();
+    const handleSubmit = async (event) => {
+  event.preventDefault();
+
+  //console.log(`Selected gender: ${gender}`);
+ 
+
+  try {
+    const response = await axios.post(
+      "http://localhost:3036/api/staff/staf_create/ForeignerStaff",
+      formData
+    );
+    console.log(response.data);
+    toast.success("Staff Add Successfully!!!");
+    navigate('/liststaff');  
+       // navigate("/login");
+    // redirect to login page
+  } catch (error) {
+    console.error(error);
+    toast.error("An error occurred while creating the account.");
+  }
+};
+
+
 
   const [formData, setFormData] = useState({
     role_id: 2,
@@ -145,26 +168,7 @@ const Addforeign =()=>{
       [event.target.name]: event.target.value,
     });
   };
-  const handleSubmit = async (event) => {
-    event.preventDefault();
 
-    //console.log(`Selected gender: ${gender}`);
-   
-
-    try {
-      const response = await axios.post(
-        "",
-        formData
-      );
-      console.log(response.data);
-      //toast.success("Staff Add Successfully!!!");
-         // navigate("/login");
-      // redirect to login page
-    } catch (error) {
-      console.error(error);
-      toast.error("An error occurred while creating the account.");
-    }
-};
 
 
 
