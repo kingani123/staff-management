@@ -35,9 +35,20 @@ const navigate = useNavigate();
   }
 };
 
+const handleRemove= index=>{
+  const list=[...inputList];
+  list.splice(index,1);
+  setInputList(list);
+}
 
+const handleAddClick=()=>{ 
+  setInputList([...inputList, 
+      { slNo: '', firstName: '', lastName: '', qualificationId: '', institution: '', passingYear: '' }]);
+}
 const [selectedOption, setSelectedOption] = useState('');
-
+const [inputList, setInputList] = useState([
+  { slNo: '', firstName: '', lastName: '', qualificationId: '', institution: '', passingYear: '' },
+]);
   const [formData, setFormData] = useState({
     role_id: 1,
     organizationtype_id: 1,
@@ -177,6 +188,13 @@ const [selectedOption, setSelectedOption] = useState('');
       [event.target.name]: event.target.value,
     });
   };
+  const handleInputchange=(e, index)=>{
+    const {name, value}= e.target;
+    const list= [...inputList];
+    list[index][name]= value;
+    setInputList(list);
+
+  }
 
   const [showField, setShowField] = useState(false);
   const [showField1, setShowField1] = useState(false);
@@ -716,7 +734,43 @@ const [selectedOption, setSelectedOption] = useState('');
                     </h2>
                     <div id="collapseFour" className="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                       <div className="accordion-body">
-                        <div className="col-12">
+                      <div className="col-sm-12">
+        
+           
+         {
+  inputList.map((x, i) => {
+    return (
+      <div className="row mb-3">
+        <div class="form-group col-md-1">
+          <label>Sl.No.</label>
+          <input type="text" name="slNo"
+           
+           class="form-control" placeholder="Enter Sl.No." onChange={e => handleInputChange(e, i)} />
+        </div>
+       
+        <div class="form-group col-md-2">
+          <label>Qualification ID</label>
+          <input type="text" name="qualificationId" class="form-control" placeholder="Enter Qualification ID" onChange={e => handleInputChange(e, i)} />
+        </div>
+        <div class="form-group col-md-2">
+          <label>Institution</label>
+          <input type="text" name="institution" class="form-control" placeholder="Enter Institution" onChange={e => handleInputChange(e, i)} />
+        </div>
+        <div class="form-group col-md-1">
+          <label>Passing Year</label>
+          <input type="text" name="passingYear" class="form-control" placeholder="Enter Year" onChange={e => handleInputChange(e, i)} />
+        </div>
+        <div class="form-group col-md-12 mt-4">
+          {inputList.length !== 1 && <button className="btn btn-danger mx-1" onClick={() => handleRemove(i)}>Remove</button>}
+          {inputList.length - 1 === i && <button className="btn btn-success" onClick={handleAddClick}>Add More</button>}
+        </div>
+      </div>
+    );
+  })
+}
+</div>
+</div>
+                     {/*  <div className="col-12">
                           <div className="table-responsive">
                             <table className="table table-light mb-0">
                               <thead>
@@ -786,12 +840,12 @@ const [selectedOption, setSelectedOption] = useState('');
                               </tbody>
                             </table>
                           </div>
-                        </div>
+                        </div> */}
                         {}
 
                       </div>
                     </div>
-                  </div>
+ 
                   <div className="accordion-item">
                     <h2 className="accordion-header" id="headingFive">
                       <button className="accordion-button fw-bold collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
