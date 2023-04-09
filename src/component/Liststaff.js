@@ -74,14 +74,14 @@ import Sidebar from "./Sidebar";
               </div>
                 
               <div className="user_table_area">
-              <table>
+              <table style={{padding: 15}}>
   <thead>
     <tr>
       <th>Sl No.</th>
       <th>Name</th>
-      <th>Country</th>
-      <th>State</th>
-      <th>District</th>
+      <th>DOB</th>
+      <th>Email</th>
+      <th>Phone no</th>
       <th>Police Station</th>
       <th>Action</th>
     </tr>
@@ -115,25 +115,46 @@ import Sidebar from "./Sidebar";
   </tbody>
 </table>
 
-                  <div style={{width: '15%'}}>
-                    <p className="mobile_heading">Name</p>
-                    <p></p>
+                  
                   </div>
-                  <div style={{width: '15%'}}>
-                    <p className="mobile_heading">Country</p>
-                    <p></p>
+
+{/* 
+                  <div className="user_table_area">
+                <div className="table_header">
+                  <div style={{width: '8%'}}>Sl No.</div>
+                  <div style={{width: '15%'}}>Name</div>
+                  <div style={{width: '15%'}}>Country</div>
+                  <div style={{width: '15%'}}>State</div>
+                  <div style={{width: '15%'}}>District</div>
+                  <div style={{width: '15%'}}>Police Station</div>
+                  <div style={{width: '15%'}}>Action </div>
+                  
+                </div>
+                <div className="table_body">
+                {staffList.map((staff, index) => (
+      <div key={staff.id}>
+         <div style={{width: '15%'}}>
+            <p className="mobile_heading">{index + 1}</p>
+          </div>
+        <div style={{width: '8%'}}>
+                    <p >{staff.name}</p>
+                    <p className="sl_no"></p>
                   </div>
-                  <div style={{width: '15%'}}>
-                    <p className="mobile_heading">State</p>
-                    <p></p>
+                  <div style={{width: '8%'}}>
+                    <p className="mobile_heading">{staff.name}</p>
+                    <p className="sl_no"></p>
                   </div>
-                  <div style={{width: '15%'}}>
-                    <p className="mobile_heading">District</p>
-                    <p></p>
+                  <div style={{width: '8%'}}>
+                    <p className="mobile_heading">{staff.name}</p>
+                    <p className="sl_no"></p>
                   </div>
-                  <div style={{width: '15%'}}>
-                    <p className="mobile_heading">Police Station</p>
-                    <p></p>
+                  <div style={{width: '8%'}}>
+                    <p className="mobile_heading">{staff.name}</p>
+                    <p className="sl_no"></p>
+                  </div>
+                  <div style={{width: '8%'}}>
+                    <p className="mobile_heading">{staff.name}</p>
+                    <p className="sl_no"></p>
                   </div>
                   <div style={{width: '15%'}}>
                     <p className="mobile_heading">Action</p>
@@ -142,9 +163,20 @@ import Sidebar from "./Sidebar";
         <button className="btn btn-primary"><i class="fa-regular fa-pen-to-square"></i></button>&nbsp;
         <button className="btn btn-danger"><i class="fa-regular fa-trash-can"></i></button>
                   </div>
-                  </div>
+        </div>
+         ))}</div>
+         </div>
+         */}
+         </div>
+                   
                   
-                </div>
+                  
+
+
+
+
+
+                  
                 
                 <br></br>  
                 
