@@ -1,7 +1,7 @@
 import React, { useState ,useEffect } from "react";
 import Navbar from "./Navbar";
 
-
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Sidebar from "./Sidebar";
 import axios from "axios";
 import { toast } from "react-toastify";
@@ -9,7 +9,7 @@ import { toast } from "react-toastify";
 
 import "./Profile.css";
 const Profile=()=>{
-
+  const navigate = useNavigate();
   const [countries, setCountries] = useState([]);
   const [country_id, setCountryId] = useState('');
   const [states, setStates] = useState([]);
@@ -103,7 +103,7 @@ const Profile=()=>{
           );
           console.log(response.data);
           toast.success("Account Created Successfully!!!");
-             // navigate("/login");
+             navigate("/login");
           // redirect to login page
         } catch (error) {
           console.error(error);
@@ -137,17 +137,27 @@ const Profile=()=>{
         <div>
       <Navbar/>
       <div className="wrapper">  
-      <Sidebar className="nav-link active"/> 
-      <div className="body_right">
+      <Sidebar className="nav-link active"/>            
+
+<div className="body_right">
   <div className="inside">
-<div className="form-container">
-          <h5 className="text-left mb-4">My Account</h5>
-          
-          <hr />
-         
+    <div className="right_body_pagenation">
+      <p> ADD PROFILE</p>
+    </div>
+    <div className="right_body_section">
+      {/*--content here--*/}
+<div className="container">
+
+  <div className="row">
+          <div className="col-xl-12 mx-12">        
+          <div className="card-body">
+            <h6 className="mb-0 ">My Account</h6>
+            
+            <hr />
       <form onSubmit={handleSubmit}>
       <div className="p-4 border rounded">
-      <h6 className="text">Update Information</h6><hr />
+      <center><h4 className="mb-0">Update Information</h4></center>
+      <hr />
       <div className="row">
           <div className="col-md-3">
             <label htmlFor="Org_Name" className="text"> Organization Name</label><span className="text-danger">*</span>
@@ -201,8 +211,12 @@ const Profile=()=>{
         <div className="row">
           <div className="col-md-3">
           <label htmlFor="country" className="text">Country</label><span className="text-danger">*</span>
-        <select name="country" className="form-control" onChange={(e) => handleCountryChange(e)}>
-          <option>--Select Country--</option>
+        <select name="country"
+         onChange={(e) => handleCountryChange(e)}
+           style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver', backgroundColor: 'transparent'}}
+            
+            required>
+          <option>Select Country</option>
           {countries.map((country) => (
             <option key={country.country_id} value={country.country_id}>{country.country_name}</option>
           ))}
@@ -236,7 +250,7 @@ const Profile=()=>{
           ><option value disabled selected>Select Distict</option></select>
         </div>
         <div className="col-md-3">
-          <label htmlFor="Police_station" className="text">PS</label><span className="text-danger">*</span>
+          <label htmlFor="Police_station" className="text">Police Station</label><span className="text-danger">*</span>
           <select 
           id="Police_station"
           name="Police_station"
@@ -246,7 +260,7 @@ const Profile=()=>{
             style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver', backgroundColor: 'transparent'}}
             
             required
-          ><option value disabled selected>Select PS</option></select>
+          ><option value disabled selected>Select Police Station</option></select>
        
         </div></div>
         <br/>
@@ -313,7 +327,8 @@ const Profile=()=>{
       </div>
       </div>
       <br/>
-      <h6 className="text">Contact Details</h6><hr />
+      <center><h4 className="mb-0">Contact Details</h4></center>
+      <hr />
       <div className="row">
           <div className="col-md-4">
             <label htmlFor="Cp_name" className="text"> Contact Person Name</label><span className="text-danger">*</span>
@@ -351,13 +366,14 @@ const Profile=()=>{
          <div className="col-md-4">
           <label htmlFor="phone_Number" className="text">Phone Number</label>
           <input
-            type="text"
+            type="number"
             id="phone_Number"
             name="phone_Number"
             value={phone_Number}
+            maxLength={10}
             onChange={handleInputChange}
             
-            placeholder="phone Number "
+            placeholder="Phone Number "
             style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver', backgroundColor: 'transparent'}}
             
             required
@@ -367,7 +383,7 @@ const Profile=()=>{
  <div className="col-md-6">
           <label htmlFor="Landline" className="text">Landline</label>
           <input
-            type="text"
+            type="number"
             id="Landline"
             name="Landline"
             value={Landline}
@@ -395,8 +411,9 @@ const Profile=()=>{
             required
           /></div>
  </div>
-        
-           <h6 className="text">CCTV Details</h6><hr />
+       <br></br> 
+ <center><h4 className="mb-0">CCTV Details</h4></center>
+  <hr />
 
         <div className="row">
         <div className="col-md-6">
@@ -419,19 +436,21 @@ const Profile=()=>{
           <label   htmlFor="install" className="text">Date of Installation</label><span className="text-danger">*</span>
           
           <input
-            type="text"
+            type="date"
             id="install"
             name="install"
             value={install}
             onChange={handleInputChange}
           
-            placeholder="date of installation"
+            placeholder="Date of installation"
             style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver', backgroundColor: 'transparent'}}
             
             required
           />
         </div></div>
-        <h6 className="text">Other Details</h6><hr />
+        <br></br>
+        <center><h4 className="mb-0">Other Details</h4></center>
+        <hr />
 
  <div className="row">
           <div className="col-md-4">
@@ -481,7 +500,7 @@ const Profile=()=>{
           <label  htmlFor="aadhar"className="text">Aadhar No.</label><span className="text-danger">*</span>
           
           <input
-            type="text"
+            type="number"
             id="aadhar"
             name="aadhar"
             value={aadhar}
@@ -570,7 +589,7 @@ const Profile=()=>{
             <label htmlFor="expiry" className="text"> Lisence Expiry Date</label><span className="text-danger">*</span>
                  
           <input
-            type="text"
+            type="date"
              
             id="expiry"
             name="expiry"
@@ -780,7 +799,7 @@ const Profile=()=>{
           <label  htmlFor="lexp" className="text"> License Expiry Date</label><span className="text-danger">*</span>
           
           <input
-            type="text"
+            type="date"
             id="lexp"
             name="lexp"
             value={lexp}
@@ -910,11 +929,15 @@ const Profile=()=>{
        </form>
        
 
-      
-      
+       </div>
+    </div>
+       </div>
+    </div>
       </div>
-    </div></div>
-    </div></div>
+    </div>
+    </div>
+    </div>
+    </div>
 
               );
 };

@@ -29,7 +29,7 @@ const Navbar =()=>{
               <li>
   <Link style={{ float: 'left' }} to={'/profile'}> 
   
-      <i className="fas fa-power-off" style={{ marginRight: '10px' }} />
+      <i className="fa fa-user" style={{ marginRight: '10px' }} />
       Profile
     
   </Link>

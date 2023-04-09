@@ -238,12 +238,12 @@ function Sidebar(props) {
           </li>
           <li className="nav-item">
           <Link to="#" className={props.className}>
-              <img src="images/settings.svg" alt="" /><b> CONTACT US</b>
+              <img src="images/contact-us-icon.svg" alt="" /><b> CONTACT US</b>
             </Link>
           </li>
           <li className="nav-item">
-          <Link to="#" className={props.className}>
-              <img src="images/logout.svg" alt="" /> <b>LOGOUT</b>
+          <Link to={'/login'} className={props.className}> 
+                <img src="images/logout.svg" alt="" /> <b>LOGOUT</b>
             </Link>
           </li>
   </ul>
