@@ -1,39 +1,65 @@
-import React from "react";
 
-import Navbar from "./Navbar";
+  // const fetchStaffList = async () => {
+  //   try {
+  //     const response = await axios.post('http://localhost:3036/api/organization/list/IndianStaff');
+  //     console.log('Staff list fetched successfully:', response.data);
+  //     setStaffList(response);
+  //   } catch (error) {
+  //     console.error('Error fetching staff list:', error);
+  //   }
+  // };
+
+  // useEffect(() => {
+  //   fetchStaffList();
+  // }, []);
+  import { useState, useEffect } from 'react';
+  import axios from 'axios';
+  import Navbar from "./Navbar";
 
 
 import Sidebar from "./Sidebar";
+  function StaffList() {
+    const [staffList, setStaffList] = useState([]);
 
-// import RemoveRedEyeIcon from '@mui/icons-material/RemoveRedEye';
-// import CreateIcon from '@mui/icons-material/Create';
-// import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
-
-
-const Liststaff = ()=>{
+    useEffect(() => {
+      async function fetchData() {
+        try {
+          const response = await axios.get('http://localhost:3036/api/organization/list/IndianStaff');
+          //console.log(response.data);
+          setStaffList(response.data.results.detalis);
+        } catch (error) {
+          console.error(error);
+        }
+      }
+      fetchData();
+    }, []);
+    
+    console.log(staffList);
+  
     return (
       <div>
-      <Navbar/>
+
+<Navbar/>
       <div className="wrapper">  
       <Sidebar className="nav-link active"/>  
       <div className="body_right">
         <div className="inside">
           <div className="right_body_pagenation">
-            <p> List Of Staff Details</p>
+            <p> List Unit Details</p>
           </div>    
           <div className="right_body_section">
             {/*--content here--*/}
             
             <div className="card mt-0">
             <div className="card-body">
-              <div className="heading"><h3><b> LIST OF STAFF DETAILS</b></h3></div>
+              <div className="heading"><h3> List of Unit Details</h3></div>
               <div className="report_search_panner">
                 <div className="left">
                   <select className="form-select" aria-label="Default select example">
                     <option selected>All</option>
                   </select>
                   </div>
-                  <div className="right">
+                  {/* <div className="right">
                   <div className="search_area">
                     <div className="input-group">
                       <input className="form-control search" type="search" defaultValue="search" id="example-search-input" />
@@ -44,59 +70,81 @@ const Liststaff = ()=>{
                       </span>
                     </div>
                   </div>         
-                </div>
+                </div> */}
               </div>
                 
-              
-                <div className="user_table_area">
-                <div className="table_header">
-                  <div style={{width: '18%'}}>Sl No.</div>
-                  <div style={{width: '18%'}}>Name</div>
-                  <div style={{width: '18%'}}>DOB</div>
-                  <div style={{width: '18%'}}>Email</div>
-                  <div style={{width: '18%'}}>Mobile</div>
-                   <div style={{width: '8%'}}>Type of Job </div>
-                   <div style={{width: '18%'}}>Action</div>
-                  
-                </div>
-                <div className="table_body">
-                  <div style={{width: '18%'}}>
-                    <p className="mobile_heading">Sl No.</p>
-                    <p className="sl_no">1</p>
-                  </div>
-                  <div style={{width: '18%'}}>
+              <div className="user_table_area">
+              <table>
+  <thead>
+    <tr>
+      <th>Sl No.</th>
+      <th>Name</th>
+      <th>Country</th>
+      <th>State</th>
+      <th>District</th>
+      <th>Police Station</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    {staffList.map((staff, index) => (
+      <tr key={staff.id}>
+        <td>
+          <div style={{width: '15%'}}>
+            <p className="mobile_heading">{index + 1}</p>
+          </div>
+        </td>
+        <td>{staff.name}</td>
+        <td>{staff.dob}</td>
+        <td>{staff.email}</td>
+        <td>{staff.mobile}</td>
+        <td>{staff.police_station}</td>
+        <td>
+          <button className="btn btn-success">
+            <i className="far fa-eye"></i>
+          </button>
+          <button className="btn btn-primary">
+            <i className="far fa-pen-to-square"></i>
+          </button>
+          <button className="btn btn-danger">
+            <i className="far fa-trash-can"></i>
+          </button>
+        </td>
+      </tr>
+    ))}
+  </tbody>
+</table>
+
+                  <div style={{width: '15%'}}>
                     <p className="mobile_heading">Name</p>
-                    <p>abc</p>
+                    <p></p>
                   </div>
-                  <div style={{width: '18%'}}>
-                    <p className="mobile_heading">DOB</p>
-                    <p>abc</p>
+                  <div style={{width: '15%'}}>
+                    <p className="mobile_heading">Country</p>
+                    <p></p>
                   </div>
-                  <div style={{width: '18%'}}>
-                    <p className="mobile_heading">Email</p>
-                    <p>aaa</p>
+                  <div style={{width: '15%'}}>
+                    <p className="mobile_heading">State</p>
+                    <p></p>
                   </div>
-                  <div style={{width: '18%'}}>
-                    <p className="mobile_heading">Mobile</p>
-                    <p>aaa</p>
+                  <div style={{width: '15%'}}>
+                    <p className="mobile_heading">District</p>
+                    <p></p>
                   </div>
-                  <div style={{width: '8%'}}>
-                    <p className="mobile_heading">Type of job</p>
-                    <p>aaa</p>
+                  <div style={{width: '15%'}}>
+                    <p className="mobile_heading">Police Station</p>
+                    <p></p>
                   </div>
-                  <div style={{width: '18%'}}>
+                  <div style={{width: '15%'}}>
                     <p className="mobile_heading">Action</p>
+                    
                     <button className="btn btn-success"><i class="fa-regular fa-eye"></i></button>&nbsp;
         <button className="btn btn-primary"><i class="fa-regular fa-pen-to-square"></i></button>&nbsp;
         <button className="btn btn-danger"><i class="fa-regular fa-trash-can"></i></button>
                   </div>
-              
+                  </div>
                   
                 </div>
-              
-
-
-                
                 
                 <br></br>  
                 
@@ -130,13 +178,16 @@ const Liststaff = ()=>{
 
     </div>
   
-</div>
-
-</div>
 
 
 
 
-      );
-     }
-export default Liststaff;
+
+    
+    );
+  }
+  
+  export default StaffList;
+  
+  
+  
