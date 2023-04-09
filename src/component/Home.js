@@ -77,13 +77,13 @@ const renderCustomizedLabel = ({ cx, cy, midAngle, innerRadius, outerRadius, per
 const Home  = ()=>{
   const usenavigate = useNavigate();
 
-  useEffect(() => {
+  // useEffect(() => {
     
-          let username = sessionStorage.getItem('user_name_email');
-          if (username === '' || username === null) {
-              usenavigate('/login');
-          }
-      });
+  //         let username = sessionStorage.getItem('user_name_email');
+  //         if (username === '' || username === null) {
+  //             usenavigate('/login');
+  //         }
+  //     });
 
     return (
 
