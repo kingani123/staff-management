@@ -36,17 +36,18 @@ const navigate = useNavigate();
 };
 
 
+const [selectedOption, setSelectedOption] = useState('');
 
   const [formData, setFormData] = useState({
-    role_id: 2,
+    role_id: 1,
     organizationtype_id: 1,
     organization_id: 1,
-    in_staff_name:"",
+    name:"",
     up_image:"",
     religion:"",
     father_name:"",
     mother_name:"",
-    gen:"",
+    sex:"",
     dob:"",
     age:"",
     bloodgroup:"",
@@ -103,12 +104,12 @@ const navigate = useNavigate();
     role_id,
     organizationtype_id,
     organization_id,
-    in_staff_name,
+    name,
     up_image,
     religion,
     father_name,
     mother_name,
-    gen,
+    sex,
     dob,
     age,
     bloodgroup,
@@ -168,6 +169,31 @@ const navigate = useNavigate();
       [event.target.name]: event.target.value,
     });
   };
+
+  const [showField, setShowField] = useState(false);
+  const [showField1, setShowField1] = useState(false);
+  const [showField2, setShowField2] = useState(false);
+
+  
+   
+  
+  function handleOptionChange(option) {
+    if (option === 'dl' || option === 'cas') {
+      setShowField(true);
+    } else {
+      setShowField(false);}
+  if (option === 'oper' || option === 'mana' || option === 'exe') {
+     setShowField1(true);
+    } else {
+      setShowField1(false);
+    }
+
+    if (option === 'contractual') {
+      setShowField2(true);
+     } else {
+       setShowField2(false);
+     }
+  }
 
 
 
@@ -241,12 +267,12 @@ const navigate = useNavigate();
                     <div id="collapseOne" className="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
                       <div className="accordion-body row">
                       <div className="col-md-4">
-                          <label htmlFor="in_staff_name" className="text">Name</label><span className="text-danger">*</span>
+                          <label htmlFor="name" className="text">Name</label><span className="text-danger">*</span>
                           <input 
                           type="text" 
-                          name="in_staff_name" 
-                          id=" in_staff_name" 
-                          value={in_staff_name}
+                          name="name" 
+                          id="name" 
+                          value={name}
                           onChange={handleInputChange}
                           placeholder=" Enter Name" 
                           style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver', backgroundColor: 'transparent'}}
@@ -460,10 +486,10 @@ const navigate = useNavigate();
                         <br />
                         <h6 className="fw-bold mt-3">Present Address:</h6><hr />
                         <div className="col-md-12">
-                          <div className="form-check">
+                         {/* <div className="form-check">
                             <input className="form-check-input" type="checkbox" defaultValue id="sameas" onclick="sameAs()"  />
                             <label className="form-check-label" htmlFor="sameas">Same As Permanent Address</label>
-                          </div>
+        </div>*/}
                           <div className="col-md-12">
                             <label htmlFor="add" className="text" >Address</label><span className="text-danger">*</span>
                             <textarea 
@@ -968,17 +994,29 @@ const navigate = useNavigate();
                 //value={job_category}
                 //onChange={handleInputChange}  
                 style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
+                value={selectedOption} onChange={(e) => {
+                  setSelectedOption(e.target.value);
+                  handleOptionChange(e.target.value);
+                }} 
+                
                 required
-                >
-                    <option value="j">Select job </option>
-                    <option value="dl" className="jobopt jobopt5">Daily Labourer</option>
-                    <option value="cas" className="jobopt jobopt4">Casual</option>
-                    <option value="oper" className="jobopt jobopt3">Operational</option>
-                    <option value="mana" className="jobopt jobopt2">Managerial</option>
-                    <option value="exe" className="jobopt jobopt1">Executive</option>
-                </select>
-                </div>
-                <div className="col-md-6 mt-2">
+            >
+                <option value="">Select job </option>
+                <option value="dl" className="jobopt jobopt5">Daily Labourer</option>
+                <option value="cas" className="jobopt jobopt4">Casual</option>
+                <option value="oper" className="jobopt jobopt3">Operational</option>
+                <option value="mana" className="jobopt jobopt2">Managerial</option>
+                <option value="exe" className="jobopt jobopt1">Executive</option>
+            </select>
+
+                      
+                        </div>
+
+
+
+
+{showField && (<>
+                          <div className="col-md-6 mt-2">
                           <label htmlFor="kind_job" className="text" >What kind of job</label>
                           <input 
                           type="text"  
@@ -1002,25 +1040,35 @@ const navigate = useNavigate();
                           style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
                           required/>
                         </div>
+                        </> )}
+    {showField1 && (<>
                         <div className="col-md-6 mt-2">
                          <label htmlFor="job_sub_category" className="text">Job Sub-catyegory</label><span className="text-danger">*</span>
-                      <select
-                      name="job_sub_category" 
-                      id="job_sub_category" 
-                      value={job_sub_category}
-                      onChange={handleInputChange}  
-                      style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
-                      required
+            <select
+                name="job_sub_category" 
+                id="job_sub_category" 
+                value={job_sub_category}
+                onChange={handleInputChange}  
+                style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
+                required
             >
-                <option value="a">Select job  sub category</option>
+                <option value="">Select job  sub category</option>
                 <option value="5" className="jobopt jobopt5">Daily Labourer</option>
                 <option value="4" className="jobopt jobopt4">Casual</option>
                 <option value="3" className="jobopt jobopt3">Operational</option>
                 <option value="2" className="jobopt jobopt2">Managerial</option>
                 <option value="1" className="jobopt jobopt1">Executive</option>
             </select>
-               </div>
-               <div className="col-md-6 mt-2">
+
+                      
+                        </div>
+       </> )}
+
+
+
+{showField2 && (<>
+
+       <div className="col-md-6 mt-2">
                          <label htmlFor="select_contractor" className="text">Select Contractor</label><span className="text-danger">*</span>
             <select
                 name="select_contractor" 
@@ -1030,7 +1078,7 @@ const navigate = useNavigate();
                 style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
                 required
             >
-                <option value="b">Select </option>
+                <option value="">Select</option>
                 <option value="visito" className="jobopt jobopt5">Visito Ventures IndiaPvt Ltd(Partnership)</option>
                 <option value="anil" className="jobopt jobopt4">Anil Enterptises(individual)</option>
                
@@ -1048,7 +1096,7 @@ const navigate = useNavigate();
                 style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
                 required
             >
-                <option value="c">Select </option>
+                <option value="">Select </option>
                 <option value="5" className="jobopt jobopt5">Regular</option>
                 <option value="4" className="jobopt jobopt4">Periodic</option>
          
@@ -1056,18 +1104,8 @@ const navigate = useNavigate();
 
                       
                         </div>
-                        <div className="col-md-6 mt-2">
-                          <label  htmlFor="dob" className="text">Date of Joining</label><span className="text-danger">*</span>
-                          <input 
-                          type="date" 
-                          name="join_date" 
-                          id="join_date"
-                          value={join_date}
-                          onChange={handleInputChange}
-                          placeholder="Date of Joining"   
-                          style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}} 
-                          required/>
-                        </div>
+      
+                        </> )} 
                         <div className="col-md-6 mt-2">
                          <label htmlFor="special_skill" className="text">Special Skill</label><span className="text-danger">*</span>
      
