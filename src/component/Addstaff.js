@@ -1,7 +1,7 @@
 
 import React, { useState } from "react";
 import Navbar from "./Navbar";
-
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 import Sidebar from "./Sidebar";
 
@@ -12,7 +12,29 @@ import { toast } from "react-toastify";
 //import { useNavigate } from "react-router-dom";
 
 const Addstaff =()=>{
-  
+  const [inputList, setInputList] = useState([
+    { slNo: '', firstName: '', lastName: '', qualificationId: '', institution: '', passingYear: '' },
+  ]);
+  const location = useLocation();
+  const navigate = useNavigate();
+  const handleInputchange=(e, index)=>{
+    const {name, value}= e.target;
+    const list= [...inputList];
+    list[index][name]= value;
+    setInputList(list);
+
+  }
+ 
+  const handleRemove= index=>{
+    const list=[...inputList];
+    list.splice(index,1);
+    setInputList(list);
+  }
+
+  const handleAddClick=()=>{ 
+    setInputList([...inputList, 
+        { slNo: '', firstName: '', lastName: '', qualificationId: '', institution: '', passingYear: '' }]);
+  }
     //const [gender, setGender] = useState('');
     const [selectedOption, setSelectedOption] = useState('');
 
@@ -53,7 +75,7 @@ const Addstaff =()=>{
     role_id: 2,
     organizationtype_id: 1,
     organization_id: 1,
-    in_staff_name:"",
+    name:"",
     up_image:"",
     religion:"",
     father_name:"",
@@ -102,6 +124,7 @@ const Addstaff =()=>{
     select_contractor:"",
     job_sub_category:"",
     regular_peri:"",
+    inputList:[],
     
 
   });
@@ -109,7 +132,7 @@ const Addstaff =()=>{
  role_id,
  organizationtype_id,
  organization_id,
- in_staff_name,
+name,
  up_image,
  religion,
  father_name,
@@ -157,6 +180,7 @@ special_skill,
 kind_job,
 engaged_for,
 job_sub_category,
+
 
   } = formData;
   const handleInputChange = (event) => {
@@ -212,6 +236,7 @@ job_sub_category,
       );
       console.log(response.data);
       toast.success("Staff Add Successfully!!!");
+      navigate('/liststaff');  
          // navigate("/login");
       // redirect to login page
     } catch (error) {
@@ -380,9 +405,9 @@ const handleFormSubmit = (event) => {
                           <label htmlFor="in_staff_name" className="text">Name</label><span className="text-danger">*</span>
                           <input 
                           type="text" 
-                          name="in_staff_name" 
-                          id=" in_staff_name" 
-                          value={in_staff_name}
+                          name="name" 
+                          id=" name" 
+                          value={name}
                           onChange={handleInputChange}
                           placeholder=" Enter Name" 
                           style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver', backgroundColor: 'transparent'}}
@@ -813,6 +838,51 @@ const handleFormSubmit = (event) => {
                     </h2>
                     <div id="collapseFour" className="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                       <div className="accordion-body">
+                      <div className="row">
+       <div className="col-sm-12">
+         <h5 className="mt-3 mb-4 fw-bold">Dynamically add/remove inputs fields reactjs </h5>
+           
+         {
+  inputList.map((x, i) => {
+    return (
+      <div className="row mb-3">
+        <div class="form-group col-md-1">
+          <label>Sl.No.</label>
+          <input type="text" name="slNo" class="form-control" placeholder="Enter Sl.No." onChange={e => handleInputChange(e, i)} />
+        </div>
+        <div class="form-group col-md-3">
+          <label>First Name</label>
+          <input type="text" name="firstName" class="form-control" placeholder="Enter First Name" onChange={e => handleInputChange(e, i)} />
+        </div>
+        <div class="form-group col-md-3">
+          <label>Last Name</label>
+          <input type="text" name="lastName" class="form-control" placeholder="Enter Last Name" onChange={e => handleInputChange(e, i)} />
+        </div>
+        <div class="form-group col-md-2">
+          <label>Qualification ID</label>
+          <input type="text" name="qualificationId" class="form-control" placeholder="Enter Qualification ID" onChange={e => handleInputChange(e, i)} />
+        </div>
+        <div class="form-group col-md-2">
+          <label>Institution</label>
+          <input type="text" name="institution" class="form-control" placeholder="Enter Institution" onChange={e => handleInputChange(e, i)} />
+        </div>
+        <div class="form-group col-md-1">
+          <label>Passing Year</label>
+          <input type="text" name="passingYear" class="form-control" placeholder="Enter Year" onChange={e => handleInputChange(e, i)} />
+        </div>
+        <div class="form-group col-md-12 mt-4">
+          {inputList.length !== 1 && <button className="btn btn-danger mx-1" onClick={() => handleRemove(i)}>Remove</button>}
+          {inputList.length - 1 === i && <button className="btn btn-success" onClick={handleAddClick}>Add More</button>}
+        </div>
+      </div>
+    );
+  })
+}
+
+
+               
+       </div>
+     </div>
                         <div className="col-12">
                           <div className="table-responsive">
                             <table className="table table-light mb-0">
@@ -1318,9 +1388,13 @@ const handleFormSubmit = (event) => {
                     </div>
                   </div>
                 </div> 
+          
+    
+  
                 <div className="col-md-12 row row-cols-auto mt-2">  
                   <div className="col">
-                    <button type="submit" className="btn btn-success px-5"><i className="bx bx-check-circle mr-1" /> Submit</button>                                              
+                    <button type="submit" className="btn btn-success px-5"><i className="bx bx-check-circle mr-1" /> Submit</button>   
+                                                          
                   </div>                                                
                 </div>
               </form>
