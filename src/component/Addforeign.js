@@ -82,23 +82,27 @@ const [selectedOption, setSelectedOption] = useState('');
     special_skill:"",
     kind_job:"",
     engaged_for:"",
-    select_contractor:"",
+    contractor_id:"",
     job_sub_category:"",
     regular_peri:"",
     city:"",
-    mobile_res:"",
-    land_res:"",
-    contact_person:"",
-    contact_person_mob:"",
-    relation:"",
+   foreign_mobile_residing_country:"",
+   foreign_landline_residing_country:"",
+    emergency_contact:"",
+    emergency_contact_mobile:"",
+    emergency_contact_person_relation:"",
     passport:"",
-    place:"",
-    d_issue:"",
-    expiry:"",
-    up_pass:"",
+    passport_place_issue:"",
+    passport_expiry_date:"",
+    passport_issue_date:"",
+    passportpic:"",
+    visa:"",
+    visa_expiry_dt:"",
+    visa_issue_dt:"",
+    visa_issue_place:"",
     visa_type:"",
     visa_sub_type:"",
-    up_visa:"",
+    visapic:"",
   });
   const {
     role_id,
@@ -116,7 +120,7 @@ const [selectedOption, setSelectedOption] = useState('');
     addrss,
     landmark,
     p_pincode,
-    select_contractor,
+    contractor_id,
     regular_peri,
     country,
     state,
@@ -149,19 +153,23 @@ const [selectedOption, setSelectedOption] = useState('');
     engaged_for,
     job_sub_category,
     city,
-    mobile_res,
-    land_res,
-    contact_person,
-    contact_person_mob,
-    relation,
+    foreign_mobile_residing_country    ,
+   foreign_landline_residing_country,
+    emergency_contact,
+    emergency_contact_mobile,
+    emergency_contact_person_relation,
     passport,
-    place,
-    d_issue,
-    expiry,
-    up_pass,
+    passport_place_issue,
+    passport_expiry_date,
+    passport_issue_date,
+    passportpic,
+    visa,
+    visa_expiry_dt,
+    visa_issue_dt,
+    visa_issue_place,
     visa_type,
     visa_sub_type,
-    up_visa,
+    visapic,
    } = formData;
   const handleInputChange = (event) => {
     setFormData({
@@ -588,7 +596,7 @@ const [selectedOption, setSelectedOption] = useState('');
                     </h2>
                     <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                       <div className="accordion-body row">
-                      <div className="col-md-4">
+                      <div className="col-md-6">
                           <label htmlFor="email" className="text">Email</label><span className="text-danger">*</span>
                           <input 
                           type="email"  
@@ -601,7 +609,7 @@ const [selectedOption, setSelectedOption] = useState('');
                           required    />
                           <small className="text-danger" />
                         </div>
-                        <div className="col-md-4">
+                        <div className="col-md-6">
                           <label htmlFor="mobile" className="text">Mobile</label><span className="text-danger">*</span>
                           <input 
                           type="text" 
@@ -614,20 +622,21 @@ const [selectedOption, setSelectedOption] = useState('');
                           style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
                           required />
                         </div>
-                        <div className="col-md-4">
-                          <label htmlFor="mobile_res" className="text">Mobile( Mobile of Residing Country)</label><span className="text-danger">*</span>
+                        <div className="col-md-6">
+                          <label htmlFor="foreign_mobile_residing_country" className="text">Mobile( Mobile of Residing Country)</label><span className="text-danger">*</span>
                           <input 
                           type="text" 
-                          name="mobile_res" 
-                          id="mobile_res" 
-                          value={mobile_res}
+                          name="foreign_mobile_residing_country" 
+                          id="foreign_mobile_residing_country" 
+                          value={foreign_mobile_residing_country}
                           onChange={handleInputChange} 
                           maxLength={10} 
-                          placeholder="Enter mobile number"  
+                          placeholder=" Enter Mobile"  
                           style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
                           required />
                         </div>
-                        <div className="col-md-4">
+                       
+                        <div className="col-md-6">
                           <label htmlFor="landline" className="text" >Landline</label><span className="text-danger">*</span>
                           <input 
                           type="text" 
@@ -640,39 +649,39 @@ const [selectedOption, setSelectedOption] = useState('');
                           style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
                           required/>
                         </div>
-                        <div className="col-md-4">
-                          <label htmlFor="land_res" className="text" >Landline(Lanline of residing country)</label><span className="text-danger">*</span>
+                        <div className="col-md-6">
+                          <label htmlFor="foreign_landline_residing_country" className="text" >Landline(Lanline of residing country)</label><span className="text-danger">*</span>
                           <input 
                           type="text" 
-                          name="land_res" 
-                          id="land_res"
-                          value={land_res}
+                          name="foreign_landline_residing_country" 
+                          id="foreign_landline_residing_country"
+                          value={foreign_landline_residing_country}
                           onChange={handleInputChange} 
                           placeholder=" Enter Landline" 
                           maxLength={12}  
                           style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
                           required/>
                         </div>
-                        <div className="col-md-4">
-                          <label htmlFor="contact_person" className="text" >Contact Person</label><span className="text-danger">*</span>
+                        <div className="col-md-6">
+                          <label htmlFor="emergency_contact" className="text" >Contact Person</label><span className="text-danger">*</span>
                           <input 
                           type="text" 
-                          name="contact_person" 
-                          id="contact_person"
-                          value={contact_person}
+                          name="emergency_contact" 
+                          id="emergency_contact"
+                          value={emergency_contact}
                           onChange={handleInputChange} 
                           placeholder=" Enter contact person" 
                           maxLength={12}  
                           style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
                           required/>
                         </div>
-                        <div className="col-md-4">
-                          <label htmlFor="contact_person" className="text" >Contact Person Mobile</label><span className="text-danger">*</span>
+                        <div className="col-md-6">
+                          <label htmlFor="emergency_contact_mobile" className="text" >Contact Person Mobile</label><span className="text-danger">*</span>
                           <input 
                           type="text" 
-                          name="contact_person_mob" 
-                          id="contact_person_mob"
-                          value={contact_person_mob}
+                          name="emergency_contact_mobile" 
+                          id="emergency_contact_mobile"
+                          value={emergency_contact_mobile}
                           onChange={handleInputChange} 
                           placeholder=" Enter contact person mobile" 
                           maxLength={12}  
@@ -680,13 +689,13 @@ const [selectedOption, setSelectedOption] = useState('');
                           required/>
                         </div>
                         
-                        <div className="col-md-4">
-                          <label htmlFor="relation" className="text" >Relation</label><span className="text-danger">*</span>
+                        <div className="col-md-6">
+                          <label htmlFor="emergency_contact_person_relation" className="text" >Relation</label><span className="text-danger">*</span>
                           <input 
                           type="text" 
-                          name="relation" 
-                          id="relation"
-                          value={relation}
+                          name="emergency_contact_person_relation" 
+                          id="emergency_contact_person_relation"
+                          value={emergency_contact_person_relation}
                           onChange={handleInputChange} 
                           placeholder=" Enter relation ..." 
                             
@@ -805,11 +814,11 @@ const [selectedOption, setSelectedOption] = useState('');
                           required/>
                         </div>
                         <div className="col-md-4">
-                          <label htmlFor="place" className="text" >Place of Issue</label><span className="text-danger">*</span>
+                          <label htmlFor="passport_place_issue" className="text" >Place of Issue</label><span className="text-danger">*</span>
                           <select 
-                                    id="place"
-                                    name="place" 
-                                    value={place}
+                                    id="passport_place_issue"
+                                    name="passport_place_issue" 
+                                    value={passport_place_issue}
                                     onChange={handleInputChange} 
                                     placeholder="Select place of issue" 
                                     style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
@@ -818,42 +827,93 @@ const [selectedOption, setSelectedOption] = useState('');
                                       </select>
                         </div>
                         <div className="col-md-4 mt-2">
-                          <label  htmlFor="d_issue" className="text">Date of Issue</label><span className="text-danger">*</span>
+                          <label  htmlFor="passport_issue_date" className="text">Date of Issue</label><span className="text-danger">*</span>
                           <input 
                           type="date" 
-                          name="d_issue" 
-                          id="d_issue"
-                          value={d_issue}
+                          name="passport_issue_date" 
+                          id="passport_issue_date"
+                          value={passport_issue_date}
                           onChange={handleInputChange}
                           placeholder=" Select date of issue..."   
                           style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}} 
                           required/>
                         </div>
-                        <div className="col-md-6 mt-2">
-                          <label  htmlFor="expiry" className="text">Expiry Date</label><span className="text-danger">*</span>
+                        <div className="col-md-4 mt-2">
+                          <label  htmlFor="passport_expiry_date" className="text">Expiry Date</label><span className="text-danger">*</span>
                           <input 
                           type="date" 
-                          name="expiry" 
-                          id="expiry"
-                          value={expiry}
+                          name="passport_expiry_date" 
+                          id="passport_expiry_date"
+                          value={passport_expiry_date}
+                          onChange={handleInputChange}
+                          placeholder=" Select date of issue..."   
+                          style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}} 
+                          required/>
+                        </div>
+                       
+                        <div className="col-md-6 mt-2">
+                          <label htmlFor="passportpic" className="text">Upload Passport(File size should be less than 2mb)</label><span className="text-danger">*</span>
+                          <input   
+                          type="file"
+                          name="passportpic"
+                          id="passportpic" 
+                          value={passportpic} 
+                          onChange={handleInputChange}   
+                          style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}} />
+                       </div> 
+
+
+                       <div className="col-md-3 mt-2">
+                          <label htmlFor="visa" className="text" >Visa No.</label><span className="text-danger">*</span>
+                          <input 
+                          type="text" 
+                          name="visa" 
+                          id="visa"
+                          value={visa}
+                          onChange={handleInputChange} 
+                          placeholder=" Enter visa number ..." 
+                          maxLength={12}  
+                          style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
+                          required/>
+                        </div>
+                        <div className="col-md-3 mt-2">
+                          <label htmlFor="visa_issue_place" className="text" >Place of Issue</label><span className="text-danger">*</span>
+                          <select 
+                                    id="visa_issue_place"
+                                    name="passport_place_issue" 
+                                    value={visa_issue_place}
+                                    onChange={handleInputChange} 
+                                    placeholder="Select place of issue" 
+                                    style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
+                                    required >
+                                      <option value disabled selected>Select place </option>
+                                      </select>
+                        </div>
+                       
+                        <div className="col-md-3 mt-2">
+                          <label  htmlFor="visa_issue_dt" className="text">Date of Issue</label><span className="text-danger">*</span>
+                          <input 
+                          type="date" 
+                          name="visa_issue_dt" 
+                          id="visa_issue_dt"
+                          value={visa_issue_dt}
+                          onChange={handleInputChange}
+                          placeholder=" Select date of issue..."   
+                          style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}} 
+                          required/>
+                        </div>
+                        <div className="col-md-3 mt-2">
+                          <label  htmlFor="visa_expiry_dt" className="text">Expiry Date</label><span className="text-danger">*</span>
+                          <input 
+                          type="date" 
+                          name="visa_expiry_dt" 
+                          id="visa_expiry_dt"
+                          value={ visa_expiry_dt}
                           onChange={handleInputChange}
                           placeholder=" Select date of expiry..."   
                           style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}} 
                           required/>
                         </div>
-                        <div className="col-md-6 mt-2">
-                          <label htmlFor="up_pass" className="text">Upload Passport(File size should be less than 2mb)</label><span className="text-danger">*</span>
-                          <input   
-                          type="file"
-                          name="up_pass"
-                          id="up_pass" 
-                          value={up_pass} 
-                          onChange={handleInputChange}   
-                          style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}} />
-                       </div> 
-
-                       
-                       
 
                         <div className="col-md-3 mt-2">
                         <label htmlFor="visa_type" className="text" >VISA Type</label><span className="text-danger">*</span>
@@ -883,12 +943,12 @@ const [selectedOption, setSelectedOption] = useState('');
                                       </select>
                                       </div>
                            <div className="col-md-6">
-                           <label htmlFor="up_visa" className="text">Upload Visa(File size should be less than 2mb)</label><span className="text-danger">*</span>
+                           <label htmlFor="visapic" className="text">Upload Visa(File size should be less than 2mb)</label><span className="text-danger">*</span>
                           <input   
                           type="file"
-                          name="up_visa"
-                          id="up_visa" 
-                          value={up_visa} 
+                          name="visapic"
+                          id="visapic" 
+                          value={visapic} 
                           onChange={handleInputChange}   
                           style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}} />
                        </div> 
@@ -1069,11 +1129,11 @@ const [selectedOption, setSelectedOption] = useState('');
 {showField2 && (<>
 
        <div className="col-md-6 mt-2">
-                         <label htmlFor="select_contractor" className="text">Select Contractor</label><span className="text-danger">*</span>
+                         <label htmlFor="contractor_id" className="text">Select Contractor</label><span className="text-danger">*</span>
             <select
-                name="select_contractor" 
-                id="select_contractor" 
-                value={select_contractor}
+                name="contractor_id" 
+                id="contractor_id" 
+                value={contractor_id}
                 onChange={handleInputChange}  
                 style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
                 required
@@ -1127,6 +1187,18 @@ const [selectedOption, setSelectedOption] = useState('');
             </select>
 
                      </div> 
+                     <div className="col-md-6 mt-2">
+                          <label  htmlFor="dob" className="text">Date of Joining</label><span className="text-danger">*</span>
+                          <input 
+                          type="date" 
+                          name="join_date" 
+                          id="join_date"
+                          value={join_date}
+                          onChange={handleInputChange}
+                          placeholder="Date of Joining"   
+                          style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}} 
+                          required/>
+                        </div>
 
                         <div className="col-md-6 mt-2">
                           <label className="form-label">Verification Type</label><br />&nbsp;
