@@ -741,23 +741,25 @@ const [inputList, setInputList] = useState([
   inputList.map((x, i) => {
     return (
       <div className="row mb-3">
-        <div class="form-group col-md-1">
-          <label>Sl.No.</label>
+        <div class="form-group col-md-3">
+          <label className="text">Sl.No.</label>
           <input type="text" name="slNo"
            
            class="form-control" placeholder="Enter Sl.No." onChange={e => handleInputChange(e, i)} />
         </div>
        
-        <div class="form-group col-md-2">
-          <label>Qualification ID</label>
+        <div class="form-group col-md-3">
+          <label className="text">Qualification ID</label>
           <input type="text" name="qualificationId" class="form-control" placeholder="Enter Qualification ID" onChange={e => handleInputChange(e, i)} />
         </div>
-        <div class="form-group col-md-2">
-          <label>Institution</label>
-          <input type="text" name="institution" class="form-control" placeholder="Enter Institution" onChange={e => handleInputChange(e, i)} />
+        <div class="form-group col-md-3">
+          <label className="text">Institution</label>
+          <input type="text" name="institution" 
+          
+          class="form-control" placeholder="Enter Institution" onChange={e => handleInputChange(e, i)} />
         </div>
-        <div class="form-group col-md-1">
-          <label>Passing Year</label>
+        <div class="form-group col-md-3">
+          <label className="text">Passing Year</label>
           <input type="text" name="passingYear" class="form-control" placeholder="Enter Year" onChange={e => handleInputChange(e, i)} />
         </div>
         <div class="form-group col-md-12 mt-4">
