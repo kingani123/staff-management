@@ -15,16 +15,16 @@
   import { useState, useEffect } from 'react';
   import axios from 'axios';
   import Navbar from "./Navbar";
-import "./Liststaff.css";
+import "./Listforeign.css";
 
 import Sidebar from "./Sidebar";
-  function StaffList() {
+  function Listforeign() {
     const [staffList, setStaffList] = useState([]);
 
     useEffect(() => {
       async function fetchData() {
         try {
-          const response = await axios.get('http://localhost:3036/api/organization/list/IndianStaff');
+          const response = await axios.get('http://localhost:3036/api/organization/list/ForeignerStaff');
           //console.log(response.data);
           setStaffList(response.data.results.detalis);
         } catch (error) {
@@ -48,14 +48,14 @@ import Sidebar from "./Sidebar";
       <div className="body_right">
         <div className="inside">
           <div className="right_body_pagenation">
-            <p> List Unit Details</p>
+            <p> List Staff Details</p>
           </div>    
           <div className="right_body_section">
             {/*--content here--*/}
             
             <div className="card mt-0">
             <div className="card-body">
-              <div className="heading"><h3> List of Staff Details</h3></div>
+              <div className="heading"><h3> List of Foreign staff Details</h3></div>
               <div className="report_search_panner">
                 <div className="left">
                   <select className="form-select" aria-label="Default select example">
@@ -131,7 +131,7 @@ import Sidebar from "./Sidebar";
 
 
 
-                  ------
+                 
 {/* <div className="user_table_area">
   <table style={{padding: 15, border: '1px solid black'}}>
     <thead>
@@ -176,14 +176,13 @@ import Sidebar from "./Sidebar";
   
 </div>
  */}
- 
- <div className="user_table_area" style={{height: '400px', overflow: 'auto' }}>
+<div className="user_table_area" style={{height: '400px', overflow: 'auto' }}>
   <table style={{ padding: 15 }}>
     <thead style={{ backgroundColor: '#f2f2f2' }}>
       <tr>
         <th >Sl No.</th>
         <th style={{ width: '18%' }}>Name</th>
-        <th style={{ width: '18%' }}>DOB</th>
+        <th >DOB</th>
         <th >Email</th>
         <th >Phone no</th>
         <th  style={{ width: '20%' }}>Police Station</th>
@@ -221,6 +220,10 @@ import Sidebar from "./Sidebar";
     </tbody>
   </table>
 </div>
+
+
+
+
 
 
 
@@ -334,7 +337,7 @@ import Sidebar from "./Sidebar";
     );
   }
   
-  export default StaffList;
+  export default Listforeign;
   
   
   

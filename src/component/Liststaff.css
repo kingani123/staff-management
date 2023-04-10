@@ -1,0 +1,13 @@
+ th {
+    padding: 55px;
+    height: 12px;
+    background-color:blueviolet;
+  }
+     
+      .user_table_area {
+       
+        height: 400px;
+        overflow: auto;
+        border: 2px solid #ccc;
+      }
+       

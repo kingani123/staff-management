@@ -33,6 +33,7 @@ import Profile from "./component/Profile";
 import Admin from "./component/Admin";
 import AdminLayout2 from "./component/Admin2.Layout";
 import ApproveOrganizationPage from "./component/Approve";
+import Listforeign from "./component/Listforeign";
 
 
 function App() {
@@ -61,6 +62,7 @@ function App() {
       <Route path="/Contractlist" element={<Contractlist />}/>
       <Route path="/Release" element={<Release />}/>
       <Route path="/Liststaff" element={<Liststaff />}/>
+      <Route path="/Listforeign" element={<Listforeign />}/>
       <Route path="/Addcontract" element={<Addcontract/>}/>
       <Route path="/Contractlist" element={<Contractlist />}/>
       <Route path="/Addunit" element={<Addunit/>}/>

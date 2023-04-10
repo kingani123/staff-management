@@ -93,6 +93,11 @@ function Sidebar(props) {
                   </Link>
                 </li>
                 <li className="nav-item">
+                  <Link to="/Listforeign" className={props.className}>
+                    <img src="images/top.svg" alt="" />  Foreign staff list
+                  </Link>
+                </li>
+                <li className="nav-item">
                   <Link to="/Release" className={props.className}>
                     <img src="images/top.svg" alt="" /> Released Staff
                   </Link>

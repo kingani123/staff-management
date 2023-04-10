@@ -26,7 +26,7 @@ const navigate = useNavigate();
     );
     console.log(response.data);
     toast.success("Staff Add Successfully!!!");
-    navigate('/liststaff');  
+    navigate('/listforeign');  
        // navigate("/login");
     // redirect to login page
   } catch (error) {

@@ -1,0 +1,13 @@
+th {
+    padding: 10px;
+    background-color:rgb(140, 111, 168);
+    height: 10px;
+  }
+     
+      .user_table_area {
+       
+        height: 100px;
+        overflow: auto;
+        border: 2px solid #ccc;
+      }
+     
