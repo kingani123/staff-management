@@ -741,16 +741,16 @@ const [inputList, setInputList] = useState([
   inputList.map((x, i) => {
     return (
       <div className="row mb-3">
-        <div class="form-group col-md-3">
+        <div class="form-group col-md-1">
           <label className="text">Sl.No.</label>
           <input type="text" name="slNo"
            
-           class="form-control" placeholder="Enter Sl.No." onChange={e => handleInputChange(e, i)} />
+           class="form-control" onChange={e => handleInputChange(e, i)} />
         </div>
        
         <div class="form-group col-md-3">
-          <label className="text">Qualification ID</label>
-          <input type="text" name="qualificationId" class="form-control" placeholder="Enter Qualification ID" onChange={e => handleInputChange(e, i)} />
+          <label className="text">Qualification</label>
+          <input type="text" name="qualification" class="form-control" placeholder="Enter Qualification" onChange={e => handleInputChange(e, i)} />
         </div>
         <div class="form-group col-md-3">
           <label className="text">Institution</label>
@@ -762,7 +762,8 @@ const [inputList, setInputList] = useState([
           <label className="text">Passing Year</label>
           <input type="text" name="passingYear" class="form-control" placeholder="Enter Year" onChange={e => handleInputChange(e, i)} />
         </div>
-        <div class="form-group col-md-12 mt-4">
+               <div class="form-group col-md-2">
+          <label className="text">ADD/REMOVE</label>
           {inputList.length !== 1 && <button className="btn btn-danger mx-1" onClick={() => handleRemove(i)}>Remove</button>}
           {inputList.length - 1 === i && <button className="btn btn-success" onClick={handleAddClick}>Add More</button>}
         </div>
