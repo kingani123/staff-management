@@ -13,10 +13,29 @@ import { toast } from "react-toastify";
 
 const Addstaff =()=>{
   const [inputList, setInputList] = useState([
-    { slNo: '', firstName: '', lastName: '', qualificationId: '', institution: '', passingYear: '' },
+    { slno: '',  qualify: '', institute: '', year: '' },
   ]);
+
+  //file upload validation
+  const [u_adhar, setU_adhar] = useState(null);
+  const [preview, setPreview] = useState(null);
+
+  //email validation
+  const [inputValues, setInputValues] = useState({
+    email: '',});
+    const [emailError, setEmailError] = useState('');
+
+//mobile verification
+const [mobileError, setMobileError] = useState('');
+const [values, setValues] = useState({
+  mobile: '',});
+
+
+
+
   const location = useLocation();
   const navigate = useNavigate();
+  //add && remove
   const handleInputchange=(e, index)=>{
     const {name, value}= e.target;
     const list= [...inputList];
@@ -33,7 +52,7 @@ const Addstaff =()=>{
 
   const handleAddClick=()=>{ 
     setInputList([...inputList, 
-        { slNo: '', firstName: '', lastName: '', qualificationId: '', institution: '', passingYear: '' }]);
+      { slno: '',  qualify: '', institute: '', year: '' }]);
   }
     //const [gender, setGender] = useState('');
     const [selectedOption, setSelectedOption] = useState('');
@@ -164,7 +183,7 @@ name,
  institute,
  year,
  adhar,
- u_adhar,
+
  pan,
  pan_pic,
  driving_license,
@@ -189,6 +208,49 @@ job_sub_category,
       [event.target.name]: event.target.value,
     });
   };
+
+//Mobile verification
+const handleMobileChange = (e) => {
+  const { name, value } = e.target;
+  if (name === 'mobile') {
+    if (value.length !== 10) {
+      setMobileError('Mobile number should be 10 digits');
+    } else {
+      setMobileError('');
+    }
+  }
+  setValues({ ...values, 
+    [name]: value, });
+};
+
+
+
+
+//Email validation
+  const handleEmailChange = (event) => {
+    const { name, value } = event.target;
+  
+    // Check if the input field is the email field
+    if (name === 'email') {
+      // Use a regular expression to check if the email is valid
+      const isValidEmail = /\S+@\S+\.\S+/.test(value);
+  
+      if (!isValidEmail) {
+        // If the email is not valid, set an error message
+        setEmailError('Invalid email format');
+      } else {
+        setEmailError(''); // Reset the error message if the email is valid
+      }
+    }
+  
+    // Set the state with the updated input value
+    setInputValues((prevInputValues) => ({
+      ...prevInputValues,
+      [name]: value,
+    }));
+  };
+
+
   // function handleGenderChange(event) {
   //   setGender(event.target.value);
   // }
@@ -222,7 +284,32 @@ job_sub_category,
      }
   }
 
+  function handleFileChange(event) {
+    const file = event.target.files[0];
+    
 
+    // Validate file type
+    if (!['application/pdf', 'image/png','image/jpeg','image/jpg'].includes(file.type)) {
+      alert('Please upload a PDF or PNG or jpeg or jpg file');
+      return;
+    }
+
+    // Validate file size
+    if (file.size > 2 * 1024 * 1024) {
+      alert('Please upload a file smaller than 2MB');
+      return;
+    }
+
+    // Proceed with file upload
+    setU_adhar(file);
+
+     // Read file contents and display preview
+    const reader = new FileReader();
+    reader.readAsDataURL(file);
+    reader.onloadend = () => {
+      setPreview(reader.result);
+    };
+  }
   const handleSubmit = async (event) => {
     event.preventDefault();
 
@@ -793,30 +880,33 @@ const handleFormSubmit = (event) => {
                           type="email"  
                           name="email" 
                           id="email" 
-                          value={email}
-                          onChange={handleInputChange} 
+                          value={inputValues.email}
+                          onChange={handleEmailChange} 
                           placeholder="Email" 
                           style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
                           required    />
-                          <small className="text-danger" />
+                        {emailError && (
+          <small className="text-danger">{emailError}</small>
+        )}
                         </div>
                         <div className="col-md-4">
-                          <label htmlFor="mobile" className="text">Mobile</label><span className="text-danger">*</span>
-                          <input 
-                          type="text" 
-                          name="mobile" 
-                          id="mobile" 
-                          value={mobile}
-                          onChange={handleInputChange} 
-                          maxLength={10} 
-                          placeholder="Mobile"  
-                          style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
-                          required />
-                        </div>
+  <label htmlFor="mobile" className="text">Mobile</label><span className="text-danger">*</span>
+  <input 
+    type="number" 
+    name="mobile" 
+    id="mobile" 
+    value={values.mobile}
+    onChange={handleMobileChange} 
+    maxLength={10} 
+    placeholder="Mobile"  
+    style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
+    required />
+  {mobileError && <div className="text-danger">{mobileError}</div>}
+</div>
                         <div className="col-md-4">
                           <label htmlFor="landline" className="text" >Landline</label>
                           <input 
-                          type="text" 
+                          type="number" 
                           name="landline" 
                           id="landline"
                           value={landline}
@@ -840,37 +930,68 @@ const handleFormSubmit = (event) => {
                       <div className="accordion-body">
                       <div className="row">
        <div className="col-sm-12">
-         <h5 className="mt-3 mb-4 fw-bold">Dynamically add/remove inputs fields reactjs </h5>
+         <h5 className="mt-3 mb-4 fw-bold"> </h5>
            
          {
   inputList.map((x, i) => {
     return (
-      <div className="row mb-3">
-        <div class="form-group col-md-1">
-          <label>Sl.No.</label>
-          <input type="text" name="slNo" class="form-control" placeholder="Enter Sl.No." onChange={e => handleInputChange(e, i)} />
-        </div>
-        <div class="form-group col-md-3">
-          <label>First Name</label>
-          <input type="text" name="firstName" class="form-control" placeholder="Enter First Name" onChange={e => handleInputChange(e, i)} />
-        </div>
-        <div class="form-group col-md-3">
-          <label>Last Name</label>
-          <input type="text" name="lastName" class="form-control" placeholder="Enter Last Name" onChange={e => handleInputChange(e, i)} />
-        </div>
-        <div class="form-group col-md-2">
-          <label>Qualification ID</label>
-          <input type="text" name="qualificationId" class="form-control" placeholder="Enter Qualification ID" onChange={e => handleInputChange(e, i)} />
-        </div>
-        <div class="form-group col-md-2">
-          <label>Institution</label>
-          <input type="text" name="institution" class="form-control" placeholder="Enter Institution" onChange={e => handleInputChange(e, i)} />
-        </div>
-        <div class="form-group col-md-1">
-          <label>Passing Year</label>
-          <input type="text" name="passingYear" class="form-control" placeholder="Enter Year" onChange={e => handleInputChange(e, i)} />
-        </div>
-        <div class="form-group col-md-12 mt-4">
+      <div className="row ">
+        <div className="col-md-2">
+                          <label htmlFor="slno" className="text" >Sl.No.</label>
+                          <input 
+                          type="text" 
+                          name="slno" 
+                          id="slno"
+                          value={slno}
+                          onChange={e => handleInputChange(e, i)}
+                          placeholder="Enter Sl.No."
+                          maxLength={12}  
+                          style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
+                          required/>
+                        </div>
+                        <div className="col-md-2">
+                          <label htmlFor="qualify" className="text" >Qualification ID</label>
+                          <select 
+                            id="qualify" 
+                            name="qualify"
+                            value={qualify}
+                            onChange={e => handleInputChange(e, i)}
+                            placeholder="Enter Qualification"
+                            style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
+                            required
+                            ><option value disabled selected>Select Qualification</option>
+                            </select>
+                          </div>
+
+                          <div className="col-md-2">
+                          <label htmlFor="institute" className="text">Institution</label>
+                          <input 
+                          type="text" 
+                          name="institute" 
+                          id="institute"
+                          value={institute}
+                          onChange={e => handleInputChange(e, i)}
+                          placeholder="Enter Institution" 
+                          maxLength={12}  
+                          style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
+                          required/>
+                        </div>
+                        <div className="col-md-2">
+                          <label htmlFor="year" className="text" >Passing Year</label>
+                          <select 
+                            id="year" 
+                            name="year"
+                            value={year}
+                            onChange={e => handleInputChange(e, i)}
+                            placeholder="Enter Passing year"
+                            style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
+                            required
+                            ><option value disabled selected>Select Passing Year</option>
+                            </select>
+                          </div>
+      
+       
+        <div class="form-group col-md-3 ">
           {inputList.length !== 1 && <button className="btn btn-danger mx-1" onClick={() => handleRemove(i)}>Remove</button>}
           {inputList.length - 1 === i && <button className="btn btn-success" onClick={handleAddClick}>Add More</button>}
         </div>
@@ -883,7 +1004,7 @@ const handleFormSubmit = (event) => {
                
        </div>
      </div>
-                        <div className="col-12">
+                        {/* <div className="col-12">
                           <div className="table-responsive">
                             <table className="table table-light mb-0">
                                <tbody id="educational">
@@ -918,7 +1039,7 @@ const handleFormSubmit = (event) => {
                                               ])
                                       }
                                       style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
-                                     required/>
+                                     required/> */}
                                       
                                     {/* <input 
                                      type="text" 
@@ -929,9 +1050,9 @@ const handleFormSubmit = (event) => {
                                      placeholder="Sl.No."  
                                      style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
                                      required/> */}
-                                  </td>
+                                  {/* </td> */}
                                   {}
-                                  <td >
+                                  {/* <td >
                                     <select
            id="qualify"
            name="qualify" 
@@ -947,7 +1068,7 @@ const handleFormSubmit = (event) => {
             style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
             required>
               <option value disabled selected>Select qualification</option>
-              </select>
+              </select> */}
         
                                     {/* <select 
                                     id="qualify"
@@ -958,9 +1079,9 @@ const handleFormSubmit = (event) => {
                                     required>
                                       <option value disabled selected>Select qualification</option>
                                       </select> */}
-                                  </td>
+                                  {/* </td> */}
                                   {}
-                                  <td width="18%">
+                                  {/* <td width="18%">
                                      <input
                                       type="text"
                                       id="institute"
@@ -976,7 +1097,7 @@ const handleFormSubmit = (event) => {
             }
                          style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}} 
                                        required 
-                                           />
+                                           /> */}
           {/*                         <input 
                                    type="text"
                                      id="institute"
@@ -987,9 +1108,9 @@ const handleFormSubmit = (event) => {
           //                            style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}} 
           //                            required 
           //                            /> */}
-                                  </td>
+                                  {/* </td> */}
                                   {}
-                                  <td >
+                                  {/* <td >
                                        <select
                                        type="text"
                                        id="year"
@@ -1006,7 +1127,7 @@ const handleFormSubmit = (event) => {
                                        style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
                                     required >
                                       <option value disabled selected>Select year</option>
-                                      </select>
+                                      </select> */}
           
                                     {/* <select 
                                     id="year"
@@ -1018,11 +1139,11 @@ const handleFormSubmit = (event) => {
                                     required >
                                       <option value disabled selected>Select year</option>
                                       </select> */}
-                                  </td>
+                                  {/* </td> */}
                                   {/* // <td>
                                   //   <span onclick="add()"><button type="button" className="btn btn-outline-success radius-30">Add</button></span>
                                   // </td>   */}
-                                  <button onClick={() => removeEducation(index)}>Remove</button>
+                                  {/* <button onClick={() => removeEducation(index)}>Remove</button>
                                   </div>
                                 ))}
                                 <button onClick={addEducation}>Add Education</button>
@@ -1031,7 +1152,7 @@ const handleFormSubmit = (event) => {
                               </tbody>
                             </table>
                           </div>
-                        </div>
+                        </div> */}
                         {}
                       </div>
                     </div>
@@ -1062,14 +1183,19 @@ const handleFormSubmit = (event) => {
                                 </td>
                                 <td>
                                   <label htmlFor="u_adhar" className="text">Upload Aadhar</label><span className="text-danger">*</span>
-                                  <input 
-                                  type="file" 
-                                  id="u_adhar" 
-                                  name="u_adhar"  
-                                  value={u_adhar}
-                                  onChange={handleInputChange}   
-                                  style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}} 
-                                  required/>  
+                                  
+      <input type="file" onChange={handleFileChange} />
+      {u_adhar && (
+        <div>
+          <p>Selected file: {u_adhar.name}</p>
+          {u_adhar.type === 'image/png' || u_adhar.type === 'image/jpeg' || u_adhar.type === 'image/jpg' ? (
+            <img src={preview} alt="Selected file preview"style={{ maxWidth: '50%', maxHeight: '50px' }} />
+          ) : (
+            <embed src={preview} type={u_adhar.type} width="50%" height="100px" />
+          )}
+        </div>
+      )}
+    
                                 </td>
                               </tr>
                               <tr>

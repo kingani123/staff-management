@@ -181,7 +181,7 @@ const Profile=()=>{
           <div className="col-md-3">
           <label htmlFor="O_Email" className="text"> Organization E-mail</label><span className="text-danger">*</span>
           <input
-            type="O_Email"
+            type="email"
             id="O_Email"
             name="O_Email"
             value={O_Email}
