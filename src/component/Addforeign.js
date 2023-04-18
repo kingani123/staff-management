@@ -12,6 +12,22 @@ import "./Addforiegn.css";
 
  
 const Addforeign =()=>{
+
+
+   //email validation
+   const [inputValues, setInputValues] = useState({
+    email: '',});
+    const [emailError, setEmailError] = useState('');
+
+//mobile verification
+const [mobileError, setMobileError] = useState('');
+const [values, setValues] = useState({
+  mobile: '',});
+
+
+
+
+
 const navigate = useNavigate();
     const handleSubmit = async (event) => {
   event.preventDefault();
@@ -43,11 +59,11 @@ const handleRemove= index=>{
 
 const handleAddClick=()=>{ 
   setInputList([...inputList, 
-      { slNo: '', firstName: '', lastName: '', qualificationId: '', institution: '', passingYear: '' }]);
+      { slNo: '',  qualify: '', institute: '', year: '' }]);
 }
 const [selectedOption, setSelectedOption] = useState('');
 const [inputList, setInputList] = useState([
-  { slNo: '', firstName: '', lastName: '', qualificationId: '', institution: '', passingYear: '' },
+  { slNo: '',  qualify: '', institute: '', year: '' },
 ]);
   const [formData, setFormData] = useState({
     role_id: 1,
@@ -220,7 +236,44 @@ const [inputList, setInputList] = useState([
        setShowField2(false);
      }
   }
+//Mobile verification
+const handleMobileChange = (e) => {
+  const { name, value } = e.target;
+  if (name === 'mobile') {
+    if (value.length !== 10) {
+      setMobileError('Mobile number should be 10 digits');
+    } else {
+      setMobileError('');
+    }
+  }
+  setValues({ ...values, 
+    [name]: value, });
+};
 
+  
+//Email validation
+const handleEmailChange = (event) => {
+  const { name, value } = event.target;
+
+  // Check if the input field is the email field
+  if (name === 'email') {
+    // Use a regular expression to check if the email is valid
+    const isValidEmail = /\S+@\S+\.\S+/.test(value);
+
+    if (!isValidEmail) {
+      // If the email is not valid, set an error message
+      setEmailError('Invalid email format');
+    } else {
+      setEmailError(''); // Reset the error message if the email is valid
+    }
+  }
+
+  // Set the state with the updated input value
+  setInputValues((prevInputValues) => ({
+    ...prevInputValues,
+    [name]: value,
+  }));
+};
 
 
 
@@ -614,36 +667,40 @@ const [inputList, setInputList] = useState([
                     </h2>
                     <div id="collapseThree" className="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
                       <div className="accordion-body row">
-                      <div className="col-md-6">
+                      <div className="col-md-6 mt-2">
                           <label htmlFor="email" className="text">Email</label><span className="text-danger">*</span>
                           <input 
                           type="email"  
                           name="email" 
                           id="email" 
-                          value={email}
-                          onChange={handleInputChange} 
+                          value={inputValues.email}
+                          onChange={handleEmailChange} 
                           placeholder="Email" 
                           style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
                           required    />
-                          <small className="text-danger" />
+                        {emailError && (
+          <small className="text-danger">{emailError}</small>
+        )}
                         </div>
-                        <div className="col-md-6">
-                          <label htmlFor="mobile" className="text">Mobile</label><span className="text-danger">*</span>
-                          <input 
-                          type="text" 
-                          name="mobile" 
-                          id="mobile" 
-                          value={mobile}
-                          onChange={handleInputChange} 
-                          maxLength={10} 
-                          placeholder="Mobile"  
-                          style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
-                          required />
-                        </div>
-                        <div className="col-md-6">
+
+                        <div className="col-md-6 mt-2">
+  <label htmlFor="mobile" className="text">Mobile</label><span className="text-danger">*</span>
+  <input 
+    type="number" 
+    name="mobile" 
+    id="mobile" 
+    value={values.mobile}
+    onChange={handleMobileChange} 
+    maxLength={10} 
+    placeholder="Mobile"  
+    style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
+    required />
+  {mobileError && <div className="text-danger">{mobileError}</div>}
+</div>
+                        <div className="col-md-6 mt-2">
                           <label htmlFor="foreign_mobile_residing_country" className="text">Mobile( Mobile of Residing Country)</label><span className="text-danger">*</span>
                           <input 
-                          type="text" 
+                          type="number" 
                           name="foreign_mobile_residing_country" 
                           id="foreign_mobile_residing_country" 
                           value={foreign_mobile_residing_country}
@@ -654,10 +711,10 @@ const [inputList, setInputList] = useState([
                           required />
                         </div>
                        
-                        <div className="col-md-6">
+                        <div className="col-md-6 mt-2">
                           <label htmlFor="landline" className="text" >Landline</label><span className="text-danger">*</span>
                           <input 
-                          type="text" 
+                          type="number" 
                           name="landline" 
                           id="landline"
                           value={landline}
@@ -667,10 +724,10 @@ const [inputList, setInputList] = useState([
                           style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
                           required/>
                         </div>
-                        <div className="col-md-6">
+                        <div className="col-md-6 mt-2">
                           <label htmlFor="foreign_landline_residing_country" className="text" >Landline(Lanline of residing country)</label><span className="text-danger">*</span>
                           <input 
-                          type="text" 
+                          type="number" 
                           name="foreign_landline_residing_country" 
                           id="foreign_landline_residing_country"
                           value={foreign_landline_residing_country}
@@ -680,7 +737,7 @@ const [inputList, setInputList] = useState([
                           style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
                           required/>
                         </div>
-                        <div className="col-md-6">
+                        <div className="col-md-6 mt-2">
                           <label htmlFor="emergency_contact" className="text" >Contact Person</label><span className="text-danger">*</span>
                           <input 
                           type="text" 
@@ -693,7 +750,7 @@ const [inputList, setInputList] = useState([
                           style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
                           required/>
                         </div>
-                        <div className="col-md-6">
+                        <div className="col-md-6 mt-2">
                           <label htmlFor="emergency_contact_mobile" className="text" >Contact Person Mobile</label><span className="text-danger">*</span>
                           <input 
                           type="text" 
@@ -707,7 +764,7 @@ const [inputList, setInputList] = useState([
                           required/>
                         </div>
                         
-                        <div className="col-md-6">
+                        <div className="col-md-6 mt-2">
                           <label htmlFor="emergency_contact_person_relation" className="text" >Relation</label><span className="text-danger">*</span>
                           <input 
                           type="text" 
@@ -734,36 +791,70 @@ const [inputList, setInputList] = useState([
                     </h2>
                     <div id="collapseFour" className="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#accordionExample">
                       <div className="accordion-body">
-                      <div className="col-sm-12">
-        
+                      <div className="row">
+       <div className="col-sm-12">
+         <h5 className="mt-3 mb-4 fw-bold"> </h5>
            
          {
   inputList.map((x, i) => {
     return (
-      <div className="row mb-3">
-        <div class="form-group col-md-1">
-          <label className="text">Sl.No.</label>
-          <input type="text" name="slNo"
-           
-           class="form-control" onChange={e => handleInputChange(e, i)} />
-        </div>
+      <div className="row ">
+        <div className="col-md-2">
+                          <label htmlFor="slno" className="text" >Sl.No.</label>
+                          <input 
+                          type="text" 
+                          name="slno" 
+                          id="slno"
+                          value={slno}
+                          onChange={e => handleInputChange(e, i)}
+                          placeholder="Enter Sl.No."
+                          
+                          style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
+                          required/>
+                        </div>
+                        <div className="col-md-2">
+                          <label htmlFor="qualify" className="text" >Qualification ID</label>
+                          <select 
+                            id="qualify" 
+                            name="qualify"
+                            value={qualify}
+                            onChange={e => handleInputChange(e, i)}
+                            placeholder="Enter Qualification"
+                            style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
+                            required
+                            ><option value disabled selected>Select Qualification</option>
+                            </select>
+                          </div>
+
+                          <div className="col-md-2">
+                          <label htmlFor="institute" className="text">Institution</label>
+                          <input 
+                          type="text" 
+                          name="institute" 
+                          id="institute"
+                          value={institute}
+                          onChange={e => handleInputChange(e, i)}
+                          placeholder="Enter Institution" 
+                        
+                          style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
+                          required/>
+                        </div>
+                        <div className="col-md-2">
+                          <label htmlFor="year" className="text" >Passing Year</label>
+                          <select 
+                            id="year" 
+                            name="year"
+                            value={year}
+                            onChange={e => handleInputChange(e, i)}
+                            placeholder="Enter Passing year"
+                            style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
+                            required
+                            ><option value disabled selected>Select Passing Year</option>
+                            </select>
+                          </div>
+      
        
-        <div class="form-group col-md-3">
-          <label className="text">Qualification</label>
-          <input type="text" name="qualification" class="form-control" placeholder="Enter Qualification" onChange={e => handleInputChange(e, i)} />
-        </div>
-        <div class="form-group col-md-3">
-          <label className="text">Institution</label>
-          <input type="text" name="institution" 
-          
-          class="form-control" placeholder="Enter Institution" onChange={e => handleInputChange(e, i)} />
-        </div>
-        <div class="form-group col-md-3">
-          <label className="text">Passing Year</label>
-          <input type="text" name="passingYear" class="form-control" placeholder="Enter Year" onChange={e => handleInputChange(e, i)} />
-        </div>
-               <div class="form-group col-md-2">
-          <label className="text">ADD/REMOVE</label>
+        <div class="form-group col-md-3 ">
           {inputList.length !== 1 && <button className="btn btn-danger mx-1" onClick={() => handleRemove(i)}>Remove</button>}
           {inputList.length - 1 === i && <button className="btn btn-success" onClick={handleAddClick}>Add More</button>}
         </div>
@@ -771,8 +862,11 @@ const [inputList, setInputList] = useState([
     );
   })
 }
-</div>
-</div>
+
+
+          </div>     
+       </div>
+     </div>
                      {/*  <div className="col-12">
                           <div className="table-responsive">
                             <table className="table table-light mb-0">
