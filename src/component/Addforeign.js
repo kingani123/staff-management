@@ -679,7 +679,7 @@ const handleEmailChange = (event) => {
                           style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
                           required    />
                         {emailError && (
-          <small className="text-danger">{emailError}</small>
+          <small className="text-danger"><i>{emailError}</i></small>
         )}
                         </div>
 
@@ -695,9 +695,10 @@ const handleEmailChange = (event) => {
     placeholder="Mobile"  
     style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
     required />
-  {mobileError && <div className="text-danger">{mobileError}</div>}
+  {mobileError && <small className="text-danger"><i>{mobileError}</i></small>}
 </div>
                         <div className="col-md-6 mt-2">
+                         
                           <label htmlFor="foreign_mobile_residing_country" className="text">Mobile( Mobile of Residing Country)</label><span className="text-danger">*</span>
                           <input 
                           type="number" 
@@ -1003,7 +1004,7 @@ const handleEmailChange = (event) => {
                         </div>
                        
                         <div className="col-md-6 mt-2">
-                          <label htmlFor="passportpic" className="text">Upload Passport(File size should be less than 2mb)</label><span className="text-danger">*</span>
+                          <label htmlFor="passportpic" className="text">Upload Passport (Max File Size 2MB(JPG,PNG,PDF))</label><span className="text-danger">*</span>
                           <input   
                           type="file"
                           name="passportpic"
@@ -1356,7 +1357,7 @@ const handleEmailChange = (event) => {
                           <input className="form-check-input verifyModal" type="radio" data-bs-toggle="modal" data-bs-target="#verifyModal" aria-expanded="false" defaultValue="self" name="verification" id="sameas1" onclick="sameAs()" />
                           <label className="form-check-label" htmlFor="sameas1">Self Verified</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                           <input className="form-check-input verifyModal" type="radio" data-bs-toggle="modal" data-bs-target="#verifyModal" aria-expanded="false" defaultValue="ps" name="verification" id="sameas2" onclick="sameAs()" />
-                          <label className="form-check-label" htmlFor="sameas2">Required to Verified</label> 
+                          <label className="form-check-label" htmlFor="sameas2">Required to Verify</label> 
                           <input type="hidden" id="verification_value" name="verification_value" />                                              
                         </div>
                         <div className="col-md-6 mt-2" id="otherTextDiv" />

@@ -886,7 +886,7 @@ const handleFormSubmit = (event) => {
                           style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
                           required    />
                         {emailError && (
-          <small className="text-danger">{emailError}</small>
+          <small className="text-danger"><i>{emailError}</i></small>
         )}
                         </div>
                         <div className="col-md-4">
@@ -901,7 +901,7 @@ const handleFormSubmit = (event) => {
     placeholder="Mobile"  
     style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
     required />
-  {mobileError && <div className="text-danger">{mobileError}</div>}
+  {mobileError && <small className="text-danger" ><i>{mobileError}</i></small>}
 </div>
                         <div className="col-md-4">
                           <label htmlFor="landline" className="text" >Landline</label>
@@ -1506,7 +1506,7 @@ const handleFormSubmit = (event) => {
                           <input className="form-check-input verifyModal" type="radio" data-bs-toggle="modal" data-bs-target="#verifyModal" aria-expanded="false" defaultValue="self" name="verification" id="sameas1" onclick="sameAs()" />
                           <label className="form-check-label" htmlFor="sameas1">Self Verified</label>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                           <input className="form-check-input verifyModal" type="radio" data-bs-toggle="modal" data-bs-target="#verifyModal" aria-expanded="false" defaultValue="ps" name="verification" id="sameas2" onclick="sameAs()" />
-                          <label className="form-check-label" htmlFor="sameas2">Required to Verified</label> 
+                          <label className="form-check-label" htmlFor="sameas2">Required to Verify</label> 
                           <input type="hidden" id="verification_value" name="verification_value" />                                              
                         </div>
                         <div className="col-md-6 mt-2" id="otherTextDiv" />

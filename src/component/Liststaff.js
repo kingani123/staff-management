@@ -185,8 +185,8 @@ import Sidebar from "./Sidebar";
         <th style={{ width: '18%' }}>Name</th>
         <th style={{ width: '18%' }}>DOB</th>
         <th >Email</th>
-        <th >Phone no</th>
-        <th  style={{ width: '20%' }}>Police Station</th>
+        <th >Mobile No.</th>
+        <th  style={{ width: '20%' }}>PS</th>
        
         <th  style={{ width: '20%' }}>Action</th>
       </tr>
@@ -195,9 +195,9 @@ import Sidebar from "./Sidebar";
       {staffList.map((staff, index) => (
         <tr key={staff.id}>
           <td>
-            <div style={{ width: '15%' }}>
+          
               <p className="sl_no">{index + 1}</p>
-            </div>
+            
           </td>
           <td>{staff.name}</td>
           <td>{staff.dob}</td>
