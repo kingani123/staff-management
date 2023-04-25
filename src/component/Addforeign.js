@@ -113,6 +113,7 @@ const [inputList, setInputList] = useState([
     job_sub_category:"",
     regular_peri:"",
     city:"",
+    countrycode:"",
    foreign_mobile_residing_country:"",
    foreign_landline_residing_country:"",
     emergency_contact:"",
@@ -180,6 +181,7 @@ const [inputList, setInputList] = useState([
     engaged_for,
     job_sub_category,
     city,
+    countrycode,
     foreign_mobile_residing_country    ,
    foreign_landline_residing_country,
     emergency_contact,
@@ -697,7 +699,38 @@ const handleEmailChange = (event) => {
     required />
   {mobileError && <small className="text-danger"><i>{mobileError}</i></small>}
 </div>
-                        <div className="col-md-6 mt-2">
+
+<div className="col-md-2 ">
+                         
+                          <label htmlFor="countrycode" className="text"></label><span className="">.</span>
+                                                  
+                           <select 
+                          id="countrycode"
+                          name="countrycode" 
+                          value={countrycode}
+                          onChange={handleInputChange}  
+                          style={{height: '50%', width: '100%', border: 'none', fontSize: '12px', borderBottom: '2px solid silver',backgroundColor: 'transparent'}}
+                          required 
+                          >
+                        
+                          <option value="" disabled="" selected="">+91</option>
+                                                    <option>+355</option>
+                                                    <option>+1-684</option>
+                                                    <option>+672</option>
+                                                    <option>+501</option>
+                                                    <option>+246</option>
+                                                    <option>+855</option>
+                                                    <option>+54</option>
+                                                    <option>+1-264</option>
+                                                    <option>+374</option>
+                                                    <option>+880</option>
+                                                    <option>+975</option>
+                                                </select>          
+                           
+                          
+                        </div>
+
+                        <div className="col-md-5 mt-2">
                          
                           <label htmlFor="foreign_mobile_residing_country" className="text">Mobile( Mobile of Residing Country)</label><span className="text-danger">*</span>
                           <input 
@@ -712,7 +745,7 @@ const handleEmailChange = (event) => {
                           required />
                         </div>
                        
-                        <div className="col-md-6 mt-2">
+                        <div className="col-md-5 mt-2">
                           <label htmlFor="landline" className="text" >Landline</label><span className="text-danger">*</span>
                           <input 
                           type="number" 

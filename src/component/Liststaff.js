@@ -131,7 +131,7 @@ import Sidebar from "./Sidebar";
 
 
 
-                  ------
+                 
 {/* <div className="user_table_area">
   <table style={{padding: 15, border: '1px solid black'}}>
     <thead>
@@ -181,12 +181,12 @@ import Sidebar from "./Sidebar";
   <table style={{ padding: 15 }}>
     <thead style={{ backgroundColor: '#f2f2f2' }}>
       <tr>
-        <th >Sl No.</th>
+        <th style={{ width: '8%' }}>Sl No.</th>
         <th style={{ width: '18%' }}>Name</th>
-        <th style={{ width: '18%' }}>DOB</th>
-        <th >Email</th>
-        <th >Mobile No.</th>
-        <th  style={{ width: '20%' }}>PS</th>
+        <th style={{ width: '15%' }}>DOB</th>
+        <th style={{ width: '18%' }}>Email</th>
+        <th style={{ width: '18%' }}>Mobile No.</th>
+        <th  style={{ width: '18%' }}>PS</th>
        
         <th  style={{ width: '20%' }}>Action</th>
       </tr>

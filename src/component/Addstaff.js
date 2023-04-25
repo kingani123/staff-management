@@ -1194,7 +1194,8 @@ const handleFormSubmit = (event) => {
             <embed src={preview} type={u_adhar.type} width="50%" height="100px" />
           )}
         </div>
-      )}
+      )} &nbsp;&nbsp;
+       <button className="btn btn-success"><i class="fa-regular fa-eye"></i></button>
     
                                 </td>
                               </tr>
